@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Guía unificada PYS - ATC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div class="app-title-row">
+        <div>
+          <div class="app-title">
+            Guía unificada PYS
+          </div>
+          <div class="app-subtitle">
+            Panel interno para agentes: consulta rápida por familia y tipo de proceso, con fichas de cada PYS, precios de referencia y guías de fidelización.
+          </div>
+        </div>
+        <div class="header-actions">
+          <div class="chip">
+            <span class="chip-dot"></span> Navegación por familia / proceso
+          </div>
+          <div class="chip">
+            <span class="chip-dot"></span> Fichas agrupadas por secciones
+          </div>
+        </div>
+      </div>
+
+      <nav class="top-nav">
+        <button class="top-nav-button primary" data-open-modal="modal-geir">
+          <span class="dot"></span> Guía GEIR PYS
+        </button>
+        <button class="top-nav-button" data-open-modal="modal-fidelizacion-global">
+          <span class="dot"></span> Guía global de fidelización
+        </button>
+        <button class="top-nav-button" data-open-modal="modal-averias">
+          <span class="dot"></span> Protocolo averías eléctricas / gas
+        </button>
+        <button class="top-nav-button" data-open-modal="modal-estructura">
+          <span class="dot"></span> Mapa de procesos PYS
+        </button>
+      </nav>
+    </header>
+
+    <main class="layout-main">
+      <!-- Barra de navegación por familias / procesos -->
+      <section class="toolbar-panel">
+        <div class="toolbar-header">
+          <div class="toolbar-title">Navegación rápida</div>
+          <div class="toolbar-subtitle">Pulsa una familia y, si quieres, afina por proceso.</div>
+        </div>
+
+        <div>
+          <div class="toolbar-section-title">Familias / ramas</div>
+          <div class="toolbar-row" id="family-buttons">
+            <button class="toolbar-button active" data-family="all">
+              <span class="dot"></span> Todas
+            </button>
+            <button class="toolbar-button" data-family="proteccion">
+              Protección eléctrica / Hogar
+            </button>
+            <button class="toolbar-button" data-family="gas">
+              PYS de Gas
+            </button>
+            <button class="toolbar-button" data-family="legal-digital">
+              Legal / Digital
+            </button>
+            <button class="toolbar-button" data-family="seguros-asistentes">
+              Seguros / Asistentes Smart
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <div class="toolbar-section-title">Tipos de proceso</div>
+          <div class="toolbar-row" id="process-buttons">
+            <button class="toolbar-button active" data-process="all">
+              Todos
+            </button>
+            <button class="toolbar-button" data-process="info-general">
+              Información general
+            </button>
+            <button class="toolbar-button" data-process="contratacion">
+              Contratación / Alta
+            </button>
+            <button class="toolbar-button" data-process="gestion-servicio">
+              Gestión del servicio
+            </button>
+            <button class="toolbar-button" data-process="averias">
+              Averías
+            </button>
+            <button class="toolbar-button" data-process="geir">
+              GEIR PYS
+            </button>
+            <button class="toolbar-button" data-process="fidelizacion">
+              Fidelización / Retención
+            </button>
+            <button class="toolbar-button" data-process="bajas">
+              Bajas / Regularización
+            </button>
+            <button class="toolbar-button" data-process="ejemplos-argumentario">
+              Ejemplos / Argumentario
+            </button>
+          </div>
+        </div>
+
+        <div class="toolbar-hint">
+          Ejemplo: si el cliente quiere <strong>baja</strong> de un PYS de gas, elige
+          <strong>PYS de Gas</strong> y luego <strong>Bajas / Regularización</strong> para centrar la ficha en ese proceso.
+        </div>
+      </section>
+
+      <!-- Panel de resultados -->
+      <section class="content-panel">
+        <div class="results-header">
+          <div class="results-title">PYS visibles</div>
+          <div class="results-meta">
+            <span class="badge" id="results-count">– resultados</span>
+            <span class="badge" id="results-context">Familia: todas · Proceso: todos</span>
+          </div>
+        </div>
+
+        <div class="tags-row" id="active-tags"></div>
+
+        <div class="cards-grid" id="cards-grid"></div>
+
+        <div class="empty-state" id="empty-state" style="display:none;">
+          <strong>No hay PYS con la combinación actual.</strong><br />
+          Vuelve a “Todas las familias” o “Todos los procesos” para ver más fichas.
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- MODALES GENERALES (GEIR, FIDELIZACIÓN GLOBAL, AVERÍAS, MAPA PROCESOS) -->
+
+  <div class="modal-backdrop" id="modal-geir">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <div class="modal-title">GEIR PYS · Guía rápida</div>
+          <div class="modal-subtitle">
+            Disconformidades de contratación o facturación de PYS sin abrir reclamación, siempre que se pueda resolver o reconducir desde PYS.
+          </div>
+        </div>
+        <button class="btn-icon-circle" data-close-modal="modal-geir">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-grid">
+          <div class="modal-block">
+            <div class="modal-block-title">
+              <span>Ámbito</span>
+              <span class="badge-soft">Foco: PYS</span>
+            </div>
+            <div class="modal-block-body">
+              <ul>
+                <li>Errores o dudas de <strong>facturación de PYS</strong>.</li>
+                <li>Disconformidad con la <strong>contratación</strong> (cliente dice que no contrató, o que le ofrecieron otra cosa).</li>
+                <li><strong>Bajas no tramitadas</strong> que el cliente afirma haber solicitado.</li>
+                <li>Revisión de <strong>uso del servicio</strong> (averías, visitas, importes cubiertos).</li>
+              </ul>
+              <div class="callout info">
+                Objetivo: resolver rápido y dejar trazabilidad, evitando reclamación formal salvo que el cliente la pida o el caso lo exija.
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-block">
+            <div class="modal-block-title">
+              <span>Pasos básicos</span>
+              <span class="badge-soft">Escucha · Verifica · Decide</span>
+            </div>
+            <div class="modal-block-body">
+              <ol style="padding-left:18px;margin:2px 0;">
+                <li>Escucha y reformula el motivo real.</li>
+                <li>Consulta en sistemas: fechas de alta/baja, canales, uso del PYS.</li>
+                <li>Clasifica: facturación, contratación, baja no tramitada, mal servicio.</li>
+                <li>Decide:
+                  <ul>
+                    <li>Resolver en línea (explicación, corrección, gesto comercial).</li>
+                    <li>O generar callback GEIR PYS con toda la información.</li>
+                  </ul>
+                </li>
+                <li>Comunica plazos y forma de contacto al cliente.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <span>Codifica siempre la interacción como GEIR PYS, detallando el compromiso y el PYS afectado.</span>
+        <button class="btn-close" data-close-modal="modal-geir">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="modal-fidelizacion-global">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <div class="modal-title">Fidelización y promociones · Visión global</div>
+          <div class="modal-subtitle">
+            Esquema de actuación común para retener servicios: orden del discurso y tipos habituales de descuento.
+          </div>
+        </div>
+        <button class="btn-icon-circle" data-close-modal="modal-fidelizacion-global">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-grid">
+          <div class="modal-block">
+            <div class="modal-block-title">
+              <span>Orden de la llamada</span>
+              <span class="badge-soft">Evitar bajas “reflejo”</span>
+            </div>
+            <div class="modal-block-body">
+              <ol style="padding-left:18px;margin:2px 0;">
+                <li>Explorar motivo real (precio, no uso, otro seguro, mal servicio...).</li>
+                <li>Poner en valor 2–3 coberturas que encajen con su caso.</li>
+                <li>Resolver dudas técnicas (límites, carencias, antigüedad...).</li>
+                <li>Si sigue dudando, plantear:
+                  <ul>
+                    <li>Descuento temporal.</li>
+                    <li>Cambio de producto (más sencillo o más completo).</li>
+                  </ul>
+                </li>
+                <li>Si aun así mantiene la baja, tramitar y documentar bien el motivo.</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="modal-block">
+            <div class="modal-block-title">
+              <span>Tipos de descuento típicos</span>
+              <span class="badge-soft">Ejemplos orientativos</span>
+            </div>
+            <div class="modal-block-body">
+              <ul>
+                <li>Protección / Gas:
+                  <ul>
+                    <li>Campañas tipo <strong>50 % de descuento 12 meses</strong> sobre la cuota.</li>
+                  </ul>
+                </li>
+                <li>Asistentes Smart:
+                  <ul>
+                    <li>A veces <strong>100 % 12 meses</strong> en fidelización/prueba.</li>
+                  </ul>
+                </li>
+              </ul>
+              <div class="callout warning">
+                Valida siempre en la herramienta comercial qué campañas están activas y qué PYS son elegibles.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <span>El detalle de cada PYS está en el botón “Fidelización / Precio” dentro de su ficha.</span>
+        <button class="btn-close" data-close-modal="modal-fidelizacion-global">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="modal-averias">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <div class="modal-title">Protocolo de averías eléctricas y gas</div>
+          <div class="modal-subtitle">
+            Diferenciar avería general/particular y decidir si entra por PYS de protección.
+          </div>
+        </div>
+        <button class="btn-icon-circle" data-close-modal="modal-averias">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-grid">
+          <div class="modal-block">
+            <div class="modal-block-title">
+              <span>Avería eléctrica</span>
+              <span class="badge-soft">Primero seguridad</span>
+            </div>
+            <div class="modal-block-body">
+              <ul>
+                <li>Comprobar si afecta solo al cliente o a vecinos/calle (distribuidora).</li>
+                <li>Descartar corte por impago.</li>
+                <li>Revisar cuadro (magnetos, ICP) y contador si está accesible.</li>
+                <li>Valorar peligrosidad (olor a quemado, chispas, etc.).</li>
+                <li>Si es interior y hay PYS (PEH, PIH, etc.), abrir aviso según el producto.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="modal-block">
+            <div class="modal-block-title">
+              <span>Avería de gas</span>
+              <span class="badge-soft">Calma y protocolo</span>
+            </div>
+            <div class="modal-block-body">
+              <ul>
+                <li>Si hay olor a gas o riesgo, ventilar, no accionar interruptores y derivar a emergencias/distribuidora.</li>
+                <li>Si es fallo de caldera/calentador, revisar si tiene PMG/AG/PG, etc., y si entra en cobertura.</li>
+                <li>Tipificar bien el motivo para que el técnico vaya preparado.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <span>Usa esta guía junto con las fichas de PYS para saber hasta dónde llega la cobertura.</span>
+        <button class="btn-close" data-close-modal="modal-averias">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="modal-estructura">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <div class="modal-title">Mapa de procesos PYS</div>
+          <div class="modal-subtitle">
+            Contratación, uso del servicio, GEIR, fidelización y bajas/regularizaciones.
+          </div>
+        </div>
+        <button class="btn-icon-circle" data-close-modal="modal-estructura">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-grid">
+          <div class="modal-block">
+            <div class="modal-block-title">
+              <span>Contratación</span>
+              <span class="badge-soft">Inicio</span>
+            </div>
+            <div class="modal-block-body">
+              <ul>
+                <li>Verificar titular y compatibilidad del PYS.</li>
+                <li>Explicar coberturas clave, carencias, permanencias.</li>
+                <li>Registrar consentimiento y cómo se verá en factura.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="modal-block">
+            <div class="modal-block-title">
+              <span>Gestión / uso</span>
+              <span class="badge-soft">Durante vida del PYS</span>
+            </div>
+            <div class="modal-block-body">
+              <ul>
+                <li>Apertura de averías, visitas y servicios asociados.</li>
+                <li>Seguimiento de solicitudes y plazos.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="modal-block">
+            <div class="modal-block-title">
+              <span>GEIR</span>
+              <span class="badge-soft">Disconformidades</span>
+            </div>
+            <div class="modal-block-body">
+              <ul>
+                <li>Revisión de facturación, contratación y bajas no tramitadas.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="modal-block">
+            <div class="modal-block-title">
+              <span>Fidelización / Bajas</span>
+              <span class="badge-soft">Cierre</span>
+            </div>
+            <div class="modal-block-body">
+              <ul>
+                <li>Intento de retención con explicación y descuentos.</li>
+                <li>Si baja, revisar impacto y posible regularización.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <span>En cada ficha verás qué procesos aplican y qué tener en cuenta.</span>
+        <button class="btn-close" data-close-modal="modal-estructura">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODALES DE FIDELIZACIÓN ESPECÍFICA POR PYS -->
+  <div class="modal-backdrop" id="fid-peh">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <div class="modal-title">PEH · Fidelización y precio</div>
+          <div class="modal-subtitle">
+            Claves para retener Protección Eléctrica Hogar.
+          </div>
+        </div>
+        <button class="btn-icon-circle" data-close-modal="fid-peh">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-grid">
+          <div class="modal-block">
+            <div class="modal-block-title">
+              <span>Precio</span>
+              <span class="badge-soft">Completa con tarifa actual</span>
+            </div>
+            <div class="modal-block-body">
+              <ul>
+                <li><strong>Cuota mensual PEH:</strong> consulta importe actual en la herramienta comercial.</li>
+                <li>Comparar con el coste típico de:
+                  <ul>
+                    <li>Desplazamiento + mano de obra + piezas de una avería eléctrica.</li>
+                  </ul>
+                </li>
+              </ul>
+              <div class="callout info">
+                El foco está en que una sola avería puede costar más que varias cuotas de PEH.
+              </div>
+            </div>
+          </div>
+          <div class="modal-block">
+            <div class="modal-block-title">
+              <span>Promociones</span>
+              <span class="badge-soft">Ejemplos</span>
+            </div>
+            <div class="modal-block-body">
+              <ul>
+                <li>Campañas tipo <strong>50 % 12 meses</strong> sobre la cuota PEH, cuando exista promoción activa.</li>
+              </ul>
+              <p><strong>Ejemplo de frase:</strong></p>
+              <ul>
+                <li>“Puedo ajustarte la cuota aplicando un <strong>descuento del X % durante Y meses</strong> para que sigas con la misma protección.”</li>
+              </ul>
+              <div class="callout warning">
+                Verifica siempre que el contrato es elegible para la campaña antes de comprometer el descuento.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <span>Si aun así quiere baja, recuerda explicar que perderá la cobertura de averías y bricolaje.</span>
+        <button class="btn-close" data-close-modal="fid-peh">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="fid-pih">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <div class="modal-title">PIH · Fidelización y precio</div>
+          <div class="modal-subtitle">
+            Cómo argumentar el valor del Pack Iberdrola Hogar.
+          </div>
+        </div>
+        <button class="btn-icon-circle" data-close-modal="fid-pih">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-grid">
+          <div class="modal-block">
+            <div class="modal-block-title">
+              <span>Precio</span>
+              <span class="badge-soft">Pack global</span>
+            </div>
+            <div class="modal-block-body">
+              <ul>
+                <li>Cuota mensual PIH = suma de protección eléctrica + electrodomésticos + digital + otros, normalmente más barato que contratar todo por separado.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="modal-block">
+            <div class="modal-block-title">
+              <span>Promociones</span>
+              <span class="badge-soft">Ejemplos</span>
+            </div>
+            <div class="modal-block-body">
+              <ul>
+                <li>Descuento % sobre la cuota PIH durante X meses (según campaña).</li>
+                <li>Condiciones especiales para migrar desde otros servicios individuales a PIH.</li>
+              </ul>
+              <p><strong>Discurso:</strong></p>
+              <ul>
+                <li>“Con PIH tienes varias coberturas en un solo servicio; con el descuento te sigue saliendo más rentable que separar todo.”</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <span>Si el cliente no quiere algo tan completo, valora pasar a PEH manteniendo al menos la parte eléctrica.</span>
+        <button class="btn-close" data-close-modal="fid-pih">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="fid-pmg">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <div class="modal-title">PMG · Fidelización y precio</div>
+          <div class="modal-subtitle">
+            Mantenimiento de gas: precio, regularización y alternativas.
+          </div>
+        </div>
+        <button class="btn-icon-circle" data-close-modal="fid-pmg">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-grid">
+          <div class="modal-block">
+            <div class="modal-block-title">
+              <span>Precio y regularización</span>
+              <span class="badge-soft">Punto sensible</span>
+            </div>
+            <div class="modal-block-body">
+              <ul>
+                <li>Cuota mensual PMG = revisión periódica + cobertura de averías.</li>
+                <li>Si ya ha habido visita o avería y se da de baja, puede aplicarse <strong>regularización</strong>.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="modal-block">
+            <div class="modal-block-title">
+              <span>Promociones y cambios</span>
+              <span class="badge-soft">Downgrade</span>
+            </div>
+            <div class="modal-block-body">
+              <ul>
+                <li>Descuento temporal sobre la cuota, si hay campaña activa.</li>
+                <li>Cambio de PMG → AG cuando el cliente no valora tanto la visita de mantenimiento, pero quiere cobertura de averías.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <span>Antes de hablar de devoluciones, revisa siempre si el cliente ha usado el servicio.</span>
+        <button class="btn-close" data-close-modal="fid-pmg">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="fid-tal">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <div class="modal-title">TAL · Fidelización y precio</div>
+          <div class="modal-subtitle">
+            Claves para retener Tu Asesor Legal.
+          </div>
+        </div>
+        <button class="btn-icon-circle" data-close-modal="fid-tal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-grid">
+          <div class="modal-block">
+            <div class="modal-block-title">
+              <span>Precio vs valor</span>
+              <span class="badge-soft">Prevención</span>
+            </div>
+            <div class="modal-block-body">
+              <ul>
+                <li>Una consulta puntual en un despacho suele ser más cara que varios meses de TAL.</li>
+                <li>Con TAL puede llamar antes de firmar contratos o reclamar, evitando errores caros.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="modal-block">
+            <div class="modal-block-title">
+              <span>Promociones</span>
+              <span class="badge-soft">Seg. campañas</span>
+            </div>
+            <div class="modal-block-body">
+              <ul>
+                <li>Descuentos temporales en la cuota si hay campaña activa.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <span>Si dice “no lo he usado nunca”, usa ejemplos de situaciones legales muy típicas (alquiler, trabajo, compras).</span>
+        <button class="btn-close" data-close-modal="fid-tal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
