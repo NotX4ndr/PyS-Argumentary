@@ -19,81 +19,130 @@ const FAMILIES = [
 ];
 
 const PRODUCTS = [
-  {
+{
   id: "PIH",
   family: "PYS Protección",
   name: "PIH · Pack Iberdrola Hogar",
   price: "8,95 €/mes + impuestos",
-  carencia: "1 mes general, 6 meses AE",
-  fidelizacionResumen: "50% 12 meses si elegible",
-  resumenCorto: "Pack integral con urgencias eléctricas, electrodomésticos, bricolaje y servicios digitales.",
+  carencia: "30 días general · 6 meses Asesoramiento Energético",
+  fidelizacionResumen: "50% 12 meses si elegible (según Manual de Fidelización PYS)",
+  
+  resumenCorto: "Pack integral con averías eléctricas urgentes, reparación de electrodomésticos, bricolaje eléctrico, Asistente Smart, Hogar Digital, Asesoramiento Energético y Protección de Pagos Esencial.",
+
   sections: {
+
     info: `
-      PIH es un pack integral para clientes residenciales orientado a cubrir averías eléctricas, electrodomésticos, pequeños trabajos de bricolaje y servicios digitales como hogar conectado y ciberseguridad. Ofrece además un nivel básico de protección de pagos.
+      El Pack Iberdrola Hogar (PIH) es un servicio que sustituye al antiguo Pack Iberdrola en nuevas ventas, ampliando sus prestaciones con la cobertura de Hogar Digital. Ofrece una solución integral en averías eléctricas urgentes, electrodomésticos, bricolaje eléctrico, Asistente Smart, asesoramiento energético y Protección de Pagos Esencial.
+      El servicio debe contratarse siempre asociado a un suministro eléctrico con potencia inferior a 15 kW.
     `,
+
     coberturas: `
-      <h3>Urgencias eléctricas</h3>
+      <h3>Avería Eléctrica Urgente</h3>
       <ul>
-        <li>Atención urgente 24/7.</li>
-        <li>Desplazamiento, mano de obra y materiales incluidos hasta el límite anual fijado en 300€ con opción a pago de sustitución por reparación inviable de
-hasta 300€ en función de la antigüedad, a decisión del técnico.
-.</li>
+        <li>Atención en menos de 3 horas.</li>
+        <li>Incluye desplazamiento, mano de obra, piezas e impuestos.</li>
+        <li>Cobertura económica anual: hasta 550 €.</li>
       </ul>
-      <h3>Reparación de electrodomésticos</h3>
+
+      <h3>Reparación de Electrodomésticos</h3>
       <ul>
-        <li>Incluye desplazamiento + 2 horas mano de obra.</li>
-        <li>Piezas cubiertas hasta el límite económico anual.</li>
-        <li>Electrodomésticos de cocina y TV bajo antigüedad máxima permitida.</li>
+        <li>Incluye desplazamiento, mano de obra, piezas e impuestos.</li>
+        <li>Electrodomésticos cubiertos:
+          Frigorífico, Lavadora, Cocina eléctrica, Campana, Lavavajillas, Horno (no microondas independiente),
+          Secadora, Congelador, Termo/caldera eléctricos y Televisor.
+        </li>
+        <li>Límite económico: 300 € por electrodoméstico y año.</li>
+        <li>Antigüedad máxima: menos de 11 años para electrodomésticos de cocina y menos de 6 años para TV.</li>
+        <li>Atención en menos de 48 horas laborables.</li>
       </ul>
-      <h3>Bricolaje eléctrico</h3>
+
+      <h3>Bricolaje Eléctrico</h3>
       <ul>
-        <li>Instalación de enchufes, interruptores, lámparas sobre punto existente.</li>
-        <li>1 intervención anual incluida.</li>
+        <li>1 intervención anual realizada por un técnico cualificado.</li>
       </ul>
-      <h3>Servicios digitales</h3>
+
+      <h3>Hogar Digital</h3>
       <ul>
-        <li>Ciberseguridad.</li>
-        <li>Control parental.</li>
-        <li>Asistencia remota.</li>
+        <li>Servicios de ciberseguridad.</li>
+        <li>Monitorización de tarjetas y cuentas de correo (hasta 3 emails).</li>
+        <li>10 GB de almacenamiento en la nube.</li>
+        <li>Hasta 3 borrados digitales al año.</li>
+        <li>Soporte tecnológico en el hogar.</li>
+        <li>Requiere registro en https://hogardigitaliberdrola.es/ mediante el código enviado en el email de bienvenida.</li>
       </ul>
-      <h3>Protección de pagos</h3>
+
+      <h3>Asistente Smart</h3>
       <ul>
-        <li>Saldo compensatorio si se cumplen las condiciones (baja laboral, desempleo, etc.).</li>
+        <li>Información detallada del consumo por electrodoméstico y categorías en la App/Web IBD Clientes.</li>
+        <li>Notificaciones personalizadas y alertas de consumo.</li>
+        <li>Informes mensuales.</li>
+        <li>Es imprescindible completar el perfil para una correcta estimación.</li>
+        <li>Si no es posible obtener los datos necesarios en 4 meses, se activa “PIH sin Asistente Smart”.</li>
+      </ul>
+
+      <h3>Asesoramiento Energético</h3>
+      <ul>
+        <li>Diagnóstico energético del hogar.</li>
+        <li>El informe se remite en un máximo de 10 días laborables desde la visita.</li>
+      </ul>
+
+      <h3>Protección de Pagos Esencial</h3>
+      <ul>
+        <li>Fallecimiento: 600 €.</li>
+        <li>Incapacidad Absoluta y Permanente: 600 €.</li>
+        <li>Incapacidad Temporal: 250 € a los 30 días + 250 € a los 210 días.</li>
+        <li>Hospitalización: 250 € a los 3 días.</li>
+        <li>Sin carencia.</li>
       </ul>
     `,
+
     exclusiones: `
       <ul>
-        <li>Averías en equipos fuera de antigüedad permitida.</li>
-        <li>Instalaciones irregulares o sin certificación.</li>
-        <li>Daños intencionados o manipulación indebida.</li>
+        <li>Electrodomésticos con antigüedad superior a 11 años (cocina) o 6 años (TV).</li>
+        <li>Microondas cuando sea un equipo independiente.</li>
+        <li>Costes que excedan los límites económicos (550 € en urgencias eléctricas o 300 €/año por electrodoméstico).</li>
+        <li>Asistente Smart: imposibilidad de proporcionar datos del contador tras 4 meses (activa PIH sin AS).</li>
+        <li>Hogar Digital: Iberdrola no gestiona solicitudes; la atención depende exclusivamente del proveedor.</li>
       </ul>
+      <p>Nota: Los anexos detallados de exclusiones no están incluidos en los documentos proporcionados.</p>
     `,
+
     procesos: `
       <h3>Contratación</h3>
       <ul>
-        <li>Comprobar potencia ≤ 15 kW.</li>
-        <li>Cliente en mercado libre.</li>
+        <li>Debe contratarse siempre asociado a un suministro eléctrico.</li>
+        <li>No es posible la contratación independiente.</li>
+        <li>Potencia contratada inferior a 15 kW.</li>
+        <li>Incompatible con: PEH, PEH+, Protección Electrodomésticos, Protección Climatización, Urgencias Eléctricas, Pack Iberdrola (SPI), Asistente Smart independiente, Hogar Digital independiente, Asistencia CC.PP, API/UUEE Negocios.</li>
+        <li>Carencia de 30 días excepto Asesoramiento Energético (6 meses).</li>
       </ul>
-      <h3>Uso</h3>
+
+      <h3>Uso del servicio</h3>
       <ul>
-        <li>Clasificación correcta de avería.</li>
-        <li>Confirmación del límite económico disponible.</li>
+        <li>Avería eléctrica urgente: atención en menos de 3 horas.</li>
+        <li>Electrodomésticos: atención en menos de 48 horas laborables.</li>
+        <li>AE: informe en máximo 10 días laborables.</li>
+        <li>Hogar Digital: el cliente debe registrarse en la web indicada.</li>
       </ul>
     `,
+
     fidelizacion: `
       <ul>
-        <li>Ofrecer 50% 12 meses si el cliente duda por precio.</li>
-        <li>Derivar a PEH si quiere algo más básico.</li>
+        <li>Aplicable el descuento de fidelización del 50% durante 12 meses si el cliente es elegible.</li>
+        <li>El descuento no aplica si el cliente está disfrutando un descuento de captación vigente.</li>
       </ul>
     `,
+
     ejemplos: `
       <ul>
-        <li>Cliente con lavadora y frigorífico antiguos.</li>
-        <li>Familias con varios dispositivos electrónicos.</li>
+        <li>Clientes con varios electrodomésticos dentro de la antigüedad cubierta.</li>
+        <li>Hogares que buscan soporte digital, ciberseguridad y control de consumo.</li>
+        <li>Clientes que desean cobertura completa en urgencias eléctricas y electrodomésticos.</li>
       </ul>
     `,
+
     argumentario: `
-      “Una sola avería eléctrica o de electrodoméstico puede superar en coste varios meses del pack PIH.”
+      “Una sola avería eléctrica urgente o una reparación de electrodomésticos puede superar con facilidad los límites anuales cubiertos por el Pack Iberdrola Hogar, lo que convierte el servicio en una opción eficiente y de gran valor.”
     `
   }
 },
@@ -1564,5 +1613,6 @@ document.addEventListener("DOMContentLoaded", () => {
   renderFamilyButtons();
   renderCards();
 });
+
 
 
