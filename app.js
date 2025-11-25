@@ -8,368 +8,529 @@ const SECTION_LABELS = {
   argumentario: "Argumentario simple"
 };
 
+const FAMILIES = [
+  "Todas las familias",
+  "PYS Protección",
+  "PYS Gas",
+  "SSAA Asistente Smart",
+  "SSAA Mobility",
+  "SSAA Seguridad",
+  "SSAA Energía"
+];
+
 const PRODUCTS = [
   {
     id: "PIH",
-    family: "Servicios de protección",
+    family: "PYS Protección",
     name: "PIH · Pack Iberdrola Hogar",
-    price: "8,95 €/mes + impuestos",
-    carencia: "Carencia 1 mes (6 meses para Asesoramiento Energético)",
-    fidelizacionResumen: "Fidelización estándar PYS: 50% en la cuota durante 12 meses. En campañas concretas puede aplicarse 100% 12 meses si el cliente no disfruta descuentos de captación.",
-    resumenCorto: "Servicio integral con urgencias eléctricas, reparación de electrodomésticos, bricolaje eléctrico, asesoramiento energético, Hogar Digital y Seguro de Protección de Pagos Esencial.",
+    price: "X,XX €/mes + impuestos (sustituir por precio vigente)",
+    carencia: "Carencia general 1 mes; 6 meses para Asesoramiento Energético",
+    fidelizacionResumen: "Fidelización habitual: 50% de descuento en la cuota durante 12 meses, si no hay descuento de captación activo.",
+    resumenCorto: "Pack completo que integra averías eléctricas, reparación de electrodomésticos, bricolaje, asesoramiento energético, servicios digitales y protección de pagos.",
     sections: {
       info: `
-        <p>El Pack Iberdrola Hogar es el servicio prioritario dentro de los servicios de protección. Sustituye al antiguo SPI en nuevas altas y añade la cobertura Hogar Digital sobre el paquete clásico de protección hogar.</p>
-        <p>Está asociado al contrato de suministro eléctrico (potencia inferior a 15 kW) y no es contratable de forma independiente. Es un servicio recurrente mensual, renovable, con carencia de 30 días para la mayoría de coberturas y 6 meses para el Asesoramiento Energético.</p>
-        <p>Es el servicio de referencia a ofrecer cuando el cliente busca protección global del hogar y tiene perfil digital.</p>
+        <p>Pack Iberdrola Hogar es el servicio de referencia cuando el cliente quiere máxima tranquilidad en su vivienda. Reúne en una sola cuota varias coberturas que antes se contrataban por separado: urgencias eléctricas, reparación de electrodomésticos, bricolaje eléctrico, servicios digitales y un seguro de protección de pagos.</p>
+        <p>Se asocia al contrato de luz de Iberdrola en mercado libre y está orientado a clientes residenciales con potencia hasta 15 kW.</p>
       `,
       coberturas: `
-        <h3>Bloque hogar y confort</h3>
+        <h3>Urgencias y averías eléctricas</h3>
         <ul>
-          <li>Averías eléctricas urgentes en menos de 3 horas, con cobertura económica anual de hasta 550 € en desplazamiento, mano de obra y materiales en la instalación eléctrica interior del hogar (no zonas comunes ni exteriores).</li>
-          <li>Reparación de 9 electrodomésticos de cocina y la TV: frigorífico, congelador, lavadora, lavavajillas, secadora, cocina eléctrica, horno, campana y termo/caldera eléctricos, más televisor, con hasta 300 € por aparato/año y sin límite de intervenciones mientras no se supere el tope anual.</li>
-          <li>Bricolaje eléctrico: una intervención anual con desplazamiento y hasta 3 horas de mano de obra para trabajos como cambio de enchufes, interruptores y apliques, instalación de lámparas, pequeños trabajos de cableado interior o conexión y puesta en marcha de equipos.</li>
+          <li>Atención de averías eléctricas urgentes en la instalación interior de la vivienda, con tiempos de respuesta preferentes.</li>
+          <li>Cobertura de desplazamiento, mano de obra y materiales hasta un límite económico anual predefinido en condiciones particulares.</li>
         </ul>
-        <h3>Bloque eficiencia y digital</h3>
+        <h3>Reparación de electrodomésticos</h3>
         <ul>
-          <li>Asesoramiento Energético: diagnóstico de consumo del hogar, análisis de curva de carga y propuesta de medidas de ahorro. Visita periódica (habitualmente cada 4 años) bajo demanda del cliente y emisión de informe con propuestas.</li>
-          <li>Asistente Smart Hogar: información de consumos detallados, tendencias, alarmas de uso anómalo y recomendaciones de ahorro desde la App Clientes.</li>
-          <li>Hogar Digital: ciberseguridad (antivirus, protección de identidad, control parental), monitorización de presencia online y soporte digital/tecnológico remoto y, si procede, presencial hasta un máximo de intervenciones anuales.</li>
+          <li>Cobertura para electrodomésticos de cocina y televisor dentro de la antigüedad máxima permitida.</li>
+          <li>Incluye desplazamiento y mano de obra, y materiales hasta un importe máximo por aparato y año.</li>
         </ul>
-        <h3>Bloque protección de pagos</h3>
+        <h3>Bricolaje eléctrico</h3>
         <ul>
-          <li>Seguro de Protección de Pagos Esencial incluido: genera un saldo a favor del cliente para cubrir facturas de luz y gas en caso de siniestro cubierto (incapacidad, fallecimiento, y coberturas que dependen de edad y situación laboral).</li>
-          <li>Carencia y capitales adaptados a la edad; es obligatorio registrar la fecha de nacimiento en IberU al contratar.</li>
+          <li>Intervención anual para trabajos eléctricos de pequeña entidad (sustitución de enchufes, interruptores, instalación de lámparas sobre puntos existentes, etc.).</li>
+        </ul>
+        <h3>Servicios digitales y eficiencia</h3>
+        <ul>
+          <li>Servicios digitales tipo Hogar Digital: soporte tecnológico, ciberseguridad, control parental o servicios equivalentes según modalidad vigente.</li>
+          <li>Asesoramiento energético con análisis de consumo y recomendaciones de ahorro, con carencia superior (habitualmente 6 meses).</li>
+        </ul>
+        <h3>Protección de pagos</h3>
+        <ul>
+          <li>Seguro de protección de pagos esencial, que genera saldo a favor del cliente para cubrir facturas de luz y gas en supuestos concretos (baja laboral, desempleo, fallecimiento, etc., según perfil y condiciones).</li>
         </ul>
       `,
       exclusiones: `
         <ul>
-          <li>No cubre electrodomésticos en garantía del fabricante ni equipos que no estén ubicados en el domicilio del punto de suministro.</li>
-          <li>No cubre averías en garajes, trasteros, anexos, piscinas ni iluminación exterior, salvo que se indiquen explícitamente en las condiciones particulares.</li>
-          <li>No cubre reparaciones en elementos propiedad de la distribuidora (equipos de medida, contadores de compañía, etc.).</li>
-          <li>En electrodomésticos con antigüedad superior al límite (habitualmente más de 10 años, o más de 5 años para TV) la cobertura se limita a desplazamiento y 3 horas de mano de obra; las piezas corren a cargo del cliente.</li>
-          <li>Hogar Digital no cubre daños materiales en equipos, sino servicios de ciberseguridad, soporte digital y gestión de huella digital.</li>
-          <li>El Seguro de Protección de Pagos no cubre todos los tipos de siniestros para todos los perfiles; las coberturas y capitales dependen de la edad y situación (empleado, autónomo, pensionista, etc.).</li>
+          <li>No cubre averías en instalaciones o equipos que no sean del domicilio asociado al contrato.</li>
+          <li>Quedan excluidos equipos que superen la antigüedad límite detallada en condiciones (por ejemplo, televisores demasiado antiguos o electrodomésticos fuera de rango).</li>
+          <li>No cubre daños derivados de mala fe, manipulación indebida, reformas sin boletín o incumplimiento grave de normativa eléctrica.</li>
+          <li>Los servicios digitales no cubren daños físicos en dispositivos, sino soporte y servicios de ciberseguridad y configuración.</li>
+          <li>El seguro de protección de pagos no cubre todos los supuestos posibles; las coberturas dependen de la edad y situación laboral del titular.</li>
         </ul>
       `,
       procesos: `
-        <h3>Información general</h3>
-        <ul>
-          <li>Producto asociado al contrato de electricidad IberCLI, con potencia inferior a 15 kW y cliente residencial.</li>
-          <li>No compatible con otros servicios de protección equivalentes (PEH, PEH+, SPI, determinados packs o servicios de protección independientes).</li>
-          <li>Alta, bajas y modificaciones se gestionan en IberU, en la ficha del contrato de suministro.</li>
-        </ul>
         <h3>Contratación / Alta</h3>
         <ol>
-          <li>Desde IberU, acceder al catálogo de productos y seleccionar Pack Iberdrola Hogar, asociándolo al suministro correcto.</li>
-          <li>Comprobar requisitos: potencia, mercado libre, ausencia de incompatibilidades activas. En caso de incompatibilidad, valorar sustitución o cambio de servicio (upgrade/downgrade).</li>
-          <li>Revisar en la pantalla de detalles de oferta que aparecen los descuentos de captación o campañas vigentes, incluyendo promocionales sobre energía, si los hubiera.</li>
-          <li>Explicar claramente carencias, permanencia si aplica por campañas, y contenido de coberturas clave (urgencias eléctricas, electrodomésticos y Hogar Digital).</li>
-          <li>Enviar documentación y consentimiento al cliente, y cerrar la contratación en IberU una vez aceptada la oferta.</li>
+          <li>Comprobar en sistema que el cliente es residencial, en mercado libre y con potencia compatible.</li>
+          <li>Verificar que no tiene otros productos incompatibles activos (por ejemplo, servicios antiguos que se sustituyen por PIH).</li>
+          <li>Explicar de forma sencilla las coberturas clave y las carencias, especialmente la de Asesoramiento Energético.</li>
+          <li>Formalizar el alta en la herramienta comercial y enviar documentación con condiciones al cliente.</li>
         </ol>
-        <h3>Gestión de servicio y averías</h3>
+        <h3>Gestión del servicio</h3>
         <ol>
-          <li>Para aperturas de servicio (electrodomésticos, urgencias eléctricas, bricolaje, asesoramiento energético) acceder al módulo de Gestión de PYS e identificar el servicio PIH activo en la ficha del cliente.</li>
-          <li>Seleccionar tipo de servicio: avería electrodomésticos, urgencia eléctrica, bricolaje, asesoramiento energético o soporte digital según el caso, comprobando el saldo remanente y los límites anuales antes de abrir la solicitud.</li>
-          <li>Completar los datos de la incidencia, persona de contacto, teléfonos y breve descripción de la avería. Registrar las observaciones con máximo detalle para el proveedor.</li>
-          <li>Informar al cliente de los tiempos de atención: urgencias eléctricas en menos de 3 horas, electrodomésticos y bricolaje en torno a 48 horas laborables, asesoramiento energético bajo cita y soporte digital según procedimiento de Hogar Digital.</li>
+          <li>Para averías y servicios, abrir solicitudes desde la operativa de PYS indicando tipo de intervención: eléctrica, electrodomésticos, bricolaje, digital, etc.</li>
+          <li>Comprobar siempre si quedan importes disponibles en la cobertura antes de confirmar al cliente.</li>
+          <li>Informar de plazos estándar: urgencias en pocas horas, resto de servicios en 24/48 horas laborables, salvo picos de demanda.</li>
         </ol>
-        <h3>GEIR PYS</h3>
+        <h3>GEIR y reclamaciones</h3>
         <ul>
-          <li>Si el cliente indica que desconoce la contratación, no recuerda haber aceptado el PIH o indica error de comercialización, seguir circuito GEIR PYS y no aplicar argumentario de fidelización estándar hasta aclarar el origen del alta.</li>
-          <li>Registrar la gestión GEIR en la tipificación correcta y documentar claramente el relato del cliente, la revisión de interacciones y grabaciones, y el resultado de la verificación.</li>
+          <li>Si el cliente duda de la contratación o de la facturación, seguir el circuito GEIR PYS y revisar origen del alta, campañas aplicadas y uso del servicio antes de tomar decisiones sobre devoluciones o anulaciones.</li>
         </ul>
       `,
       fidelizacion: `
-        <h3>Criterios generales de fidelización</h3>
+        <h3>Estrategia de retención</h3>
         <ul>
-          <li>Objetivo principal: evitar la baja y mantener el PIH destacando las coberturas y el valor frente a alternativas (seguro hogar, servicios sueltos o competencia).</li>
-          <li>Si el cliente amenaza baja por precio pero valora el servicio, ofrecer primero la promoción de fidelización estándar: 50 % de descuento en la cuota durante 12 meses, siempre que el cliente no esté ya disfrutando de un descuento de captación.</li>
-          <li>En determinadas campañas puede aplicarse 100 % de descuento 12 meses para ciertos servicios recurrentes; revisar siempre en el Manual de Fidelización y en IberU si el PIH es elegible.</li>
-          <li>Si el cliente no acepta mantener el PIH aunque se ofrezca fidelización, plantear downgrade a PEH/PEH+ o PB según perfil digital y necesidades, explicando el cambio de coberturas.</li>
+          <li>Recordar que PIH agrupa varias coberturas de alto coste si se contratan por separado (urgencias, electrodomésticos, digital, protección de pagos).</li>
+          <li>Si el cliente ve valor pero le preocupa el precio, ofrecer un descuento de fidelización (por ejemplo, 50% 12 meses) en la cuota del pack, siempre que no haya descuentos de captación vigentes.</li>
+          <li>Si no quiere un pack tan completo, proponer bajar a un servicio más sencillo (PEH, PEH+ u otro) manteniendo al menos la protección básica más importante para su caso.</li>
         </ul>
-        <h3>Pasos orientativos</h3>
-        <ol>
-          <li>Escuchar y sondear el motivo principal (precio, desconocimiento, insatisfacción por gestión de averías, duplicidad con seguro hogar, etc.).</li>
-          <li>Reformular resaltando coberturas usadas o potencialmente útiles: urgencias eléctricas sin costes adicionales, reparaciones de electrodomésticos, asesoramiento energético e higiene digital.</li>
-          <li>Si el motivo es precio y el cliente ve valor en el servicio, plantear explícitamente la promoción: por ejemplo, señalando la nueva cuota con 50 % durante 12 meses.</li>
-          <li>Registrar siempre en IberU la aceptación o rechazo de la promoción y la interacción de fidelización correspondiente.</li>
-        </ol>
       `,
       ejemplos: `
         <ul>
-          <li>Cliente con varias averías recientes en electrodomésticos y preocupado por costes futuros: reforzar el valor de las reparaciones incluidas y la garantía de 6 meses frente a precios de mercado (reparaciones de TV, nevera u horno pueden superar fácilmente los 100 € por intervención).</li>
-          <li>Cliente con dudas sobre consumos: poner en valor Asistente Smart y Asesoramiento Energético para detectar consumos anómalos, optimizar potencia y proponer soluciones de eficiencia.</li>
-          <li>Cliente muy digital preocupado por seguridad online de su familia: enfatizar Hogar Digital, control parental, protección de identidad y soporte técnico remoto.</li>
+          <li>Cliente con varias averías en electrodomésticos en pocos años: comparar el coste de una reparación independiente con la cuota anual del pack.</li>
+          <li>Cliente que trabaja desde casa y depende de electrónica y conexión: enfatizar el soporte digital y la rapidez en urgencias eléctricas.</li>
+          <li>Familias preocupadas por gastos imprevistos: explicar el papel del seguro de protección de pagos si ocurre una situación grave.</li>
         </ul>
       `,
       argumentario: `
-        <p>“Este pack concentra en una sola cuota la parte más cara de cualquier problema en casa: las urgencias eléctricas, las averías de electrodomésticos de cocina y el soporte tecnológico, además de un seguro que protege el pago de sus facturas si ocurre algo grave. Una sola reparación de nevera, termo o TV suele costar más que varios meses del servicio. Con el Pack Iberdrola Hogar tiene un técnico de confianza, asistencia digital y protección económica, todo centralizado con Iberdrola y con tiempos de respuesta pactados.”</p>
-        <p>“Si lo que le preocupa es el precio mensual, podemos revisar la posibilidad de aplicar un descuento temporal de fidelización y, si aun así prefiere algo más básico, adaptar el servicio a uno de menor cuota manteniendo parte de la protección.”</p>
+        <p>“Con el Pack Iberdrola Hogar concentra en una sola cuota la parte más cara de los problemas en casa: las urgencias eléctricas, las averías de electrodomésticos y el soporte digital, además de un seguro que ayuda a pagar sus facturas si ocurre algo grave. Una sola reparación de nevera, caldera eléctrica o televisor suele costar más que varios meses de servicio.”</p>
+        <p>“Si el precio es lo que más le preocupa, podemos revisar un descuento de fidelización para que mantenga toda la protección con una cuota más baja durante el primer año.”</p>
       `
     }
   },
   {
     id: "PEH_PLUS",
-    family: "Servicios de protección",
+    family: "PYS Protección",
     name: "PEH+ · Protección Eléctrica Hogar Plus",
-    price: "8,95 €/mes + impuestos",
-    carencia: "Carencia 1 mes (6 meses para Asesoramiento Energético)",
-    fidelizacionResumen: "Fidelización estándar PYS: 50% 12 meses, con posibilidad de campañas reforzadas. Prioritario como alternativa cuando el cliente no quiere PIH pero sí protección amplia.",
-    resumenCorto: "Protección avanzada de instalación eléctrica, electrodomésticos, climatización y bricolaje eléctrico, con asesoramiento energético, protección de pagos esencial y fuerte foco en urgencias.",
+    price: "X,XX €/mes + impuestos (sustituir por precio vigente)",
+    carencia: "Carencia 1 mes; 6 meses para servicios de asesoramiento energético si aplica",
+    fidelizacionResumen: "Aplica fidelización del 50% 12 meses sobre la cuota, según campañas y elegibilidad.",
+    resumenCorto: "Protección avanzada de instalación eléctrica, electrodomésticos, climatización y bricolaje eléctrico, con foco en urgencias y averías frecuentes.",
     sections: {
       info: `
-        <p>PEH+ es la evolución del servicio PEH, con las mismas coberturas base y la ampliación a climatización y asesoramiento energético. Es un servicio recurrente mensual, asociado al suministro eléctrico, pensado para clientes que quieren protección amplia pero sin componentes digitales añadidos como Hogar Digital o Asistente Smart.</p>
+        <p>PEH+ amplía la protección clásica de PEH añadiendo coberturas sobre equipos de climatización y mayor detalle en reparaciones. Es adecuado para clientes con muchos electrodomésticos, aire acondicionado y alta dependencia de la instalación eléctrica.</p>
       `,
       coberturas: `
-        <h3>Urgencias eléctricas</h3>
+        <h3>Instalación eléctrica y urgencias</h3>
         <ul>
-          <li>Atención de averías eléctricas urgentes en menos de 3 horas, los 365 días del año, con un límite económico anual de 550 € en desplazamiento, mano de obra y materiales sobre la instalación interior de la vivienda.</li>
+          <li>Atención urgente de averías eléctricas interiores con desplazamiento, mano de obra y materiales hasta el límite económico anual fijado en condiciones.</li>
         </ul>
-        <h3>Reparación de electrodomésticos</h3>
+        <h3>Electrodomésticos</h3>
         <ul>
-          <li>Reparación de frigorífico, lavadora, cocina eléctrica, campana, lavavajillas, horno, secadora, congelador, termo/caldera eléctricos y TV.</li>
-          <li>Hasta 300 € por electrodoméstico y año, en aparatos con antigüedad igual o inferior a 10 años (5 años en el caso del televisor).</li>
-          <li>Sin límite de intervenciones mientras no se supere el límite económico por aparato; para equipos más antiguos, cubre desplazamiento y 3 horas de mano de obra.</li>
-        </ul>
-        <h3>Bricolaje eléctrico</h3>
-        <ul>
-          <li>Una intervención anual con desplazamiento y hasta 3 horas de mano de obra para trabajos eléctricos domésticos: sustitución de enchufes o interruptores, instalación de lámparas o apliques donde ya exista punto de luz, instalación de temporizadores, termostatos o pequeños ajustes de cableado interior.</li>
+          <li>Reparación de electrodomésticos de cocina y televisión hasta un límite económico por aparato y año.</li>
+          <li>Incluye desplazamiento y mano de obra; piezas incluidas hasta el máximo definido para equipos dentro de la antigüedad permitida.</li>
         </ul>
         <h3>Climatización</h3>
         <ul>
-          <li>Incluye las coberturas del servicio Protección Climatización: averías en equipos de aire acondicionado y bombas de calor, con hasta 300 € por equipo y año en equipos de hasta 10 años, atención en unas 48 horas laborables y posibilidad de pago de sustitución en caso de reparación inviable.</li>
+          <li>Cobertura para averías de aire acondicionado y equipos de climatización dentro de la antigüedad máxima.</li>
         </ul>
-        <h3>Asesoramiento Energético y protección de pagos</h3>
+        <h3>Bricolaje</h3>
         <ul>
-          <li>Asesoramiento Energético con visita de técnico bajo demanda y emisión de informe de ahorro y eficiencia, disponible una vez cada varios años.</li>
-          <li>Seguro de Protección de Pagos Esencial incluido, generando saldo a favor en caso de siniestro cubierto para pagar facturas futuras de luz y gas.</li>
+          <li>Trabajos de mejora y pequeños ajustes en la instalación eléctrica interior (instalación de puntos de luz, enchufes, cambio de mecanismos, etc.).</li>
         </ul>
       `,
       exclusiones: `
         <ul>
-          <li>No cubre electrodomésticos en periodo de garantía del fabricante ni equipos situados fuera de la vivienda asociada al contrato.</li>
-          <li>Quedan excluidas urgencias eléctricas en suministros con potencia contratada superior a 15 kW o en usos no residenciales fuera de las condiciones particulares.</li>
-          <li>No cubre materiales en trabajos de bricolaje eléctrico, solo desplazamiento y mano de obra dentro de los límites del servicio.</li>
-          <li>Equipos de climatización con antigüedad superior al límite tienen cobertura reducida a desplazamiento y mano de obra; la sustitución completa puede requerir copago o estar fuera de cobertura.</li>
-          <li>No cubre daños derivados de mala fe, manipulación indebida, falta de mantenimiento obligatorio o modificaciones no autorizadas de la instalación.</li>
+          <li>No cubre averías causadas por reformas sin legalizar o instalaciones que no cumplan normativa.</li>
+          <li>Equipos fuera de la antigüedad máxima se cubren en modalidad reducida (solo desplazamiento/mano de obra) o quedan excluidos, según condiciones.</li>
+          <li>No cubre trabajos de obra civil importantes ni ampliaciones de instalación que superen el concepto de reparación o bricolaje.</li>
         </ul>
       `,
       procesos: `
-        <h3>Contratación / Alta</h3>
+        <h3>Contratación</h3>
         <ol>
-          <li>En IberU, seleccionar la línea de producto PEH y dentro de ella el servicio PEH+. Asociarlo al contrato de electricidad correcto.</li>
-          <li>Verificar requisitos generales: mercado libre, potencia residencial, ausencia de servicios equivalentes incompatibles (PIH, PB, PEH estándar si se trata de alta nueva).</li>
-          <li>Informar de carencias: 1 mes para reparaciones y urgencias, 6 meses para Asesoramiento Energético.</li>
-          <li>Revisar hoja de precios en IberU para indicar cuota al cliente, explicando que los precios se actualizan anualmente según IPC.</li>
+          <li>Validar potencia y tipo de suministro, y que el cliente no tenga contratado un pack superior que haga redundante PEH+.</li>
+          <li>Explicar claramente qué diferencia PEH+ de PEH básico (climatización, mayor alcance en reparaciones).</li>
         </ol>
-        <h3>Gestión de servicio y averías</h3>
+        <h3>Gestión de servicio</h3>
         <ol>
-          <li>Acceder al módulo de Gestión PYS y consultar los servicios activos del cliente; confirmar que PEH+ está marcado.</li>
-          <li>Seleccionar tipo de solicitud: avería electrodomésticos, urgencia eléctrica, climatización o bricolaje eléctrico según corresponda.</li>
-          <li>Comprobar saldo de coberturas y avisar al cliente si está próximo al límite anual por aparato o servicio.</li>
-          <li>Registrar detalladamente la avería, número de contacto y franja horaria de disponibilidad. Informar de tiempos estándar: urgencias en menos de 3 horas, resto de intervenciones en torno a 48 horas laborables.</li>
+          <li>En averías, tipificar correctamente si es eléctrica, de electrodoméstico o de climatización, para enviar al técnico adecuado.</li>
+          <li>Revisar límites económicos y antigüedad del equipo antes de prometer una cobertura total de piezas.</li>
         </ol>
-        <h3>GEIR PYS</h3>
-        <ul>
-          <li>Ante dudas de contratación o reclamación de alta no consentida, seguir el flujo de Gestiones GEIR PYS antes de plantear fidelización o baja directa, revisando interacciones, contratos y grabaciones asociadas.</li>
-        </ul>
       `,
       fidelizacion: `
-        <h3>Estrategia sobre PEH+</h3>
+        <h3>Retención</h3>
         <ul>
-          <li>Cuando el cliente amenace baja por precio, poner en valor el alcance: incluye urgencias eléctricas, reparación de electrodomésticos, climatización, bricolaje y asesoramiento energético, más protección de pagos.</li>
-          <li>Si el cliente valora el servicio pero no el coste, ofertar primero descuento de fidelización del 50% 12 meses sobre la cuota mensual de PEH+.</li>
-          <li>Si pese a la promoción sigue viendo el precio alto, plantear cambio a un servicio con menor cuota (PEH estándar o un pack más sencillo), informando de qué coberturas perdería.</li>
-          <li>En clientes muy sensibles a precio, revisar si tiene sentido moverle a PB o PIH según su perfil digital y necesidades, para concentrar valor en un solo servicio.</li>
+          <li>Si el cliente ha utilizado el servicio recientemente, recordar el coste de mercado de ese tipo de intervención.</li>
+          <li>Ofrecer fidelización sobre la cuota (por ejemplo, 50% 12 meses) si el precio es el motivo principal de baja.</li>
+          <li>Si PEH+ sigue siendo percibido como caro, plantear bajar a PEH estándar manteniendo núcleo de protección.</li>
         </ul>
       `,
       ejemplos: `
         <ul>
-          <li>Cliente con varias incidencias en aire acondicionado y reparaciones de electrodomésticos en los últimos años: reforzar el ahorro frente a reparar por libre cada vez y la tranquilidad de tener un servicio único para electricidad, electrodomésticos y climatización.</li>
-          <li>Cliente con familia numerosa preocupada por quedarse sin luz por avería interna: insistir en urgencias eléctricas en menos de 3 horas con cobertura económica amplia y sin límite de intervenciones.</li>
+          <li>Usuario con aire acondicionado y varios electrodomésticos críticos (nevera, horno, lavadora) preocupado por averías en verano.</li>
         </ul>
       `,
       argumentario: `
-        <p>“Con PEH Plus tiene un único servicio que cubre tanto urgencias eléctricas como la mayor parte de las averías de electrodomésticos y climatización. El coste de una sola reparación de aire acondicionado o de una nevera suele superar con creces varios meses de cuota del servicio. Además, dispone de asesoramiento energético y un seguro que protege el pago de sus facturas en caso de imprevisto.”</p>
-        <p>“Si el precio le preocupa, podemos aplicar un descuento temporal de fidelización y así mantiene toda la protección por un importe mucho más ajustado durante el primer año.”</p>
-      `
-    }
-  },
-  {
-    id: "PMG",
-    family: "PYS de Gas",
-    name: "PMG · Pack Mantenimiento Gas",
-    price: "9,95 €/mes + impuestos",
-    carencia: "Carencia 15 días",
-    fidelizacionResumen: "Aplican descuentos de fidelización 50% 12 meses como resto de PYS, siempre que no haya descuentos de captación activos. Atención especial a regularización por baja anticipada.",
-    resumenCorto: "Servicio de mantenimiento completo de instalación y equipos de gas, con visita anual y cobertura en averías, pensado para evitar imprevistos y facturas elevadas en calderas y calefacción.",
-    sections: {
-      info: `
-        <p>El Pack Mantenimiento Gas es el servicio más completo para la instalación de gas y los equipos asociados (caldera, calentador y circuito hidráulico). Puede asociarse al contrato de gas o contratarse de forma independiente manteniendo las mismas coberturas y precio.</p>
-        <p>Tiene una vigencia de 12 meses, con carencia de 15 días y permanencia anual: si el cliente causa baja anticipada es posible la emisión de factura de regularización con el importe pendiente del año.</p>
-      `,
-      coberturas: `
-        <h3>Visita de mantenimiento</h3>
-        <ul>
-          <li>Una visita anual de mantenimiento de la instalación de gas y equipos asociados.</li>
-          <li>Incluye análisis de combustión de caldera, limpieza del quemador, revisión del vaso de expansión, revisión de la instalación de gas y del circuito de calefacción.</li>
-          <li>Alternancia entre visita completa RITE y visita reducida según el ciclo establecido.</li>
-        </ul>
-        <h3>Averías</h3>
-        <ul>
-          <li>Cubre hasta 2 averías al año, con desplazamiento gratuito en todas las intervenciones.</li>
-          <li>Incluye hasta 3 horas de mano de obra y 50 € en materiales por cada una de las dos primeras averías.</li>
-          <li>A partir de la tercera avería, el servicio cubre el desplazamiento; mano de obra y materiales corren a cargo del cliente según tarifa del proveedor.</li>
-          <li>Atención en un máximo de 24 horas desde la apertura de la solicitud (plazos indicativos de servicio).</li>
-        </ul>
-        <h3>Alcance</h3>
-        <ul>
-          <li>Cubre caldera o calentador de gas, instalación de gas y circuito hidráulico de calefacción del punto de suministro.</li>
-          <li>Cubre todos los gasodomésticos de la vivienda, incluyendo hasta dos calderas si existen en el domicilio.</li>
-        </ul>
-      `,
-      exclusiones: `
-        <ul>
-          <li>La visita de mantenimiento del PMG no sustituye a la inspección obligatoria de la distribuidora (cada 5 años); esta sigue siendo responsabilidad del cliente.</li>
-          <li>No cubre aparatos o instalaciones que no sean del punto de suministro contratado, ni instalaciones en segundas viviendas si el contrato está asociado a otra dirección.</li>
-          <li>Excluye daños por manipulación indebida, modificaciones no autorizadas, falta de mantenimiento mínimo o uso incorrecto evidente.</li>
-          <li>Determinados elementos decorativos, reformas o mejoras estéticas no están incluidos; el foco está en seguridad, funcionamiento y normativa.</li>
-          <li>En caso de baja anticipada, el cliente puede recibir una factura de regularización por el tramo de anualidad pendiente, independientemente de si ha usado o no el servicio.</li>
-        </ul>
-      `,
-      procesos: `
-        <h3>Contratación / Alta</h3>
-        <ol>
-          <li>Si el cliente ya tiene gas con IberCLI y quiere añadir PMG, realizar la contratación desde “Servicios adicionales” en IberU para mantener condiciones de gas y añadir el servicio.</li>
-          <li>Si no se muestran los descuentos asociados a la nueva contratación, valorar realizar Modificación de contrato, asumiendo que se modificará la tarifa de gas.</li>
-          <li>Para contratación independiente (sin gas en IberCLI), seguir la operativa específica de PMG independiente, verificando que el cliente cumple requisitos (cliente residencial RL1, RL2, RL3, etc.).</li>
-          <li>Informar siempre de vigencia anual, carencia de 15 días y posibilidad de regularización por baja anticipada.</li>
-        </ol>
-        <h3>Gestión de servicio y averías</h3>
-        <ol>
-          <li>Acceder desde IberU a la ficha de cliente y entrar en la operativa de Gestión de PYS de Gas.</li>
-          <li>Para visitas de mantenimiento, programar la visita anual cuando corresponda, recordando alternancia RITE/reducida según indique el sistema.</li>
-          <li>Para averías, abrir solicitud indicando el tipo de incidencia (caldera, calentador, instalación, circuito de calefacción), nivel de urgencia y datos de contacto del cliente.</li>
-          <li>Informar de que la atención se realizará en torno a las 24 horas desde la apertura de la solicitud, salvo picos excepcionales.</li>
-        </ol>
-        <h3>Bajas y regularización (clave en retención)</h3>
-        <ul>
-          <li>Al tratarse de un servicio anual, la baja anticipada puede conllevar factura de regularización por el importe pendiente de la anualidad.</li>
-          <li>No se emite factura de regularización si la baja se solicita durante el mes posterior a la contratación inicial o alrededor de la fecha de renovación, según condiciones detalladas en el manual.</li>
-          <li>En clientes que han hecho uso del servicio (visita o averías), explicar de forma clara el valor ya recibido frente al importe de la cuota anual y la posible regularización si insiste en la baja.</li>
-        </ul>
-      `,
-      fidelizacion: `
-        <h3>En llamadas de amenaza de baja</h3>
-        <ol>
-          <li>Sondear motivo: factura alta, desconocimiento del servicio, cambio de compañía de gas, mala experiencia con una intervención, etc.</li>
-          <li>Si el motivo es económico y el cliente reconoce valor en tener visita anual y cobertura de averías, plantear descuentos de fidelización estándar (50% 12 meses) si aplica.</li>
-          <li>Explicar siempre, antes de cerrar la baja, el impacto de la regularización: si ha habido visita o averías, se puede emitir una factura con el importe pendiente de la anualidad.</li>
-          <li>En clientes que cambian de comercializadora de gas, aclarar que la baja de gas puede implicar baja automática del servicio asociado, y que perderá tanto las visitas como la cobertura ante averías futuras.</li>
-        </ol>
-      `,
-      ejemplos: `
-        <ul>
-          <li>Cliente que quiere dar de baja PMG tras haber tenido varias intervenciones: explicar coste de mercado de visitas y reparaciones de caldera y el ahorro frente a gestionar cada avería por libre.</li>
-          <li>Cliente que aún no ha usado el servicio pero tiene caldera antigua: poner en valor la revisión anual y la tranquilidad de tener una intervención rápida y parcialmente financiada si se avería en invierno.</li>
-        </ul>
-      `,
-      argumentario: `
-        <p>“El Pack Mantenimiento Gas le evita sorpresas con la caldera: cada año tendrá una revisión completa y, si se avería, las dos primeras intervenciones incluyen desplazamiento, hasta 3 horas de mano de obra y 50 € en materiales. Una sola avería de caldera sin servicio suele costar más que varios meses de cuota.”</p>
-        <p>“Antes de que valore la baja, es importante que sepa que es un servicio anual. Si lo cancela antes de tiempo, puede emitirse una regularización con el importe pendiente del año. Por eso normalmente compensa mantenerlo al menos hasta completar la anualidad.”</p>
+        <p>“PEH Plus agrupa en un solo servicio las urgencias eléctricas, la reparación de electrodomésticos y climatización y el bricolaje eléctrico. Una avería en aire acondicionado o en la nevera puede costar fácilmente más que varios meses de la cuota.”</p>
       `
     }
   },
   {
     id: "TAL",
-    family: "Servicios de protección",
+    family: "PYS Protección",
     name: "TAL · Tu Asesor Legal",
-    price: "3,95 €/mes + impuestos",
+    price: "X,XX €/mes + impuestos (sustituir por precio vigente)",
     carencia: "Carencia 30 días",
-    fidelizacionResumen: "Aplican descuentos de fidelización PYS (50% 12 meses) cuando el cliente amenaza baja y no tiene descuentos de captación activos.",
-    resumenCorto: "Servicio de asesoramiento y asistencia jurídica telefónica y telemática con abogados colegiados, urgencias legales 24h y revisión y redacción de documentación.",
+    fidelizacionResumen: "Aplica fidelización estándar PYS (50% 12 meses) si el cliente amenaza baja y no tiene descuentos de captación.",
+    resumenCorto: "Asesoría jurídica para temas de vivienda, familia, trabajo, consumo, impuestos, tráfico y más, con abogados colegiados y consultas ilimitadas.",
     sections: {
       info: `
-        <p>Tu Asesor Legal es un servicio de asesoramiento jurídico para clientes residenciales, prestado por abogados colegiados. Ofrece apoyo continuo en temas de vivienda, familia, trabajo, consumo, impuestos, seguros, tráfico, internet y asuntos penales, entre otros.</p>
-        <p>El servicio está asociado al contrato de electricidad en IberCLI, con una cuota fija mensual y carencia de 30 días desde la contratación. No tiene permanencia: el cliente puede darse de baja sin penalización, salvo campañas específicas que indiquen lo contrario.</p>
+        <p>Tu Asesor Legal permite al cliente disponer de abogados colegiados a los que consultar cualquier duda jurídica del ámbito personal y familiar. El foco está en prevención y orientación antes de tomar decisiones importantes.</p>
       `,
       coberturas: `
-        <h3>Asesoramiento jurídico general</h3>
+        <h3>Asesoramiento jurídico</h3>
         <ul>
-          <li>Consultas telefónicas y por canales telemáticos sobre un amplio abanico de materias: vivienda, familia, trabajo, consumo, impuestos, seguros, internet, automóvil, seguridad vial y tráfico, relaciones con la Administración Pública y asuntos penales.</li>
-          <li>Consultas ilimitadas dentro del ámbito personal y familiar del cliente, durante la vigencia del servicio.</li>
+          <li>Consultas sobre vivienda, alquileres, hipotecas, comunidad de propietarios.</li>
+          <li>Consultas laborales (contratos, despidos, sanciones, bajas, etc.).</li>
+          <li>Consultas sobre consumo, compras, servicios bancarios y seguros.</li>
+          <li>Asesoramiento en materia de familia, herencias y sucesiones.</li>
         </ul>
-        <h3>Urgencias legales 24h</h3>
+        <h3>Documentación</h3>
         <ul>
-          <li>Atención prioritaria en situaciones urgentes, como delitos, conflictos graves en el hogar, problemas legales con hijos menores, incidentes de tráfico o reclamaciones críticas.</li>
+          <li>Revisión de contratos y documentos antes de firmar.</li>
+          <li>Redacción de escritos y cartas de reclamación.</li>
         </ul>
-        <h3>Documentación y gestiones</h3>
+        <h3>Urgencias legales</h3>
         <ul>
-          <li>Revisión de contratos y documentos: laborales, hipotecarios, de alquiler, bancarios, de compra-venta de vivienda o vehículo, etc.</li>
-          <li>Redacción de documentos y escritos extrajudiciales necesarios para reclamaciones, comunicaciones formales o acuerdos entre partes.</li>
-          <li>Gestión de reclamaciones en nombre del cliente frente a empresas, entidades financieras, aseguradoras, administraciones o terceros.</li>
-          <li>Negociación con la parte contraria buscando el mejor acuerdo posible dentro del marco jurídico.</li>
-          <li>Recurso de multas de tráfico y apoyo en sanciones administrativas.</li>
-          <li>Solicitud, en nombre del cliente, de certificados a Seguridad Social, DGT, Ministerio de Justicia, Registros y Ayuntamientos cuando sea necesario para la gestión del caso.</li>
-        </ul>
-        <h3>Acceso a red de despachos</h3>
-        <ul>
-          <li>En caso de requerir abogado presencial para procedimientos judiciales, el cliente accede a una red de despachos con condiciones económicas preferentes respecto al mercado.</li>
+          <li>Servicio de urgencias legales 24h en supuestos graves según condiciones.</li>
         </ul>
       `,
       exclusiones: `
         <ul>
-          <li>No se presta servicio cuando existe conflicto de intereses, por ejemplo cuando la reclamación es contra Iberdrola o contra el propio proveedor jurídico del servicio.</li>
-          <li>Quedan fuera de cobertura la redacción de determinados documentos complejos ligados a procesos judiciales que requieren elevación a público o intervención notarial, y servicios de gestoría puros.</li>
-          <li>No cubre el pago de costas judiciales, tasas o indemnizaciones; el servicio presta asesoramiento y apoyo, pero no asume esos costes.</li>
-          <li>No cubre servicios profesionales que excedan el asesoramiento y la asistencia extrajudicial incluida en el producto, salvo los que se contraten con despacho de la red en condiciones preferentes.</li>
+          <li>No incluye el pago de costas judiciales ni de abogados externos en procedimientos presenciales.</li>
+          <li>No cubre conflictos con Iberdrola ni supuestos con conflicto de intereses con el proveedor jurídico.</li>
+          <li>No cubre asesoramiento de naturaleza empresarial o profesional fuera del ámbito particular.</li>
         </ul>
       `,
       procesos: `
-        <h3>Contratación / Alta</h3>
+        <h3>Contratación</h3>
         <ol>
-          <li>En IberU, dentro del catálogo de productos, seleccionar “Tu Asesor Legal” y añadirlo a la oferta del contrato de electricidad correspondiente.</li>
-          <li>Comprobar que el cliente cumple condiciones de contratación (cliente persona física, contrato residencial, etc.).</li>
-          <li>Informar de carencia de 30 días desde la contratación y coste mensual según hoja de precios.</li>
-          <li>Finalizar la contratación, enviar documentación y registrar la interacción comercial correspondiente.</li>
+          <li>Ofrecerlo como complemento de tranquilidad jurídica para cualquier cliente residencial.</li>
+          <li>Explicar que es más económico que acudir a un despacho por consulta suelta.</li>
         </ol>
-        <h3>Gestión de consultas</h3>
+        <h3>Uso del servicio</h3>
         <ol>
-          <li>Cuando el cliente llama a Iberdrola para utilizar el servicio, validar que el TAL está activo en IberU.</li>
-          <li>Transferir la llamada al proveedor jurídico (por ejemplo, Legálitas) usando la botonera específica, tras explicar al cliente que será atendido por un abogado.</li>
-          <li>Fuera del horario regular, informar de que, si es urgencia legal, será atendido por el servicio 24h, y si no lo es, se gestionará en el horario laboral indicado.</li>
-          <li>Ofrecer la opción de que el cliente envíe la documentación por correo electrónico al buzón habilitado si lo prefiere, indicándole la información mínima que debe adjuntar.</li>
+          <li>Validar que TAL está activo y trasferir al proveedor jurídico a través del circuito específico.</li>
+          <li>En caso de urgencia legal, informar de disponibilidad 24h según el procedimiento.</li>
         </ol>
       `,
       fidelizacion: `
-        <h3>Fidelización y retención</h3>
+        <h3>Retención</h3>
         <ul>
-          <li>Ante amenazas de baja por precio, comparar el coste del servicio (alrededor de 3,95 €/mes) con lo que puede costar una sola consulta en despacho físico (entre 100 y 300 € según complejidad y ubicación).</li>
-          <li>Recordar la utilidad de tener un abogado “de cabecera” al que poder llamar sin preocuparse por el coste por consulta, especialmente ante multas, conflictos con compras, alquileres, herencias o problemas laborales.</li>
-          <li>Si el cliente valora el servicio pero considera alto el precio, explorar descuentos de fidelización de 50% 12 meses para suavizar el impacto y animarle a mantenerlo.</li>
-          <li>Si el cliente realmente no utiliza el servicio y no percibe valor, valorar reconducir la conversación a otros PYS más alineados con sus necesidades, manteniendo la satisfacción global con la compañía.</li>
+          <li>Si el cliente dice “no lo uso”, preguntar por situaciones recientes (alquiler, trabajo, multas, bancos) donde podría haberle sido útil.</li>
+          <li>Ofrecer descuento temporal si el problema es el precio, reforzando que el coste de una sola consulta externa supera el de muchos meses de TAL.</li>
         </ul>
       `,
       ejemplos: `
         <ul>
-          <li>Cliente que va a firmar una hipoteca y quiere que revisen las condiciones: explicar que el TAL permite revisión detallada del contrato y recomendaciones antes de firmar.</li>
-          <li>Cliente con varias multas o problemas recurrentes con la comunidad de propietarios: poner en valor la capacidad de reclamación, redacción de escritos y recurso de sanciones.</li>
-          <li>Cliente que compra online con frecuencia: destacar que puede apoyarse en el servicio cuando los productos no llegan, llegan defectuosos o las empresas no responden a sus reclamaciones.</li>
+          <li>Cliente a punto de firmar alquiler o hipoteca que quiere que revisen el contrato.</li>
+          <li>Cliente con multa de tráfico dudosa o cláusulas bancarias que no entiende.</li>
         </ul>
       `,
       argumentario: `
-        <p>“Tu Asesor Legal le permite tener un abogado disponible por teléfono o correo cuando lo necesite, para cualquier tema del día a día: vivienda, trabajo, compras, impuestos o tráfico. Una sola consulta en un despacho suele costar mucho más que la cuota mensual del servicio.”</p>
-        <p>“Además de resolver dudas, revisan contratos, redactan escritos y gestionan reclamaciones en su nombre. Es una forma muy económica de asegurarse de que siempre va a tomar decisiones importantes con respaldo jurídico.”</p>
+        <p>“Con Tu Asesor Legal puede consultar con un abogado cualquier duda importante de su día a día antes de firmar o aceptar nada. Una sola consulta en un despacho suele costar más que varios meses de servicio, aquí lo tiene todo incluido.”</p>
+      `
+    }
+  },
+  {
+    id: "PMG",
+    family: "PYS Gas",
+    name: "PMG · Pack Mantenimiento Gas",
+    price: "X,XX €/mes + impuestos (sustituir por precio vigente)",
+    carencia: "Carencia 15 días",
+    fidelizacionResumen: "Aplica fidelización (50% 12 meses) y hay que explicar siempre la posible regularización por baja anticipada.",
+    resumenCorto: "Servicio anual de mantenimiento de instalación de gas y caldera, con visita periódica y cobertura para averías, incluyendo desplazamiento, mano de obra y materiales hasta ciertos límites.",
+    sections: {
+      info: `
+        <p>El Pack Mantenimiento Gas es un servicio anual que incluye revisión de la instalación de gas y del equipo (caldera o calentador), además de cobertura de averías con desplazamiento y mano de obra incluida hasta un límite.</p>
+      `,
+      coberturas: `
+        <h3>Visita de mantenimiento</h3>
+        <ul>
+          <li>Una visita anual de mantenimiento de la instalación de gas y de la caldera/calentador.</li>
+          <li>Verificación de seguridad y eficiencia, limpieza básica de componentes y ajustes necesarios.</li>
+        </ul>
+        <h3>Averías</h3>
+        <ul>
+          <li>Cobertura de un número determinado de averías al año con desplazamiento y mano de obra incluida, y materiales hasta un importe máximo por avería.</li>
+          <li>Atención en un plazo orientativo de 24 horas desde la apertura de la solicitud, salvo saturación puntual.</li>
+        </ul>
+      `,
+      exclusiones: `
+        <ul>
+          <li>No sustituye la inspección periódica obligatoria de la distribuidora.</li>
+          <li>No cubre instalaciones que no cumplan normativa o que estén en situación irregular.</li>
+          <li>Puede haber exclusiones para equipos con antigüedad superior a la permitida o para determinadas marcas no soportadas.</li>
+        </ul>
+      `,
+      procesos: `
+        <h3>Contratación</h3>
+        <ol>
+          <li>Explicar que es un servicio anual, con posible regularización si se da de baja antes de cumplir el año.</li>
+          <li>Formalizar el alta asociándolo al contrato de gas o como servicio independiente según proceda.</li>
+        </ol>
+        <h3>Gestión del servicio</h3>
+        <ol>
+          <li>Para programar la visita, abrir la solicitud de mantenimiento e informar al cliente de la fecha estimada.</li>
+          <li>Para averías, recoger bien el tipo de problema y datos del equipo (marca, modelo, antigüedad).</li>
+        </ol>
+        <h3>Bajas y regularización</h3>
+        <ul>
+          <li>Antes de tramitar la baja, explicar de forma clara que, al ser un servicio anual, puede generarse una factura de regularización si ya se ha prestado servicio (visita o averías) y no se completa el año.</li>
+        </ul>
+      `,
+      fidelizacion: `
+        <h3>Retención</h3>
+        <ul>
+          <li>Si el cliente ya ha tenido visitas o averías cubiertas, comparar el coste que habría tenido sin PMG frente a la cuota del servicio.</li>
+          <li>Ofrecer descuento temporal en la cuota si el motivo es el precio pero el cliente reconoce que le da tranquilidad tener cubierta la caldera.</li>
+        </ul>
+      `,
+      ejemplos: `
+        <ul>
+          <li>Caldera con varios años de antigüedad en vivienda principal: el cliente valora no quedarse sin calefacción en invierno.</li>
+        </ul>
+      `,
+      argumentario: `
+        <p>“Con PMG tiene la revisión anual y la atención en averías incluida. Una sola avería de caldera en invierno puede costar bastante más que la cuota del servicio, aquí tiene el desplazamiento y la mano de obra incluidos dentro de los límites.”</p>
+      `
+    }
+  },
+  {
+    id: "ASH",
+    family: "SSAA Asistente Smart",
+    name: "ASH · Asistente Smart Hogar",
+    price: "X,XX €/mes + impuestos (sustituir por precio vigente)",
+    carencia: "Consultar infografía vigente (habitualmente carencia corta o nula en parte digital, y mayor en coberturas de reparación si las incluye).",
+    fidelizacionResumen: "Fidelización habitual por descuento en cuota o meses gratis, según campaña de SSAA vigente.",
+    resumenCorto: "Servicio digital para monitorizar consumos, recibir recomendaciones de ahorro y disponer de soporte tecnológico y ciberseguridad en el hogar.",
+    sections: {
+      info: `
+        <p>Asistente Smart Hogar está orientado a clientes con perfil digital que quieren entender mejor su consumo, recibir alertas y tener soporte tecnológico y de ciberseguridad. Se comercializa como servicio adicional, no como PYS ligado a la instalación.</p>
+      `,
+      coberturas: `
+        <h3>Monitorización y ahorro</h3>
+        <ul>
+          <li>Información de consumos y alertas ante comportamientos anómalos.</li>
+          <li>Recomendaciones de ahorro y optimización de potencia contratada.</li>
+        </ul>
+        <h3>Soporte digital</h3>
+        <ul>
+          <li>Asistencia remota para incidencias básicas en dispositivos conectados al hogar digital (configuración, conexiones, aplicaciones).</li>
+        </ul>
+        <h3>Ciberseguridad</h3>
+        <ul>
+          <li>Servicios de protección frente a amenazas online, control parental y, en su caso, protección de identidad digital según modalidad vigente.</li>
+        </ul>
+      `,
+      exclusiones: `
+        <ul>
+          <li>No cubre daños físicos en dispositivos, solo soporte y servicios digitales.</li>
+          <li>No sustituye un seguro de hogar ni un seguro de dispositivos; se centra en monitorización, asesoramiento y soporte.</li>
+        </ul>
+      `,
+      procesos: `
+        <h3>Contratación</h3>
+        <ol>
+          <li>Confirmar que el cliente dispone de conexión a internet y cierto nivel de uso de la App de Iberdrola.</li>
+          <li>Explicar que se trata de un servicio adicional y que parte de su gestión se hace desde el entorno digital (App/Web).</li>
+        </ol>
+        <h3>Uso del servicio</h3>
+        <ol>
+          <li>Si un cliente llama por dudas, orientar hacia la sección correspondiente de la App y, en caso de incidencias, abrir solicitud hacia el proveedor digital.</li>
+        </ol>
+      `,
+      fidelizacion: `
+        <h3>Retención</h3>
+        <ul>
+          <li>En clientes que valoran la parte digital pero ven alto el precio, revisar si hay campañas con meses gratis o % de descuento.</li>
+          <li>Si solo quiere monitorización básica, valorar mover a un producto de menor alcance si existe una versión más sencilla.</li>
+        </ul>
+      `,
+      ejemplos: `
+        <ul>
+          <li>Cliente que quiere controlar consumos y recibir alertas cuando se dispara el gasto.</li>
+          <li>Familias con hijos menores que buscan control parental y protección online.</li>
+        </ul>
+      `,
+      argumentario: `
+        <p>“Con Asistente Smart Hogar no solo ve lo que paga al final de mes, sino qué está pasando en su consumo día a día y cómo ahorrar. Además, cuenta con apoyo tecnológico y herramientas de protección online para su hogar digital.”</p>
+      `
+    }
+  },
+  {
+    id: "IPACK",
+    family: "SSAA Mobility",
+    name: "I+ Pack Mobility",
+    price: "X,XX €/mes + impuestos (sustituir por precio vigente)",
+    carencia: "Carencia 1 mes en la mayoría de coberturas (consultar ficha concreta).",
+    fidelizacionResumen: "Promociones habituales con meses al 50% o gratis en captación; en fidelización se pueden mantener o ajustar descuentos según campaña.",
+    resumenCorto: "Servicio asociado a la movilidad eléctrica que cubre averías del punto de recarga y asistencia en desplazamientos, pensado para usuarios de vehículo eléctrico.",
+    sections: {
+      info: `
+        <p>I+ Pack Mobility reúne servicios para propietarios de vehículo eléctrico que tienen punto de recarga vinculado a Iberdrola. Incluye coberturas sobre reparación del punto, asistencia en vacaciones y ayudas en traslados por incidencias relacionadas con la recarga.</p>
+      `,
+      coberturas: `
+        <h3>Reparación del punto de recarga</h3>
+        <ul>
+          <li>Cobertura de mano de obra, desplazamiento y materiales hasta un límite económico por intervención y año.</li>
+          <li>Atención de averías en el punto de recarga instalado, siempre que sea compatible con las condiciones del servicio.</li>
+        </ul>
+        <h3>Solución vacaciones y traslado</h3>
+        <ul>
+          <li>Servicios de asistencia durante desplazamientos, incluyendo traslado del beneficiario hasta un importe máximo.</li>
+          <li>Ayuda en caso de imposibilidad de cargar el vehículo por avería del punto o incidencia similar, según condiciones.</li>
+        </ul>
+      `,
+      exclusiones: `
+        <ul>
+          <li>No cubre daños intencionados, vandalismo o siniestros derivados de accidentes de circulación (cubiertos por el seguro del vehículo).</li>
+          <li>No abarca puntos de recarga no incluidos en el ámbito del contrato o instalaciones realizadas por terceros fuera del circuito autorizado.</li>
+        </ul>
+      `,
+      procesos: `
+        <h3>Contratación</h3>
+        <ol>
+          <li>Confirmar que el cliente dispone de punto de recarga compatible y que entiende que el servicio se asocia a dicho punto.</li>
+          <li>Informar de carencias y vigencia mínima según detalle de la ficha.</li>
+        </ol>
+        <h3>Uso</h3>
+        <ol>
+          <li>Para averías del punto, abrir solicitud hacia el proveedor específico de movilidad, indicando todos los datos del equipo y del vehículo eléctrico.</li>
+          <li>En caso de incidencias durante desplazamientos, seguir el teléfono y protocolo de asistencia definidos para I+ Pack Mobility.</li>
+        </ol>
+      `,
+      fidelizacion: `
+        <h3>Retención</h3>
+        <ul>
+          <li>Recordar que el coste de una intervención en un punto de recarga sin servicio puede ser elevado frente a la cuota mensual.</li>
+          <li>Aplicar descuentos de fidelización sobre la cuota si el motivo es precio y no hay campañas de captación activas que lo impidan.</li>
+        </ul>
+      `,
+      ejemplos: `
+        <ul>
+          <li>Cliente con punto de recarga en garaje comunitario, preocupado por qué hacer si se avería estando de vacaciones.</li>
+        </ul>
+      `,
+      argumentario: `
+        <p>“Con I+ Pack Mobility tiene cubierta la parte más delicada de la movilidad eléctrica: el punto de recarga y la asistencia en caso de problemas para cargar. Así evita quedarse tirado por una avería del punto y sabe a quién llamar.”</p>
+      `
+    }
+  },
+  {
+    id: "KIT_HOGAR",
+    family: "SSAA Seguridad",
+    name: "Seguridad Iberdrola · Kit Hogar",
+    price: "Cuota mensual según oferta vigente (equipos financiados; instalación incluida).",
+    carencia: "Consultar según condiciones del contrato de seguridad (normalmente sin carencia en el servicio de alarma una vez instalada).",
+    fidelizacionResumen: "Las promociones (meses gratis, cuotas reducidas) se rigen por la política de Seguridad Iberdrola y Securitas Direct; revisar campaña vigente.",
+    resumenCorto: "Sistema de alarma para el hogar con instalación profesional, conexión a central receptora de alarmas y servicios de disuasión y respuesta.",
+    sections: {
+      info: `
+        <p>Seguridad Iberdrola Hogar ofrece un sistema de alarma conectado a central receptora, con equipos adecuados para viviendas principales y la instalación realizada por Securitas Direct. El servicio incluye atención 24/7 y protocolos de verificación en caso de alarma.</p>
+      `,
+      coberturas: `
+        <h3>Equipos y servicios</h3>
+        <ul>
+          <li>Kit de alarma con panel, sensores y dispositivos de detección según las necesidades del hogar.</li>
+          <li>Conexión permanente a central receptora de alarmas y aviso en caso de intrusión, sabotaje o emergencias definidas.</li>
+          <li>Servicios de intervención según protocolo: aviso a fuerzas de seguridad cuando procede y comunicación con el cliente.</li>
+        </ul>
+      `,
+      exclusiones: `
+        <ul>
+          <li>No es un seguro de hogar; no cubre indemnizaciones por robo o daños, sino la prestación de servicios de alarma y respuesta.</li>
+          <li>La cobertura depende del correcto uso y armado del sistema y de la cobertura de comunicaciones.</li>
+        </ul>
+      `,
+      procesos: `
+        <h3>Contratación</h3>
+        <ol>
+          <li>Precalificar al cliente y derivar la solicitud al canal específico de Seguridad Iberdrola para estudio y presupuesto personalizado.</li>
+          <li>La instalación y configuración la realiza Securitas Direct, que formaliza la parte operativa de la alarma.</li>
+        </ol>
+        <h3>Gestión</h3>
+        <ol>
+          <li>Las incidencias operativas del sistema se gestionan con Securitas Direct a través de sus canales dedicados.</li>
+        </ol>
+      `,
+      fidelizacion: `
+        <h3>Retención</h3>
+        <ul>
+          <li>Recordar la importancia de la disuasión, la respuesta en tiempo real y la tranquilidad para el hogar frente a intentos de intrusión.</li>
+          <li>Revisar promociones o ajustes de cuota disponibles en seguridad según la antigüedad del cliente y campañas activas.</li>
+        </ul>
+      `,
+      ejemplos: `
+        <ul>
+          <li>Cliente con vivienda principal en planta baja o unifamiliar que quiere mejorar seguridad ante robos.</li>
+        </ul>
+      `,
+      argumentario: `
+        <p>“Con Seguridad Iberdrola Hogar dispone de un sistema profesional de alarma con conexión a central y respuesta inmediata. No es solo una alarma sonora, sino un servicio completo de protección 24/7 para su vivienda.”</p>
+      `
+    }
+  },
+  {
+    id: "SOLAR_CLOUD",
+    family: "SSAA Energía",
+    name: "Solar Cloud",
+    price: "Cuota mensual o comisión sobre excedentes según modalidad vigente.",
+    carencia: "Consultar condiciones; normalmente se aplica desde la activación del servicio.",
+    fidelizacionResumen: "Promociones ligadas a autoconsumo y excedentes; conviene revisar campañas específicas antes de ofrecer descuentos adicionales.",
+    resumenCorto: "Servicio que permite acumular el valor de excedentes de autoconsumo en una especie de monedero virtual para aplicarlo a facturas futuras.",
+    sections: {
+      info: `
+        <p>Solar Cloud está orientado a clientes con instalación fotovoltaica que vierten excedentes a la red. En lugar de liquidar los excedentes de forma estándar, el servicio permite acumularlos y utilizarlos en facturas futuras, mejorando el aprovechamiento económico de la instalación.</p>
+      `,
+      coberturas: `
+        <ul>
+          <li>Acumulación del valor económico de los excedentes en un saldo virtual asociado al contrato.</li>
+          <li>Aplicación del saldo a facturas de energía futuras según el esquema definido en las condiciones.</li>
+        </ul>
+      `,
+      exclusiones: `
+        <ul>
+          <li>No sustituye a la compensación de excedentes regulada si el cliente no cumple requisitos para Solar Cloud.</li>
+          <li>Pueden existir límites al volumen de saldo acumulable o plazos máximos para su consumo.</li>
+        </ul>
+      `,
+      procesos: `
+        <h3>Contratación</h3>
+        <ol>
+          <li>Confirmar que el cliente dispone de instalación de autoconsumo compatible y que está interesado en optimizar el valor de sus excedentes.</li>
+          <li>Explicar de forma sencilla cómo se acumula el saldo y cómo se aplica a las facturas posteriores.</li>
+        </ol>
+        <h3>Gestión</h3>
+        <ol>
+          <li>Las dudas sobre saldo acumulado y su aplicación se resuelven consultando el detalle de facturación y el módulo de Solar Cloud.</li>
+        </ol>
+      `,
+      fidelizacion: `
+        <h3>Retención</h3>
+        <ul>
+          <li>Ante quejas por “pago bajo de excedentes”, explicar el funcionamiento de acumulación y aplicación del saldo, comparando con el esquema estándar.</li>
+        </ul>
+      `,
+      ejemplos: `
+        <ul>
+          <li>Cliente con instalación sobredimensionada que genera excedentes importantes y quiere aprovechar más su valor a lo largo del año.</li>
+        </ul>
+      `,
+      argumentario: `
+        <p>“Con Solar Cloud el valor de sus excedentes no se pierde en un solo mes, sino que se acumula como saldo para ir descontando futuras facturas, adaptándose mejor a su patrón de consumo anual.”</p>
       `
     }
   }
-];
-
-const FAMILIES = [
-  "Todas las familias",
-  "Servicios de protección",
-  "PYS de Gas"
 ];
 
 let currentFamily = "Todas las familias";
@@ -402,7 +563,7 @@ function renderCards() {
   if (filtered.length === 0) {
     const empty = document.createElement("div");
     empty.className = "empty-state";
-    empty.textContent = "No hay PyS en esta familia con la configuración actual.";
+    empty.textContent = "No hay productos en esta familia.";
     container.appendChild(empty);
     return;
   }
