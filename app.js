@@ -975,7 +975,8 @@ const PRODUCTS = [
       Una sola reparación sin servicio puede costar más que varios meses de cuota.”
     `
   }
-}{
+},
+  {
   id: "ASH",
   family: "SSAA Asistente Smart",
   name: "ASH · Asistente Smart Hogar",
@@ -2012,6 +2013,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderFamilyButtons();
   renderCards();
 });
+
 
 
 
