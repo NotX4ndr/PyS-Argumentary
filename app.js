@@ -1975,58 +1975,155 @@ const PRODUCTS = [
     `
   }
 },
-  {
+{
   id: "SPP_PLUS",
   family: "PYS Protección",
   name: "SPP Plus · Protección de Pagos Plus",
   price: "Cuota según contrato",
-  carencia: "Sin carencia",
+  carencia: "Habitualmente sin carencia para siniestros sobrevenidos tras el alta (siempre revisar póliza)",
   fidelizacionResumen: "No aplica fidelización",
-  resumenCorto: "Seguro que cubre pagos de suministros ante situaciones económicas adversas como desempleo, incapacidad o fallecimiento.",
+  resumenCorto: "Seguro que refuerza el pago de facturas de energía ante desempleo, incapacidad, hospitalización o fallecimiento, con importes superiores al SPP Esencial.",
 
   sections: {
     info: `
-      SPP Plus es un seguro orientado a proteger al cliente frente a la imposibilidad de afrontar los pagos de sus suministros.
-      Ofrece coberturas ampliadas respecto al SPP Esencial, incluyendo mayores indemnizaciones y más supuestos protegidos.
+      SPP Plus es un seguro de Protección de Pagos orientado a que el cliente pueda seguir afrontando los pagos
+      de sus facturas (electricidad y otros suministros asociados al contrato asegurado) cuando atraviesa una
+      situación económica complicada: desempleo, incapacidad, hospitalización o fallecimiento.
+      
+      Es una versión reforzada frente al Seguro Protección de Pagos Esencial (SPP Esencial), con importes de
+      indemnización más elevados y/o más supuestos cubiertos (según póliza vigente). En caso de que el cliente
+      tenga contratado SPP Esencial junto con SPP Plus, las coberturas de ambos seguros se suman sobre el mismo
+      contrato asegurado (hasta los límites de cada póliza).
     `,
     coberturas: `
       <ul>
-        <li>Desempleo involuntario: indemnización según contrato.</li>
-        <li>Incapacidad temporal o permanente.</li>
-        <li>Fallecimiento.</li>
-        <li>Hospitalización.</li>
-        <li>Pago directo sobre el contrato asegurado para cubrir cuotas o facturas.</li>
+        <li>
+          <strong>Desempleo involuntario (trabajador por cuenta ajena)</strong>:
+          se abona una indemnización por mensualidades, orientada a cubrir las facturas del contrato asegurado
+          mientras dura la situación, hasta los límites económicos previstos en la póliza.
+        </li>
+        <li>
+          <strong>Incapacidad Temporal (trabajador en activo)</strong>:
+          pago de una cantidad prefijada por periodo de baja, destinada a cubrir total o parcialmente
+          los recibos de energía asociados al contrato asegurado.
+        </li>
+        <li>
+          <strong>Incapacidad Absoluta y Permanente</strong>:
+          indemnización única de importe superior a la del SPP Esencial, destinada a cubrir facturas futuras
+          del contrato asegurado hasta agotar el capital contratado.
+        </li>
+        <li>
+          <strong>Fallecimiento</strong>:
+          capital asegurado para liquidar o cubrir el pago de las facturas de energía del contrato asegurado
+          hasta el límite económico definido en la póliza.
+        </li>
+        <li>
+          <strong>Hospitalización</strong>:
+          pago de una indemnización cuando el asegurado permanece hospitalizado un número mínimo de días,
+          con el objetivo de que no tenga que asumir el pago de las facturas de suministros durante ese periodo.
+        </li>
+        <li>
+          <strong>Aplicación de la indemnización</strong>:
+          el importe se aplica directamente sobre las facturas del contrato asegurado (electricidad u otros
+          suministros vinculados) hasta agotar el capital disponible. Si coexiste con SPP Esencial, se acumulan
+          los importes de ambos seguros sobre el mismo contrato.
+        </li>
       </ul>
+      <p>
+        <em>Nota para el agente:</em> los importes concretos por cobertura (capital en fallecimiento,
+        incapacidad, número de mensualidades cubiertas, etc.) vienen detallados en el Manual SPP / condicionado
+        específico. En ficha solo indicamos que SPP Plus supone un nivel de protección superior al SPP Esencial.
+      </p>
     `,
     exclusiones: `
       <ul>
-        <li>Situaciones voluntarias como baja voluntaria o despidos pactados.</li>
-        <li>Enfermedades preexistentes no declaradas.</li>
-        <li>Siniestros ocurridos antes de la contratación.</li>
+        <li>
+          Situaciones <strong>voluntarias</strong> como baja voluntaria, abandono del puesto,
+          despidos pactados o finalización de contrato por mutuo acuerdo.
+        </li>
+        <li>
+          Situaciones de desempleo o incapacidad que <strong>no cumplan el periodo mínimo de cotización
+          o afiliación</strong> exigido por la aseguradora (según póliza).
+        </li>
+        <li>
+          Enfermedades preexistentes no declaradas o excluidas expresamente en el cuestionario de salud.
+        </li>
+        <li>
+          Siniestros ocurridos <strong>antes de la fecha de efecto</strong> del seguro o durante un posible
+          periodo de carencia específico indicado en el condicionado (si lo hubiera).
+        </li>
+        <li>
+          Sucesos derivados de actos dolosos o fraudulentos del asegurado o de beneficiarios.
+        </li>
       </ul>
     `,
     procesos: `
       <ul>
-        <li>Contratación asociada a un suministro activo.</li>
-        <li>Declaración de siniestro directamente con la aseguradora.</li>
-        <li>Documentación requerida según tipo de prestación (parte médico, certificado de empresa, etc.).</li>
+        <li>
+          <strong>Contratación</strong>:
+          <ul>
+            <li>Siempre vinculado a un contrato de suministro (habitualmente electricidad) en Iberdrola.</li>
+            <li>La cuota y los capitales asegurados quedan definidos en el condicionado/póliza.</li>
+            <li>El cliente debe aceptar las condiciones del seguro (aseguradora, coberturas, exclusiones y capitales).</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Comunicación de siniestro</strong>:
+          <ul>
+            <li>El cliente debe declarar el siniestro directamente a la aseguradora (actualmente MetLife, según documentación vigente).</li>
+            <li>Canales habituales: teléfono, email y formulario online de siniestros de la aseguradora.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Documentación típica</strong> (según causa):
+          <ul>
+            <li>Desempleo: certificado de empresa y de prestación por desempleo.</li>
+            <li>Incapacidad: partes médicos y resolución del organismo competente si aplica.</li>
+            <li>Hospitalización: informe y justificante de ingreso y alta hospitalaria.</li>
+            <li>Fallecimiento: certificado de defunción y documentación de beneficiarios.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Aplicación de la indemnización</strong>:
+          la aseguradora comunica a Iberdrola el capital aprobado y este se aplica sobre las facturas
+          del contrato asegurado hasta agotar el importe disponible.
+        </li>
       </ul>
     `,
     fidelizacion: `
       <ul>
-        <li>No aplica descuentos comerciales ya que es un seguro.</li>
-        <li>En caso de baja, recordar el valor de las coberturas y sus importes.</li>
+        <li>Al ser un seguro regulado, no se aplican descuentos comerciales tipo fidelización.</li>
+        <li>
+          En objeciones por precio o baja, recordar el impacto económico de un desempleo,
+          incapacidad o fallecimiento sin cobertura (varios meses de facturas sin poder pagar).
+        </li>
+        <li>
+          Si el cliente tiene también SPP Esencial, recalcar que las coberturas se <strong>acumulan</strong>,
+          aumentando el colchón de protección sobre su contrato.
+        </li>
       </ul>
     `,
     ejemplos: `
       <ul>
-        <li>Cliente que entra en situación de desempleo y necesita cubrir las próximas cuotas.</li>
-        <li>Cliente hospitalizado durante varios días.</li>
+        <li>
+          Cliente que pasa a <strong>desempleo involuntario</strong> y durante varios meses no puede asumir
+          el pago completo de su factura de luz: SPP Plus activa indemnizaciones periódicas para cubrir esas facturas.
+        </li>
+        <li>
+          Cliente que sufre una <strong>baja laboral</strong> con ingresos reducidos:
+          el seguro cubre un importe fijo por incapacidad temporal que se aplica a las facturas del contrato asegurado.
+        </li>
+        <li>
+          Fallecimiento del titular del contrato: el capital de SPP Plus permite seguir pagando las facturas
+          de la vivienda mientras la familia regulariza su situación económica.
+        </li>
       </ul>
     `,
     argumentario: `
-      “SPP Plus ofrece una protección económica real para momentos inesperados. En situaciones difíciles,
-      permite que el cliente mantenga sus servicios esenciales sin preocuparse por los pagos.”
+      “SPP Plus refuerza el colchón económico del cliente en los momentos más delicados: desempleo,
+      incapacidad, hospitalización o fallecimiento. En lugar de dejar de pagar las facturas de luz y otros
+      suministros, el seguro asume esos importes hasta el límite contratado. Si además tiene SPP Esencial,
+      las coberturas se suman y aumenta la protección de su hogar.”
     `
   }
 },
@@ -2037,48 +2134,92 @@ const PRODUCTS = [
   price: "Cuota según contrato",
   carencia: "Según póliza",
   fidelizacionResumen: "No aplica fidelización",
-  resumenCorto: "Pack asegurador que cubre averías y asistencia sobre la instalación de gas del hogar.",
+  resumenCorto: "Pack asegurador ligado al gas que cubre averías y asistencia sobre la instalación de gas del hogar, especialmente para clientes de IberCUR.",
 
   sections: {
     info: `
-      Pack Tranquilidad Gas es un seguro que protege al cliente frente a averías o incidencias en la instalación
-      de gas, ofreciendo asistencia técnica y cobertura económica para reparaciones.
+      Pack Tranquilidad Gas es un seguro vinculado al suministro de gas que protege al cliente frente a averías
+      o incidencias en la instalación interior de gas de su vivienda, ofreciendo asistencia técnica y cobertura
+      económica para reparaciones dentro de los límites fijados en la póliza.
+      
+      Es el producto de referencia para clientes con contrato de gas en IberCUR cuando contactan con el teléfono
+      de CUR solicitando un servicio equivalente a los PYS de gas (PMG, AG, PG). En cambio, cuando el cliente
+      pertenece a Iberdrola Clientes (CLI) se ofrece el PMG/AG/PG según proceda.
     `,
     coberturas: `
       <ul>
-        <li>Asistencia técnica por avería en instalación de gas.</li>
-        <li>Cobertura económica para reparaciones según límite de póliza.</li>
-        <li>Atención urgente en riesgos por fuga o corte.</li>
+        <li>
+          <strong>Asistencia técnica por avería en la instalación de gas</strong>:
+          tuberías interiores, llaves, juntas y elementos de la instalación receptora individual, según alcance de póliza.
+        </li>
+        <li>
+          <strong>Desplazamiento del técnico</strong>:
+          incluido en las intervenciones cubiertas.
+        </li>
+        <li>
+          <strong>Mano de obra y materiales</strong>:
+          cubiertos hasta el límite económico anual establecido en la póliza. A partir de ese límite,
+          el cliente puede aceptar presupuesto y asumir el exceso.
+        </li>
+        <li>
+          <strong>Asistencia urgente</strong> en caso de sospecha de fuga o riesgo:
+          priorización de la intervención y coordinación con la distribuidora cuando proceda.
+        </li>
       </ul>
+      <p>
+        <em>Nota para el agente:</em> Pack Tranquilidad Gas es un seguro (no un PYS gestionado por Grupo PYS). Los límites
+        económicos concretos (importe máximo por siniestro y por año) figuran en el condicionado del seguro.
+      </p>
     `,
     exclusiones: `
       <ul>
-        <li>No cubre calderas o aparatos de combustión (solo instalación).</li>
-        <li>No cubre daños estructurales ajenos al gas.</li>
-        <li>No cubre instalaciones no homologadas o manipuladas.</li>
+        <li>No cubre la caldera ni aparatos de combustión como calentadores (salvo que la póliza lo indique expresamente).</li>
+        <li>No cubre daños estructurales en la vivienda no vinculados directamente a la instalación de gas.</li>
+        <li>Quedan excluidas las instalaciones no homologadas, manipuladas o fuera de normativa.</li>
+        <li>No cubre intervenciones en instalaciones comunitarias o elementos propiedad de la distribuidora.</li>
       </ul>
     `,
     procesos: `
       <ul>
-        <li>El cliente contacta con el teléfono de asistencia aseguradora.</li>
-        <li>Un técnico acude según prioridad indicada por el nivel de riesgo.</li>
-        <li>La reparación se cubre dentro de los límites económicos del contrato.</li>
+        <li>
+          <strong>Contratación</strong>:
+          se ofrece a clientes con contrato de gas en IberCUR cuando llaman al teléfono de CUR
+          y solicitan cobertura de mantenimiento/averías de gas. La cuota y coberturas vienen definidas en el condicionado.
+        </li>
+        <li>
+          <strong>Gestión de averías</strong>:
+          el cliente llama al teléfono de asistencia del seguro; se abre parte y se envía un técnico
+          al domicilio en función de la urgencia (fuga/riesgo vs. incidencia menor).
+        </li>
+        <li>
+          <strong>Liquidación</strong>:
+          la aseguradora aplica al siniestro los límites de mano de obra y materiales previstos.
+          Si la reparación supera esos límites, el técnico puede facilitar presupuesto para el exceso.
+        </li>
       </ul>
     `,
     fidelizacion: `
       <ul>
-        <li>Recordar que la asistencia de gas externa suele ser costosa.</li>
+        <li>
+          Recordar que la visita de un técnico de gas sin seguro (desplazamiento + mano de obra + materiales)
+          suele superar fácilmente el coste anual del Pack Tranquilidad Gas.
+        </li>
+        <li>
+          En objeciones por precio, comparar con lo que podría costar una sola fuga o reparación en instalación de gas
+          sin ningún tipo de cobertura.
+        </li>
       </ul>
     `,
     ejemplos: `
       <ul>
-        <li>Olor a gas en cocina o zona de caldera.</li>
-        <li>Pérdida de presión en la instalación interior.</li>
+        <li>Olor a gas en cocina o zona de caldera y necesidad de revisión de la instalación interior.</li>
+        <li>Pérdida de presión o corte de suministro interno por defecto en la instalación receptora individual.</li>
       </ul>
     `,
     argumentario: `
-      “Pack Tranquilidad Gas garantiza asistencia rápida y económica ante cualquier incidencia en la instalación de gas,
-      evitando costes elevados por desplazamientos y reparaciones externas.”
+      “Pack Tranquilidad Gas garantiza que, si surge una incidencia en la instalación de gas, el cliente tiene un
+      técnico especializado, desplazamiento y parte de la reparación cubiertos por el seguro. Frente al coste de una
+      sola avería sin cobertura, la cuota del pack suele estar más que justificada.”
     `
   }
 },
@@ -2089,46 +2230,76 @@ const PRODUCTS = [
   price: "Cuota según contrato",
   carencia: "Según póliza",
   fidelizacionResumen: "No aplica fidelización",
-  resumenCorto: "Seguro que cubre averías en la instalación interior de gas con asistencia urgente.",
+  resumenCorto: "Seguro que cubre averías en la instalación interior de gas con asistencia urgente y límite económico asegurado.",
 
   sections: {
     info: `
-      Tranquilidad Avería Gas es un seguro especializado que cubre específicamente averías en la instalación interior,
-      proporcionando asistencia urgente y reparaciones dentro de un límite económico asegurado.
+      Tranquilidad Avería Gas es un seguro focalizado exclusivamente en las averías de la instalación interior de gas.
+      Está pensado para clientes que no necesitan un mantenimiento preventivo, pero sí quieren tener cubierta la
+      reparación de defectos o incidencias en tuberías, llaves y elementos de la instalación, con asistencia urgente
+      cuando hay riesgo.
     `,
     coberturas: `
       <ul>
-        <li>Cobertura de averías en la instalación.</li>
-        <li>Asistencia urgente ante fugas o riesgos.</li>
-        <li>Materiales y mano de obra dentro de límite de póliza.</li>
+        <li>
+          <strong>Reparación de averías en la instalación interior de gas</strong>:
+          incluye conducción interior, llaves y elementos visibles, según alcance definido en la póliza.
+        </li>
+        <li>
+          <strong>Asistencia urgente</strong> ante fugas o situaciones de riesgo percibido por el cliente:
+          priorización de la visita y, si procede, coordinación con la distribuidora.
+        </li>
+        <li>
+          <strong>Desplazamiento, mano de obra y materiales</strong>:
+          cubiertos hasta el límite económico por siniestro y/o anual establecido en el contrato del seguro.
+        </li>
       </ul>
     `,
     exclusiones: `
       <ul>
-        <li>No cubre aparatos de gas (caldera, calentador, etc.).</li>
-        <li>No cubre instalaciones exteriores o comunitarias.</li>
+        <li>No cubre aparatos de gas (caldera, calentador, cocina, etc.), salvo indicación expresa en la póliza.</li>
+        <li>No cubre instalaciones exteriores, comunitarias o propiedad de la distribuidora.</li>
+        <li>No cubre intervenciones en instalaciones manipuladas o que no cumplan normativa vigente.</li>
       </ul>
     `,
     procesos: `
       <ul>
-        <li>Declaración de avería al teléfono de asistencia.</li>
-        <li>En caso de fuga, envío prioritario.</li>
-        <li>Reparación con coste cubierto según límite asegurado.</li>
+        <li>
+          <strong>Declaración de avería</strong>:
+          el cliente llama al teléfono de asistencia del seguro y describe el problema (olor a gas, pérdida de presión, etc.).
+        </li>
+        <li>
+          <strong>Priorización</strong>:
+          si hay sospecha de fuga o riesgo, se considera aviso urgente y se da prioridad a la intervención técnica.
+        </li>
+        <li>
+          <strong>Intervención</strong>:
+          el técnico realiza la reparación y la aseguradora aplica los límites de mano de obra y materiales
+          definidos en la póliza; si se supera el límite, se ofrecerá presupuesto adicional al cliente.
+        </li>
       </ul>
     `,
     fidelizacion: `
       <ul>
-        <li>Resaltar que evita gastos inesperados por averías frecuentes en instalaciones antiguas.</li>
+        <li>
+          Recalcar que en instalaciones antiguas son habituales pequeñas fugas o defectos en llaves y tuberías,
+          y que cada intervención sin seguro puede ser costosa.
+        </li>
+        <li>
+          Presentarlo como una forma de evitar facturas imprevistas por averías puntuales de la instalación de gas.
+        </li>
       </ul>
     `,
     ejemplos: `
       <ul>
-        <li>Fuga pequeña localizada en tubería interior.</li>
-        <li>Válvula o llave interior defectuosa.</li>
+        <li>Fuga localizada en un tramo de tubería interior que requiere sustitución de un pequeño tramo.</li>
+        <li>Llave de corte interior que pierde gas o no cierra correctamente y debe ser sustituida.</li>
       </ul>
     `,
     argumentario: `
-      “Es una solución muy económica para tener cubierta cualquier avería inesperada en la instalación de gas.”
+      “Tranquilidad Avería Gas es una solución sencilla y económica para tener la instalación interior de gas cubierta:
+      si aparece una fuga o un defecto en tuberías o llaves, el seguro responde con asistencia urgente y asume el coste
+      de la reparación dentro de los límites contratados.”
     `
   }
 },
@@ -2139,46 +2310,77 @@ const PRODUCTS = [
   price: "Cuota según contrato",
   carencia: "Según póliza",
   fidelizacionResumen: "No aplica fidelización",
-  resumenCorto: "Seguro que cubre la revisión periódica de la instalación de gas y asistencias asociadas.",
+  resumenCorto: "Seguro que cubre la revisión periódica obligatoria de la instalación de gas y pequeñas correcciones asociadas.",
 
   sections: {
     info: `
-      Tranquilidad Revisión Gas cubre los costes asociados a la revisión periódica obligatoria de la instalación interior
-      y ofrece asistencia en caso de incidencias detectadas durante dicha revisión.
+      Tranquilidad Revisión Gas es un seguro orientado a cubrir el coste de la revisión periódica obligatoria de la
+      instalación de gas (habitualmente cada 5 años), incluyendo el desplazamiento del técnico y determinadas
+      actuaciones menores necesarias para superar la revisión, según los límites económicos que marque la póliza.
     `,
     coberturas: `
       <ul>
-        <li>Coste de la revisión periódica obligatoria.</li>
-        <li>Desplazamiento del técnico.</li>
-        <li>Cobertura económica en pequeñas reparaciones asociadas a la revisión.</li>
+        <li>
+          <strong>Coste de la revisión periódica obligatoria</strong> de la instalación interior de gas,
+          realizada por un técnico autorizado.
+        </li>
+        <li>
+          <strong>Desplazamiento del técnico</strong> al domicilio para realizar la revisión.
+        </li>
+        <li>
+          <strong>Pequeñas reparaciones o ajustes</strong> directamente ligados a la revisión y necesarios para
+          corregir defectos menores dentro del límite económico fijado en la póliza (por ejemplo, ajustes de llaves,
+          sustitución de juntas u otros elementos de bajo coste).
+        </li>
       </ul>
     `,
     exclusiones: `
       <ul>
-        <li>No cubre revisiones fuera del calendario obligatorio.</li>
-        <li>No cubre reparaciones de gran entidad o sustitución completa de instalación.</li>
+        <li>No cubre revisiones realizadas fuera de los periodos legales o no programadas según calendario oficial.</li>
+        <li>No cubre reformas de gran entidad ni sustitución completa de la instalación de gas.</li>
+        <li>No cubre daños estructurales ni intervenciones ajenas al alcance de la revisión periódica.</li>
       </ul>
     `,
     procesos: `
       <ul>
-        <li>Planificación de la revisión dentro del periodo legal.</li>
-        <li>Informe al cliente sobre el estado de la instalación.</li>
-        <li>Realización de ajustes y pequeñas correcciones cubiertas por la póliza.</li>
+        <li>
+          <strong>Planificación</strong>:
+          el cliente puede solicitar que se programe la revisión dentro del periodo legal establecido; la aseguradora
+          o el proveedor concertarán fecha y hora.
+        </li>
+        <li>
+          <strong>Visita y revisión</strong>:
+          el técnico revisa la instalación interior, toma medidas de estanqueidad y verifica que cumple normativa.
+        </li>
+        <li>
+          <strong>Informe</strong>:
+          se entrega al cliente un informe sobre el estado de la instalación y, si hay defectos, se corrigen
+          en el momento en la medida en que estén cubiertos por el seguro.
+        </li>
       </ul>
     `,
     fidelizacion: `
       <ul>
-        <li>Recordar que una revisión externa suele costar mucho más que la cuota anual del seguro.</li>
+        <li>
+          Recordar que una revisión de gas contratada de manera independiente suele tener un coste significativo
+          (desplazamiento + trabajo + posibles ajustes).
+        </li>
+        <li>
+          Presentarlo como una forma de tener la revisión “prepagada” y sin sobresaltos, cumpliendo la normativa
+          y evitando posibles cortes de suministro por no superar la inspección.
+        </li>
       </ul>
     `,
     ejemplos: `
       <ul>
-        <li>Revisión obligatoria cada 5 años.</li>
-        <li>Ajuste de llaves o pruebas de estanqueidad incluidas.</li>
+        <li>Revisión obligatoria de la instalación interior cada 5 años según normativa.</li>
+        <li>Ajuste de una llave o sustitución de una junta para subsanar un defecto menor detectado en la revisión.</li>
       </ul>
     `,
     argumentario: `
-      “Asegura la revisión obligatoria sin costes inesperados y garantiza que la instalación cumple con la normativa vigente.”
+      “Con Tranquilidad Revisión Gas el cliente se asegura de que la revisión obligatoria de su instalación está cubierta:
+      no tiene que preocuparse por cuánto le va a costar la visita ni por pequeñas correcciones necesarias para superar
+      la inspección y seguir cumpliendo la normativa.”
     `
   }
 },
@@ -2187,49 +2389,89 @@ const PRODUCTS = [
   family: "PYS Protección",
   name: "Protección de Pagos Plus Mascotas",
   price: "Cuota según aseguradora",
-  carencia: "Sin carencia",
+  carencia: "Según póliza (habitualmente sin carencia para siniestros sobrevenidos)",
   fidelizacionResumen: "No aplica fidelización",
-  resumenCorto: "Seguro que cubre pagos vinculados a servicios del hogar ante situaciones graves en mascotas aseguradas.",
+  resumenCorto: "Seguro que vincula eventos graves de salud de la mascota con una indemnización para ayudar a cubrir pagos del hogar.",
 
   sections: {
     info: `
-      Protección de Pagos Plus Mascotas es un seguro que amplía las coberturas tradicionales del SPP,
-      adaptándolas a situaciones relacionadas con enfermedades o accidentes graves de la mascota asegurada.
+      Protección de Pagos Plus Mascotas es un seguro que adapta el concepto de Protección de Pagos a situaciones
+      relacionadas con la mascota del cliente. Cuando la mascota asegurada sufre una enfermedad grave, accidente o
+      requiere intervención u hospitalización, el seguro abona una indemnización destinada a ayudar al propietario a
+      afrontar pagos del hogar (como facturas de energía), dentro de los límites contratados.
     `,
     coberturas: `
       <ul>
-        <li>Cobertura económica por hospitalización de la mascota.</li>
-        <li>Cobertura por intervención quirúrgica.</li>
-        <li>Indemnización orientada a cubrir pagos del hogar durante el siniestro.</li>
+        <li>
+          <strong>Cobertura por hospitalización de la mascota</strong>:
+          indemnización si la mascota debe permanecer ingresada un mínimo de días en un centro veterinario.
+        </li>
+        <li>
+          <strong>Cobertura por intervención quirúrgica</strong>:
+          pago de una cuantía fija o variable (según póliza) en caso de operación relevante de la mascota asegurada.
+        </li>
+        <li>
+          <strong>Indemnización orientada a pagos del hogar</strong>:
+          el capital se utiliza para ayudar al cliente a hacer frente a facturas de luz, gas u otros gastos esenciales
+          durante el periodo en el que la mascota requiere atención intensiva.
+        </li>
       </ul>
     `,
     exclusiones: `
       <ul>
-        <li>Enfermedades preexistentes.</li>
-        <li>Accidentes derivados de negligencia grave.</li>
-        <li>Costes veterinarios fuera del alcance de la póliza.</li>
+        <li>Enfermedades preexistentes o crónicas no declaradas en el momento de la contratación del seguro.</li>
+        <li>Accidentes o daños derivados de negligencia grave, maltrato o incumplimiento de normativa sobre animales.</li>
+        <li>Gastos veterinarios que excedan el ámbito o límites económicos fijados en la póliza.</li>
+        <li>Eventos que ocurran antes de la fecha de efecto del seguro o durante un posible periodo de carencia inicial.</li>
       </ul>
     `,
     procesos: `
       <ul>
-        <li>El cliente declara el siniestro a la aseguradora aportando informe veterinario.</li>
-        <li>Evaluación del caso y aprobación de la cobertura.</li>
-        <li>Pago de la prestación según condiciones contratadas.</li>
+        <li>
+          <strong>Declaración de siniestro</strong>:
+          el cliente contacta con la aseguradora y facilita los datos de la mascota, la clínica veterinaria y el tipo de evento
+          (hospitalización, cirugía, etc.).
+        </li>
+        <li>
+          <strong>Documentación</strong>:
+          suele requerirse informe veterinario detallado, justificantes de ingreso y/o intervención y, cuando aplique,
+          presupuestos o facturas asociadas.
+        </li>
+        <li>
+          <strong>Evaluación y pago</strong>:
+          la aseguradora analiza la documentación y, si el siniestro está cubierto, abona la indemnización según
+          las condiciones contratadas (importe y número de eventos cubiertos al año).
+        </li>
       </ul>
     `,
     fidelizacion: `
       <ul>
-        <li>El propietario suele valorar mucho la seguridad de tener respaldo económico ante emergencias veterinarias.</li>
+        <li>
+          El propietario suele tener un vínculo emocional muy fuerte con su mascota; este seguro le da tranquilidad
+          tanto desde el punto de vista emocional como económico.
+        </li>
+        <li>
+          En objeciones por precio, comparar el coste mensual del seguro con lo que puede suponer una hospitalización
+          o cirugía veterinaria y, además, tener que seguir pagando todas las facturas del hogar.
+        </li>
       </ul>
     `,
     ejemplos: `
       <ul>
-        <li>Intervención quirúrgica urgente.</li>
-        <li>Hospitalización prolongada de la mascota.</li>
+        <li>
+          Mascota que sufre un accidente de tráfico y requiere cirugía y varios días de hospitalización:
+          el seguro activa una indemnización que ayuda a cubrir facturas del hogar.
+        </li>
+        <li>
+          Diagnóstico de enfermedad grave que obliga a la mascota a permanecer ingresada y bajo tratamiento intensivo:
+          el cliente recibe una prestación económica que le da margen financiero durante ese periodo.
+        </li>
       </ul>
     `,
     argumentario: `
-      “Un seguro pensado para quienes consideran a su mascota parte de su familia y quieren proteger sus finanzas ante emergencias veterinarias.”
+      “Protección de Pagos Plus Mascotas está pensado para quienes consideran a su mascota parte de la familia.
+      Si ocurre algo grave y necesita cirugía u hospitalización, el seguro no solo ayuda con los costes asociados,
+      sino que también aporta un colchón para mantener al día los pagos esenciales del hogar.”
     `
   }
 }
@@ -2381,6 +2623,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderFamilyButtons();
   renderCards();
 });
+
 
 
 
