@@ -151,46 +151,101 @@ const PRODUCTS = [
   family: "PYS Protección",
   name: "PEH · Protección Eléctrica Hogar",
   price: "6,95 €/mes + impuestos",
-  carencia: "1 mes",
+  carencia: "30 días general · 6 meses Asesoramiento Energético",
   fidelizacionResumen: "50% 12 meses si elegible",
-  resumenCorto: "Cobertura básica de urgencias y averías de instalación eléctrica.",
+  
+  resumenCorto: "Servicio que cubre averías eléctricas urgentes, reparación de electrodomésticos, bricolaje eléctrico y una visita de Asesoramiento Energético.",
+
   sections: {
+
     info: `
-      PEH es el nivel básico de protección eléctrica para clientes residenciales. Cubre urgencias y averías en la instalación eléctrica interior con mano de obra y materiales limitados.
+      El Servicio de Protección Eléctrica Hogar (PEH) incluye cobertura de averías eléctricas urgentes,
+      reparación de electrodomésticos de cocina y TV, un trabajo anual de bricolaje eléctrico y una visita
+      de Asesoramiento Energético cada 4 años. Es un PYS asociado al suministro eléctrico y requiere
+      potencia contratada inferior a 15 kW.
     `,
+
     coberturas: `
-      <h3>Instalación eléctrica</h3>
+      <h3>Averías Eléctricas Urgentes</h3>
       <ul>
-        <li>Incluye desplazamiento, mano de obra y materiales hasta un límite de 550€ anuales sin limite de intervenciones.</li>
-        <li>Reparaciones simples con materiales hasta límite anual.</li>
-        <li>Atención en menos de 3 horas los 365 días del año excluyendo los garajes, trasteros, anexos, piscinas e iluminación exterior.</li>
+        <li>Atención en menos de 3 horas.</li>
+        <li>Incluye desplazamiento, mano de obra y materiales.</li>
+        <li>Límite anual de 550 € en reparaciones.</li>
+      </ul>
+
+      <h3>Reparación de Electrodomésticos</h3>
+      <ul>
+        <li>Electrodomésticos cubiertos: Frigorífico, Lavadora, Cocina eléctrica, Campana,
+            Lavavajillas, Horno (no microondas independiente), Secadora, Congelador,
+            Termo/Caldera eléctricos y Televisor.</li>
+        <li>Cubre desplazamiento, mano de obra, piezas e impuestos.</li>
+        <li>Antigüedad máxima: menos de 11 años en electrodomésticos de cocina y menos de 6 años en TV.</li>
+        <li>Límite económico: 300 € por electrodoméstico y año.</li>
+        <li>Atención en un máximo de 48 horas laborables.</li>
+      </ul>
+
+      <h3>Bricolaje Eléctrico</h3>
+      <ul>
+        <li>1 trabajo anual.</li>
+        <li>Incluye desplazamiento y hasta 3 horas de mano de obra.</li>
+      </ul>
+
+      <h3>Asesoramiento Energético</h3>
+      <ul>
+        <li>Un diagnóstico energético cada 4 años.</li>
+        <li>Informe con recomendaciones de ahorro.</li>
+        <li>Plazo: el técnico contacta en un máximo de 10 días desde la solicitud.</li>
       </ul>
     `,
+
     exclusiones: `
       <ul>
-        <li>Instalaciones sin normativa o manipuladas.</li>
-        <li>Averías derivadas de obras sin certificación.</li>
+        <li>Microondas independiente.</li>
+        <li>Electrodomésticos con antigüedad superior a 11 años (cocina) o 6 años (TV).</li>
+        <li>Electrodomésticos en garantía del fabricante.</li>
+        <li>Urgencias eléctricas en viviendas con potencia superior a 15 kW.</li>
+        <li>Coste de materiales en trabajos de bricolaje eléctrico.</li>
+        <li>Elementos de medida propiedad de la distribuidora.</li>
       </ul>
+      <p>Nota: los anexos detallados de PEH no están incluidos en los documentos proporcionados.</p>
     `,
+
     procesos: `
+      <h3>Contratación</h3>
       <ul>
-        <li>Comprobación de elegibilidad.</li>
-        <li>Apertura de servicio con clasificación exacta del fallo.</li>
+        <li>Debe ir asociado a suministro eléctrico en IBERCLI.</li>
+        <li>Potencia contratada inferior a 15 kW.</li>
+        <li>Carencia: 30 días en averías y bricolaje, 6 meses en Asesoramiento Energético.</li>
+        <li>Posible contratación independiente solo si cumple requisitos según anexo del manual.</li>
+      </ul>
+
+      <h3>Uso del servicio</h3>
+      <ul>
+        <li>Urgencia eléctrica: atención &lt; 3 horas.</li>
+        <li>Electrodomésticos: atención &lt; 48 horas laborables.</li>
+        <li>Asesoramiento Energético: solicitud al Grupo PYS; diagnóstico cada 4 años.</li>
       </ul>
     `,
+
     fidelizacion: `
       <ul>
-        <li>Recordar coste real de una reparación eléctrica externa.</li>
+        <li>Puedes aplicar el descuento de fidelización del 50% durante 12 meses si el cliente es elegible.</li>
+        <li>Recordar que las reparaciones tienen garantía de 6 meses.</li>
       </ul>
     `,
+
     ejemplos: `
       <ul>
-        <li>Salto continuo del automático.</li>
-        <li>Cortocircuitos en puntos de luz.</li>
+        <li>Cortocircuito o pérdida de energía en la instalación interior.</li>
+        <li>Avería en electrodomésticos como frigorífico, lavadora o televisor.</li>
+        <li>Sustitución de enchufes o instalación de apliques mediante el trabajo anual de bricolaje.</li>
       </ul>
     `,
+
     argumentario: `
-      “PEH evita pagar desplazamientos y mano de obra de urgencias eléctricas, que suelen ser costosos.”
+      “El PEH cubre las averías eléctricas urgentes, la reparación de 9 electrodomésticos de la cocina y la TV,
+      un trabajo anual de bricolaje eléctrico y una visita de Asesoramiento Energético. Una sola reparación externa
+      puede superar fácilmente el coste anual del servicio.”
     `
   }
 },
@@ -198,52 +253,147 @@ const PRODUCTS = [
   id: "PEH_PLUS",
   family: "PYS Protección",
   name: "PEH+ · Protección Eléctrica Hogar Plus",
-  price: "Consultar precio vigente",
-  carencia: "1 mes",
+  price: "8,95 €/mes + impuestos",
+  carencia: "30 días general · 6 meses Asesoramiento Energético",
   fidelizacionResumen: "50% 12 meses si elegible",
-  resumenCorto: "PEH ampliado con electrodomésticos y climatización.",
+  resumenCorto: "Servicio que cubre averías eléctricas urgentes, reparación de electrodomésticos, bricolaje eléctrico, climatización y Asesoramiento Energético, con Protección de Pagos Esencial.",
+
   sections: {
+
     info: `
-      PEH+ amplía PEH añadiendo electrodomésticos, climatización y mayor cobertura de mano de obra.
+      El Servicio de Protección Eléctrica Hogar Plus (PEH+) tiene las mismas coberturas que el PEH,
+      pero añade la protección de equipos de climatización y la inclusión del Servicio de Protección de Pagos Esencial.
+      Incluye averías eléctricas urgentes, reparación de electrodomésticos de cocina y TV, un trabajo anual de bricolaje
+      eléctrico, una visita de Asesoramiento Energético cada 4 años y protección en climatización.
     `,
+
     coberturas: `
-      <h3>Instalación eléctrica</h3>
+      <h3>Averías Eléctricas Urgentes</h3>
       <ul>
-        <li>Urgencias eléctricas ampliadas.</li>
+        <li>Mismas coberturas que el servicio Urgencias Eléctricas.</li>
+        <li>Incluye desplazamiento, mano de obra y materiales hasta un límite de 550 € anuales.</li>
+        <li>Sin límite de intervenciones.</li>
+        <li>Atención en menos de 3 horas los 365 días del año.</li>
+        <li>Excluidos garajes, trasteros, anexos, piscinas e iluminación exterior.</li>
       </ul>
-      <h3>Electrodomésticos</h3>
+
+      <h3>Reparación de Electrodomésticos</h3>
       <ul>
-        <li>Reparación de electrodomésticos con desplazamiento y mano de obra.</li>
-        <li>Materiales cubiertos hasta límite económico anual.</li>
+        <li>Mismas coberturas que Protección Electrodomésticos 10.</li>
+        <li>Electrodomésticos cubiertos: frigorífico, lavadora, cocina eléctrica, campana,
+            lavavajillas, horno, secadora, congelador, termo/caldera eléctricos y televisor.</li>
+        <li>Cubre 300 € por electrodoméstico y año para equipos dentro de la antigüedad permitida.</li>
+        <li>Sin límite de intervenciones.</li>
+        <li>Si la antigüedad supera el límite, queda cubierto el desplazamiento y hasta 3 horas de mano de obra.</li>
+        <li>Atención en un máximo de 48 horas laborables.</li>
+        <li>Con opción a pago de sustitución por reparación inviable de hasta 300 €, en función de la antigüedad y a decisión del técnico.</li>
       </ul>
-      <h3>Climatización</h3>
+
+      <h3>Bricolaje Eléctrico</h3>
       <ul>
-        <li>Cobertura de equipos dentro de antigüedad permitida.</li>
+        <li>Incluye una intervención anual (desplazamiento y hasta 3 horas de mano de obra) a elegir por el cliente entre:
+          <ul>
+            <li>Sustitución/reparación de enchufes, interruptores y pulsadores.</li>
+            <li>Conexión y puesta en marcha de varios electrodomésticos de cocina y de equipamiento tecnológico
+                (televisores, DVD, consolas y equipos home cinema).</li>
+            <li>Instalación o sustitución de extractores en cocina y baños (no incluye la campana del extractor).</li>
+            <li>Instalación de temporizadores y termostatos.</li>
+            <li>Instalación o sustitución de lámparas o apliques donde exista punto de luz.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Asesoramiento Energético</h3>
+      <ul>
+        <li>Incluye una visita de un técnico para evaluar la vivienda y su equipación energética.</li>
+        <li>Se elabora un informe con medidas para hacer más eficiente el consumo y obtener ahorro económico.</li>
+        <li>El cliente puede solicitarlo una vez cada 4 años.</li>
+        <li>El técnico solo acude bajo demanda del cliente.</li>
+      </ul>
+
+      <h3>Protección Climatización</h3>
+      <ul>
+        <li>Mismas coberturas que el Servicio Protección Climatización.</li>
+        <li>Cubre 300 € por equipo de climatización y año para equipos hasta la antigüedad permitida.</li>
+        <li>Sin límite de intervenciones.</li>
+        <li>Si la antigüedad es superior, queda cubierto el desplazamiento y hasta 3 horas de mano de obra.</li>
+        <li>Con opción a pago de sustitución por reparación inviable de hasta 300 €, en función de la antigüedad y a decisión del técnico.</li>
+      </ul>
+
+      <h3>Servicio de Protección de Pagos Esencial (SPP Esencial)</h3>
+      <ul>
+        <li>Incluye las coberturas del SPP Esencial.</li>
+        <li>Fallecimiento: 600 €.</li>
+        <li>Incapacidad Absoluta y Permanente: 600 €.</li>
+        <li>Incapacidad Temporal: 250 € a los 30 días y otros 250 € a los 210 días.</li>
+        <li>Hospitalización: 250 € a los 3 días.</li>
       </ul>
     `,
+
     exclusiones: `
       <ul>
-        <li>Antigüedad superior al límite.</li>
-        <li>Equipos sin instalación reglamentaria.</li>
+        <li>Electrodomésticos en periodo de garantía del fabricante.</li>
+        <li>Electrodomésticos que no estén ubicados habitualmente en el domicilio del punto de suministro energético.</li>
+        <li>Las urgencias eléctricas en viviendas o locales con potencia contratada superior a 15 kW.</li>
+        <li>El coste de los materiales empleados en los trabajos de bricolaje eléctrico.</li>
+        <li>La reparación de los elementos de medida cuando éstos sean propiedad de la compañía distribuidora.</li>
       </ul>
+      <p>Nota: los anexos completos de alcance y exclusiones no están incluidos en los documentos proporcionados.</p>
     `,
+
     procesos: `
+      <h3>Contratación</h3>
       <ul>
-        <li>Validar que no existen equipos fuera de rango.</li>
+        <li>Servicio asociado a un contrato de energía en IBERCLI.</li>
+        <li>Potencia contratada inferior a 15 kW.</li>
+        <li>Carencia de 30 días en averías y bricolaje eléctrico.</li>
+        <li>Carencia de 6 meses para la cobertura de Asesoramiento Energético.</li>
+      </ul>
+
+      <h3>Uso del servicio</h3>
+      <ul>
+        <li>Averías eléctricas urgentes: atención en menos de 3 horas.</li>
+        <li>Electrodomésticos y climatización: atención en un máximo de 48 horas laborables.</li>
+        <li>Bricolaje eléctrico: una intervención anual según el listado de trabajos cubiertos.</li>
+        <li>Asesoramiento Energético: solicitud a través del Grupo PYS; se presta una vez cada 4 años.</li>
       </ul>
     `,
+
     fidelizacion: `
       <ul>
-        <li>Comparar coste usual de climatización/electrodomésticos.</li>
+        <li>Aplicar, si el cliente es elegible, el descuento de fidelización del 50% durante 12 meses.</li>
+        <li>Recordar que las reparaciones tienen 6 meses de garantía.</li>
       </ul>
     `,
+
     ejemplos: `
+      <h4>Ejemplos de averías de Urgencias Eléctricas</h4>
       <ul>
-        <li>Averías de aire acondicionado.</li>
+        <li>Urgencia eléctrica por cortocircuito.</li>
+        <li>Fallo eléctrico en la red interior de la vivienda.</li>
+      </ul>
+
+      <h4>Ejemplos de averías de electrodomésticos</h4>
+      <ul>
+        <li>Fallo en la TV.</li>
+        <li>La nevera no enfría.</li>
+        <li>El lavavajillas no desagua.</li>
+        <li>El tambor de la lavadora no gira.</li>
+        <li>El termo eléctrico no calienta.</li>
+      </ul>
+
+      <h4>Ejemplos de trabajos de bricolaje eléctrico</h4>
+      <ul>
+        <li>Sustitución de enchufes e interruptores.</li>
+        <li>Instalación de un aplique donde ya existe punto de luz.</li>
+        <li>Instalación de un ventilador de techo.</li>
       </ul>
     `,
+
     argumentario: `
-      “PEH+ protege electrodomésticos y climatización, reparaciones de alto coste en temporada.”
+      “PEH+ incluye en un único servicio averías eléctricas urgentes, reparación de electrodomésticos,
+      bricolaje eléctrico, protección de climatización, Asesoramiento Energético y Servicio de Protección de Pagos Esencial,
+      para viviendas con potencia contratada hasta 15 kW.”
     `
   }
 },
@@ -252,41 +402,132 @@ const PRODUCTS = [
   family: "PYS Protección",
   name: "PB · Pack Bienestar",
   price: "8,95 €/mes + impuestos",
-  carencia: "1 mes",
-  fidelizacionResumen: "50% 12 meses",
-  resumenCorto: "Cobertura de urgencias eléctricas y pequeños servicios del hogar.",
+  carencia: "30 días general · 6 meses Asesoramiento Energético",
+  fidelizacionResumen: "50% 12 meses si elegible",
+
+  resumenCorto: "Servicio que cubre urgencias eléctricas, reparación de electrodomésticos, bricolaje eléctrico, Asesoramiento Energético, Asesoramiento Legal y Protección de Pagos Esencial.",
+
   sections: {
+
     info: `
-      Pack Bienestar cubre urgencias básicas del hogar con especial foco en electricidad y pequeñas incidencias domésticas.
+      El Pack Bienestar (PB) tiene las mismas coberturas que el PEH, pero incluye además
+      Asesoramiento Legal y el Servicio de Protección de Pagos Esencial.
+      Es un producto diseñado especialmente para clientes NO digitales y debe ofrecerse
+      como alternativa cuando el cliente rechaza los servicios digitales del PIH.
+      Requiere potencia contratada inferior a 15 kW o tarifas de gas RL1, RL2 o RL3.
     `,
+
     coberturas: `
+      <h3>Averías Eléctricas Urgentes</h3>
       <ul>
-        <li>Urgencias eléctricas con desplazamiento y mano de obra.</li>
-        <li>Pequeños trabajos básicos según ficha técnica.</li>
+        <li>Mismas coberturas que el servicio Urgencias Eléctricas.</li>
+        <li>Incluye desplazamiento, mano de obra y materiales hasta 550 € anuales.</li>
+        <li>Sin límite de intervenciones.</li>
+        <li>Atención en menos de 3 horas los 365 días del año.</li>
+        <li>Excluidos garajes, trasteros, anexos, piscinas e iluminación exterior.</li>
+      </ul>
+
+      <h3>Reparación de Electrodomésticos</h3>
+      <ul>
+        <li>Mismas coberturas que Protección Electrodomésticos 10.</li>
+        <li>Cubre 300 € por electrodoméstico y año (frigorífico, lavadora, campana, horno, etc.).</li>
+        <li>Atención en un máximo de 48 horas laborables.</li>
+        <li>Sin límite de intervenciones.</li>
+        <li>Antigüedad máxima: 10 años (5 para TV), según ficha PE10.</li>
+      </ul>
+
+      <h3>Bricolaje Eléctrico</h3>
+      <ul>
+        <li>Mismas coberturas que PEH+.</li>
+        <li>1 intervención anual.</li>
+        <li>Incluye desplazamiento y hasta 3 horas de mano de obra.</li>
+        <li>Trabajos cubiertos:
+          <ul>
+            <li>Sustitución o reparación de enchufes, interruptores y pulsadores.</li>
+            <li>Instalación de lámparas o apliques donde exista punto de luz.</li>
+            <li>Instalación de temporizadores y termostatos.</li>
+            <li>Instalación de extractores en cocina y baño (no incluye campanas).</li>
+            <li>Conexión y puesta en marcha de electrodomésticos y equipos tecnológicos (TV, DVD, consolas, home cinema).</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Asesoramiento Energético</h3>
+      <ul>
+        <li>Incluye un diagnóstico energético presencial o telefónico.</li>
+        <li>Se entrega informe con recomendaciones de ahorro.</li>
+        <li>Puede solicitarse una vez cada 4 años.</li>
+        <li>Carencia: 6 meses desde la contratación.</li>
+      </ul>
+
+      <h3>Asesoramiento Legal</h3>
+      <ul>
+        <li>Mismas coberturas que Tu Asesor Legal (TAL).</li>
+        <li>Materias cubiertas: vivienda, familia, trabajo, consumo, impuestos, seguros, internet, automóvil, seguridad vial, asuntos penales y administración.</li>
+        <li>Servicio prestado por abogados colegiados.</li>
+      </ul>
+
+      <h3>Servicio de Protección de Pagos Esencial</h3>
+      <ul>
+        <li>Incluye coberturas del SPP Esencial.</li>
+        <li>Fallecimiento: 600 €.</li>
+        <li>Incapacidad Absoluta y Permanente: 600 €.</li>
+        <li>Incapacidad Temporal: 250 € + 250 €.</li>
+        <li>Hospitalización: 250 € a los 3 días.</li>
       </ul>
     `,
+
     exclusiones: `
       <ul>
-        <li>Materiales no incluidos fuera del límite anual.</li>
+        <li>Electrodomésticos en garantía del fabricante.</li>
+        <li>Electrodomésticos que no estén en el domicilio habitual del suministro.</li>
+        <li>Urgencias eléctricas en suministros con potencia superior a 15 kW.</li>
+        <li>Materiales en trabajos de bricolaje eléctrico (solo mano de obra y desplazamiento).</li>
+        <li>Elementos propiedad de la distribuidora (contadores de luz).</li>
+        <li>Asesoramiento Legal no disponible si existe conflicto de intereses (p. ej. contra Iberdrola o contra Legálitas).</li>
       </ul>
+      <p>Nota: los anexos completos de alcance y exclusiones no están incluidos en los documentos proporcionados.</p>
     `,
+
     procesos: `
+      <h3>Contratación</h3>
       <ul>
-        <li>Validar elegibilidad.</li>
+        <li>Debe ir asociado a suministro en IBERCLI.</li>
+        <li>Potencia inferior a 15 kW o tarifas RL1-RL3.</li>
+        <li>Carencia: 30 días general y 6 meses para Asesoramiento Energético.</li>
+      </ul>
+
+      <h3>Uso del servicio</h3>
+      <ul>
+        <li>Averías eléctricas urgentes: atención &lt; 3 horas.</li>
+        <li>Electrodomésticos: atención &lt; 48 horas laborables.</li>
+        <li>Bricolaje eléctrico: 1 intervención anual, bajo listado de trabajos permitido.</li>
+        <li>Asesoramiento Legal: transferencia a proveedor.</li>
+        <li>Asesoramiento Energético: solicitud vía Grupo PYS; un diagnóstico cada 4 años.</li>
       </ul>
     `,
+
     fidelizacion: `
       <ul>
-        <li>Recordar que incluye desplazamiento + mano de obra.</li>
+        <li>Si el cliente es elegible, ofrecer 50% durante 12 meses.</li>
+        <li>Recordar que las reparaciones tienen garantía de 6 meses.</li>
+        <li>Poner en valor que incluye Asesoramiento Legal y SPP Esencial sin coste adicional.</li>
       </ul>
     `,
+
     ejemplos: `
       <ul>
-        <li>Cortocircuitos y problemas habituales.</li>
+        <li>Urgencia eléctrica por cortocircuito.</li>
+        <li>Fallo en frigorífico o lavadora.</li>
+        <li>Sustitución de un enchufe o instalación de un aplique.</li>
+        <li>Consulta legal sobre vivienda, alquiler o consumo.</li>
       </ul>
     `,
+
     argumentario: `
-      “PB cubre las urgencias habituales sin coste adicional para el cliente.”
+      “El Pack Bienestar combina en una sola cuota: averías eléctricas urgentes, electrodomésticos,
+      bricolaje eléctrico, Asesoramiento Legal, Asesoramiento Energético y Protección de Pagos Esencial.
+      Una sola reparación o consulta legal puede costar más que la cuota anual del servicio.”
     `
   }
 },
@@ -296,41 +537,123 @@ const PRODUCTS = [
   name: "TAL · Tu Asesor Legal",
   price: "3,95 €/mes + impuestos",
   carencia: "30 días",
-  fidelizacionResumen: "50% 12 meses",
-  resumenCorto: "Consultas jurídicas ilimitadas y revisión de documentos.",
+  fidelizacionResumen: "50% 12 meses si elegible",
+
+  resumenCorto: "Asesoramiento y asistencia jurídica telefónica o telemática, 24h en urgencias legales, revisión y redacción de documentos, gestión de reclamaciones y solicitud de certificados.",
+
   sections: {
+
     info: `
-      Servicio de consulta telefónica con abogados especializados: vivienda, consumo, laboral y fiscalidad básica.
+      Tu Asesor Legal es un servicio de asesoramiento y asistencia jurídica prestado por
+      abogados colegiados ejercientes. Las consultas se atienden por vía telefónica y/o
+      telemática y abarcan todas las cuestiones jurídicas del ámbito personal y familiar.
+      Está asociado al contrato de electricidad en IberCLI. Carencia: 30 días. Sin permanencia.
     `,
+
     coberturas: `
+      <h3>Ámbitos jurídicos cubiertos</h3>
       <ul>
-        <li>Consultas ilimitadas.</li>
-        <li>Revisión de contratos.</li>
-        <li>Redacción de escritos simples.</li>
+        <li>Vivienda</li>
+        <li>Familia</li>
+        <li>Trabajo</li>
+        <li>Consumo</li>
+        <li>Impuestos</li>
+        <li>Seguros</li>
+        <li>Internet</li>
+        <li>Automóvil</li>
+        <li>Seguridad vial y tráfico</li>
+        <li>Relaciones con Administraciones Públicas</li>
+        <li>Asuntos penales</li>
+      </ul>
+
+      <h3>Prestaciones del servicio</h3>
+      <ul>
+        <li>Asesoramiento jurídico telefónico ilimitado.</li>
+        <li>Urgencias legales 24h (delitos, accidentes, problemas graves en el hogar, menores, etc.).</li>
+        <li>Revisión de documentación y contratos (laborales, alquiler, bancarios…).</li>
+        <li>Redacción de documentos y escritos NO judiciales.</li>
+        <li>Gestión de reclamaciones en nombre del cliente.</li>
+        <li>Negociaciones con la parte contraria para la defensa de intereses del cliente.</li>
+        <li>Recurso de multas.</li>
+        <li>Solicitud de certificados a la Administración Pública:
+          <ul>
+            <li>Seguridad Social (vida laboral, prestaciones…)</li>
+            <li>Ministerio de Justicia (delitos sexuales, defunción…)</li>
+            <li>DGT (duplicado carnet, cambio titularidad vehículo…)</li>
+            <li>Registro de la Propiedad y Mercantil (notas simples, fincas…)</li>
+            <li>Ayuntamientos (IVTM, ZBEDEP…)</li>
+          </ul>
+        </li>
+        <li>Acceso preferente a la red de despachos en caso de juicio.</li>
+        <li>Cobertura para titular + pareja.</li>
       </ul>
     `,
+
     exclusiones: `
+      <h3>Exclusiones del servicio</h3>
       <ul>
-        <li>No cubre abogado presencial ni costas.</li>
+        <li>No cubre abogado presencial ni costas judiciales.</li>
+        <li>No se presta el servicio en caso de conflicto de intereses:
+          asesoramiento contra Iberdrola, contra Legálitas o cuando dos usuarios
+          tengan intereses contrapuestos en el mismo asunto.</li>
+        <li>Quedan excluidos:
+          <ul>
+            <li>Revisión de aranceles.</li>
+            <li>Redacción de documentos relacionados con:
+              procedimientos arbitrales privados, responsabilidad patrimonial
+              de la Administración, convenios reguladores, particiones de herencia,
+              conciliaciones laborales.</li>
+            <li>Servicios de gestoría.</li>
+            <li>Quejas sin contenido jurídico ante colegios profesionales.</li>
+            <li>Cualquier documento que requiera presentación judicial posterior,
+              intervención notarial o elevación a público.</li>
+          </ul>
+        </li>
       </ul>
     `,
+
     procesos: `
+      <h3>Contratación</h3>
       <ul>
-        <li>Transferencia al proveedor jurídico.</li>
+        <li>Debe contratarse asociado a suministro eléctrico en IberCLI.</li>
+        <li>Carencia de 30 días.</li>
+        <li>Sin permanencia.</li>
+      </ul>
+
+      <h3>Gestión de consultas</h3>
+      <ul>
+        <li>Las llamadas se transfieren al proveedor jurídico (Legálitas) mediante la botonera.</li>
+        <li>Horario general: L-V de 9h a 20h.</li>
+        <li>Urgencias legales: servicio 24h.</li>
+        <li>Fuera de horario no urgente, el cliente es atendido pero se le remite al horario oficial.</li>
+        <li>El cliente puede enviar consultas por email a clientesIB@legalitas.es indicando:
+          nombre, apellidos y teléfono de contacto.</li>
       </ul>
     `,
+
     fidelizacion: `
       <ul>
-        <li>Recordar precio de una consulta privada externa.</li>
+        <li>Recordar que una sola consulta jurídica externa puede costar entre 100 y 300€.</li>
+        <li>Posible aplicar 50% durante 12 meses si el cliente es elegible.</li>
+        <li>Poner en valor urgencias 24h, redacción de documentos y gestión completa de reclamaciones.</li>
       </ul>
     `,
+
     ejemplos: `
       <ul>
-        <li>Cliente que va a firmar alquiler.</li>
+        <li>Revisión de contrato de alquiler o hipoteca.</li>
+        <li>Recurso de multa de tráfico.</li>
+        <li>Reclamación por compra online no entregada.</li>
+        <li>Trámites con la Seguridad Social o solicitud de certificados.</li>
+        <li>Conflictos familiares o dudas legales sobre separaciones.</li>
+        <li>Dudas sobre herencias o fiscalidad básica.</li>
       </ul>
     `,
+
     argumentario: `
-      “Una sola consulta externa supera la cuota anual del servicio.”
+      “TAL ofrece asesoramiento jurídico ilimitado, urgencias legales 24h, revisión y redacción de
+      documentos, gestión de reclamaciones y solicitud de certificados. Una sola consulta externa
+      suele costar más que varios meses del servicio.”
     `
   }
 },
@@ -341,71 +664,108 @@ const PRODUCTS = [
   price: "9,95 €/mes + impuestos",
   carencia: "15 días",
   fidelizacionResumen: "50% 12 meses si es elegible",
-  resumenCorto: "Revisión anual de gas + asistencia en averías con mano de obra y desplazamiento incluidos.",
+  resumenCorto: "Visita anual de mantenimiento y dos averías al año con desplazamiento incluido, 3 horas de mano de obra y 50€ en materiales.",
+
   sections: {
+
     info: `
-      PMG cubre la revisión anual de la instalación de gas y de la caldera, además de reparaciones urgentes con desplazamiento y mano de obra incluidos. Proporciona mantenimiento preventivo y correctivo, reduciendo el riesgo de fallos y evitando costes inesperados.
+      El Pack de Mantenimiento de Gas (PMG) es el servicio más completo para el mantenimiento de la instalación de gas,
+      caldera/calentador y circuito hidráulico de calefacción. Incluye una visita anual de mantenimiento, dos intervenciones
+      por avería al año y atención en un máximo de 24 horas. Carencia de 15 días. Se contrata para un año completo,
+      prorrogable automáticamente. No tiene permanencia, pero la baja anticipada implica el pago de las mensualidades
+      restantes del año contratado.
     `,
+
     coberturas: `
-      <h3>Revisión anual obligatoria</h3>
+      <h3>Visita anual de mantenimiento</h3>
       <ul>
-        <li>Revisión de caldera e instalación de gas.</li>
-        <li>Emisión de informe técnico.</li>
-        <li>Ajustes menores incluidos.</li>
+        <li>Análisis de productos de combustión de la caldera.</li>
+        <li>Limpieza del quemador.</li>
+        <li>Revisión del vaso de expansión.</li>
+        <li>Revisión de la instalación, caldera, calentador y circuito hidráulico de calefacción.</li>
       </ul>
 
-      <h3>Averías de la instalación de gas</h3>
+      <h3>Intervenciones por avería</h3>
       <ul>
-        <li>Desplazamiento incluido 100%.</li>
-        <li>Mano de obra incluida 100%.</li>
-        <li>Materiales cubiertos hasta el límite anual indicado por proveedor.</li>
+        <li>Incluye hasta <strong>2 averías al año</strong>.</li>
+        <li>Desplazamiento siempre incluido.</li>
+        <li>Incluye hasta <strong>3 horas de mano de obra</strong> por avería.</li>
+        <li>Incluye hasta <strong>50 € en materiales</strong> por avería.</li>
+        <li>A partir de la 3ª avería del año, solo cubre el desplazamiento.</li>
+        <li>Cubre todos los gasodomésticos de la vivienda, incluidas dos calderas si las hubiera.</li>
+        <li>Atención en un plazo máximo de 24 horas desde la apertura de la solicitud.</li>
+        <li>6 meses de garantía por intervención.</li>
       </ul>
 
-      <h3>Asistencia urgente</h3>
+      <h3>Alcance del servicio</h3>
       <ul>
-        <li>Atención 24/7 en fugas o riesgo.</li>
+        <li>Instalación de gas visible.</li>
+        <li>Aparatos de gas de potencia menor de 70 kW (calderas, calentadores y aparatos de cocción domésticos).</li>
+        <li>Circuito hidráulico de calefacción visto.</li>
       </ul>
     `,
+
     exclusiones: `
+      <h3>Exclusiones generales del PMG</h3>
       <ul>
-        <li>Calderas con antigüedad superior al límite fijado por proveedor.</li>
-        <li>Instalaciones irregulares o sin normativa.</li>
-        <li>Daños estructurales ajenos al circuito de gas.</li>
+        <li>La visita anual del PMG no sustituye la Inspección Obligatoria de la Distribuidora cada 5 años.</li>
+        <li>Instalaciones con aparatos de gas superiores a 70 kW.</li>
+        <li>Cocinas vitrocerámicas de gas.</li>
+        <li>Elementos no visibles o no accesibles en la revisión.</li>
+        <li>Sustitución o mejora de elementos por cambio normativo.</li>
+        <li>Instalaciones comerciales o industriales.</li>
+        <li>Daños personales o materiales por mal uso o conservación.</li>
+        <li>Daños a terceros.</li>
+        <li>Daños por heladas, incendios, explosiones, inundaciones o fuerza mayor.</li>
+        <li>No se garantiza reparación de aparatos con antigüedad superior a 10 años.</li>
       </ul>
     `,
+
     procesos: `
       <h3>Alta</h3>
       <ul>
-        <li>Verificación de elegibilidad de caldera y sistema.</li>
-        <li>Aplicación de carencia según normativa.</li>
+        <li>Carencia de 15 días desde la contratación.</li>
+        <li>Aplica a clientes con tarifa RL1, RL2 o RL3.</li>
+        <li>Puede contratarse asociado al gas o como servicio independiente.</li>
+        <li>En caso de baja anticipada, el cliente paga las mensualidades pendientes del año.</li>
       </ul>
 
-      <h3>Uso</h3>
+      <h3>Uso (solicitudes en Opera)</h3>
       <ul>
-        <li>Clasificación del tipo de avería: caldera / conducción / válvula.</li>
-        <li>Confirmación de disponibilidad técnica.</li>
+        <li>Las solicitudes de visita y avería se gestionan en Opera (nunca se transfieren al proveedor).</li>
+        <li>Visita anual: se genera como "Solicitud de Visita PMG".</li>
+        <li>Avería: se genera como "Avería Mantenimiento de Gas".</li>
+        <li>Tiempo de atención: máximo 24 horas desde apertura.</li>
       </ul>
 
       <h3>Baja</h3>
       <ul>
-        <li>Riesgo de regularización si no se ha realizado la revisión anual dentro del ciclo.</li>
+        <li>Baja asociada a cambio de comercializadora del suministro de gas.</li>
+        <li>Emisión de factura de regularización salvo en casos de baja inmediata (< 1 mes desde contratación/renovación).</li>
+        <li>Si vuelve a contratar en los 12 días siguientes a la baja, no se emite regularización.</li>
       </ul>
     `,
+
     fidelizacion: `
       <ul>
-        <li>Recordar que una revisión anual externa supera el coste de varios meses.</li>
-        <li>Ofrecer 50% 12 meses si el cliente valora coste.</li>
-        <li>Comparar precio de reparación de caldera sin servicio.</li>
+        <li>Recordar al cliente que la visita anual de mantenimiento y las dos averías cubiertas pueden superar ampliamente el coste del servicio.</li>
+        <li>Aplicar, si corresponde, descuento del 50% durante 12 meses.</li>
+        <li>Recordar que todas las intervenciones tienen 6 meses de garantía.</li>
       </ul>
     `,
+
     ejemplos: `
       <ul>
-        <li>Cliente con caldera antigua o historial de fallos.</li>
-        <li>Viviendas con revisiones pendientes.</li>
+        <li>Fuga leve en instalación individual detectada por el cliente.</li>
+        <li>Caldera que no enciende o falla intermitentemente.</li>
+        <li>Escape de agua en circuito de calefacción.</li>
+        <li>Cliente que solicita revisión previa a inspección obligatoria de distribuidora.</li>
       </ul>
     `,
+
     argumentario: `
-      “Una reparación de caldera puede superar fácilmente la cuota anual de PMG. Con este servicio, revisión + asistencia urgente están cubiertas sin coste adicional.”
+      “PMG incluye la visita anual completa y cubre dos averías al año con desplazamiento, mano de obra y materiales.
+      Una sola reparación de caldera o un fallo en la instalación de gas puede superar el coste anual del servicio.”
     `
   }
 },
@@ -525,170 +885,209 @@ const PRODUCTS = [
   family: "SSAA Asistente Smart",
   name: "AS · Asistente Smart (Residencial)",
   price: "2,95 €/mes + impuestos",
-  carencia: "Carencia 1 mes para reparaciones / 6 meses para Asesoramiento Energético",
-  fidelizacionResumen: "Descuento fidelización 50% 12 meses si no disfruta descuentos de captación",
-  resumenCorto: "Servicio digital que combina información detallada de consumos, reparación de electrodomésticos y Asesoramiento Energético.",
+  carencia: "30 días para reparaciones · 6 meses para Asesoramiento Energético",
+  fidelizacionResumen: "50% 12 meses si no tiene descuentos de captación activos",
+
+  resumenCorto: "Servicio digital que ofrece información detallada de consumos, reparación de electrodomésticos de cocina y Asesoramiento Energético.",
+
   sections: {
+
     info: `
-      Asistente Smart Residencial es el servicio histórico para clientes domésticos 2.0TD que quieren entender mejor su consumo,
-      tener apoyo en la reparación de electrodomésticos y acceder a Asesoramiento Energético.
-      Desde febrero de 2024, se prioriza la contratación de Asistente Smart Hogar (ASH), manteniendo AS como alternativa solo si el cliente rechaza el ASH.
+      Asistente Smart Iberdrola permite al cliente entender mejor cómo consume electricidad en su hogar
+      a través de la App Iberdrola Clientes, sin necesidad de instalar dispositivos adicionales. 
+      Además, incorpora un servicio de reparación de electrodomésticos de cocina y la posibilidad
+      de recibir asesoramiento energético para mejorar la eficiencia del hogar.
     `,
+
     coberturas: `
       <h3>Información detallada de consumos</h3>
       <ul>
-        <li>Acceso desde App / Web Iberdrola Clientes.</li>
-        <li>Desagregación aproximada del consumo por usos y electrodomésticos, sin necesidad de instalar dispositivos adicionales.</li>
-        <li>Histórico de consumo en €/kWh y gráficos comparativos.</li>
-        <li>Alertas y notificaciones con consejos de ahorro.</li>
+        <li>Visualización del consumo desglosado por electrodomésticos y categorías en la App Iberdrola Clientes.</li>
+        <li>Histórico de consumos en euros y kWh.</li>
+        <li>Informes periódicos de consumo enviados por correo electrónico.</li>
+        <li>Notificaciones personalizadas sobre consumos elevados, optimización de potencia y tarifa, y recomendaciones de ahorro.</li>
       </ul>
 
-      <h3>Reparación de electrodomésticos</h3>
+      <h3>Reparación de electrodomésticos de cocina</h3>
       <ul>
-        <li>Cobertura para frigorífico, lavadora, cocina eléctrica, horno, campana, lavavajillas, secadora y congelador.</li>
-        <li>Incluye desplazamiento y 2 horas de mano de obra por intervención.</li>
-        <li>Sin límite de intervenciones, dentro de las condiciones del servicio.</li>
-        <li>Carencia de 1 mes para esta cobertura.</li>
+        <li>Cobertura para: frigorífico, lavadora, cocina eléctrica, horno (no microondas independiente), campana, lavavajillas, secadora y congelador.</li>
+        <li>Incluye desplazamiento del técnico y 2 horas de mano de obra por intervención.</li>
+        <li>Las reparaciones realizadas disponen de 6 meses de garantía.</li>
+        <li>Carencia de 30 días desde la activación del servicio para poder utilizar esta cobertura.</li>
+        <li>Si se superan las 2 horas de mano de obra o se necesitan piezas, el importe adicional corre a cargo del cliente.</li>
       </ul>
 
       <h3>Asesoramiento Energético (AE)</h3>
       <ul>
-        <li>Estudio del consumo y recomendaciones de eficiencia.</li>
-        <li>Carencia de 6 meses desde el alta para poder utilizarlo.</li>
+        <li>Análisis del consumo del hogar y recomendaciones de eficiencia energética.</li>
+        <li>Carencia de 6 meses desde el alta para poder solicitar el servicio.</li>
       </ul>
     `,
+
     exclusiones: `
       <ul>
-        <li>No compatible con Energy Wallet ni con Asistente Smart Empresas.</li>
-        <li>No cubre televisores ni calderas/termos eléctricos.</li>
-        <li>No cubre electrodomésticos en garantía ni equipos fuera del domicilio del punto de suministro.</li>
-        <li>La información de consumo es estimada y no equivale a un equipo de medida en tiempo real.</li>
+        <li>No compatible con Asistente Smart Empresas ni con determinados productos digitales que usan la misma lógica de consumo.</li>
+        <li>Quedan fuera de la cobertura de reparación: calderas, termos eléctricos, televisores y microondas independientes.</li>
+        <li>No se cubren electrodomésticos que se encuentren en periodo de garantía del fabricante.</li>
+        <li>No se cubren aparatos que no estén ubicados en el domicilio asociado al contrato de suministro.</li>
+        <li>Se excluyen daños por uso inadecuado, golpes externos, corrosión, oxidación o mantenimiento periódico del aparato.</li>
+        <li>La información de consumo no se ofrece en tiempo real, ya que depende de la validación de datos por parte de la distribuidora.</li>
       </ul>
     `,
+
     procesos: `
       <h3>Contratación</h3>
       <ul>
-        <li>Clientes residenciales con tarifa eléctrica 2.0TD.</li>
-        <li>Requiere contador con telegestión operativa.</li>
-        <li>Ofrecer ASH como opción principal y AS solo si el cliente no quiere ASH.</li>
+        <li>Cliente residencial con contrato de electricidad en Iberdrola y tarifa 2.0TD.</li>
+        <li>Potencia contratada inferior a 15 kW.</li>
+        <li>Es necesario disponer de contador inteligente telegestionado.</li>
+        <li>La contratación se realiza desde Front Office a través de IberU.</li>
       </ul>
 
       <h3>Uso del servicio</h3>
       <ul>
-        <li>Las consultas sobre consumo se gestionan vía App/Web; si hay incidencias, se deriva según procedimiento de Asistente Smart.</li>
-        <li>Para reparaciones de electrodomésticos, abrir solicitud indicando tipo de equipo, antigüedad aproximada y síntoma.</li>
-        <li>Para Asesoramiento Energético, confirmar que se ha superado la carencia de 6 meses antes de ofrecer la visita/estudio.</li>
+        <li>Una vez completado el perfil del hogar en la App, los datos de consumo comienzan a mostrarse en los días posteriores.</li>
+        <li>Las dudas sobre consumos o funcionamiento del servicio se resuelven guiando al cliente en el uso de la App/Web y, si procede, abriendo reclamación.</li>
+        <li>Las reparaciones de electrodomésticos se solicitan a través del teléfono de servicio, donde se gestiona la visita del técnico.</li>
+        <li>Para Asesoramiento Energético, se debe verificar que se ha superado la carencia de 6 meses antes de ofrecerlo.</li>
       </ul>
     `,
+
     fidelizacion: `
       <ul>
-        <li>Antes de tramitar una baja, recordar al cliente el coste de una reparación estándar (desplazamiento + mano de obra) sin servicio.</li>
-        <li>Aplicar, si procede, descuento de fidelización del 50% durante 12 meses sobre la cuota, siempre que no tenga descuentos de captación activos.</li>
-        <li>Si el cliente solo usa la parte de consumos, valorar migrar a ASH si le aporta más valor (hogar digital) o a otro servicio según perfil.</li>
+        <li>Recordar al cliente que una sola reparación con desplazamiento y mano de obra puede superar varios meses de cuota.</li>
+        <li>Si es elegible, se puede aplicar un descuento de fidelización del 50% durante 12 meses siempre que no tenga descuentos de captación activos.</li>
+        <li>En clientes que piden más valor (ciberseguridad, protección de pagos, etc.), plantear la migración a Asistente Smart Hogar.</li>
       </ul>
     `,
+
     ejemplos: `
       <ul>
-        <li>Cliente que sospecha que un electrodoméstico gasta demasiado y quiere identificarlo.</li>
-        <li>Cliente que ha tenido varias averías de lavadora o frigorífico y quiere evitar más gastos imprevistos.</li>
+        <li>Cliente que quiere saber qué electrodoméstico está incrementando su factura y busca desglose de consumos.</li>
+        <li>Cliente con varias averías en lavadora o frigorífico que quiere evitar asumir cada desplazamiento y mano de obra.</li>
+        <li>Cliente que recibe facturas más altas de lo esperado y necesita un informe detallado de su consumo.</li>
       </ul>
     `,
+
     argumentario: `
-      “Con Asistente Smart ve en detalle cómo y cuándo consume su energía, recibe recomendaciones para ahorrar y, además, tiene cubiertas
-      las averías de sus electrodomésticos más importantes con desplazamiento y mano de obra incluidos. Una sola reparación sin servicio puede
-      costar más que varios meses de cuota.”
+      “Con Asistente Smart el cliente ve cómo y cuándo consume, recibe avisos para ahorrar y, además, tiene cubiertas
+      las averías de los electrodomésticos de cocina más importantes con desplazamiento y 2 horas de mano de obra ya incluidas.
+      Una sola reparación sin servicio puede costar más que varios meses de cuota.”
     `
   }
-},
-{
+}{
   id: "ASH",
   family: "SSAA Asistente Smart",
   name: "ASH · Asistente Smart Hogar",
   price: "3,45 €/mes + impuestos",
-  carencia: "Carencia 1 mes para reparaciones de electrodomésticos; 1 mes en Hogar Digital salvo indicación distinta",
-  fidelizacionResumen: "Descuento fidelización 50% 12 meses o meses gratis según campañas de SSAA",
-  resumenCorto: "Servicio prioritario para residenciales: combina Asistente Smart + Hogar Digital + Protección de Pagos Esencial.",
+  carencia: "30 días para reparaciones · 1 mes en Hogar Digital · 6 meses para Asesoramiento Energético",
+  fidelizacionResumen: "50% 12 meses o meses gratis según campañas activas",
+
+  resumenCorto: "Servicio integral que combina información de consumos, reparación de electrodomésticos, Hogar Digital y Protección de Pagos Esencial.",
+
   sections: {
+
     info: `
-      Asistente Smart Hogar es la evolución del Asistente Smart Residencial. Incluye:
-      información detallada de consumos, reparación de electrodomésticos, Hogar Digital (ciberseguridad + soporte técnico)
-      y Servicio de Protección de Pagos Esencial.
-      Es el servicio de referencia que se debe ofrecer por defecto a clientes domésticos que cumplan requisitos.
+      Asistente Smart Hogar es la evolución del servicio Asistente Smart para clientes domésticos y
+      se ofrece como opción prioritaria. Incorpora cuatro bloques principales: análisis detallado
+      de consumos, reparación de electrodomésticos de cocina, servicios de Hogar Digital y la
+      cobertura del Servicio de Protección de Pagos Esencial.
+      Requiere disponer de contador inteligente telegestionado y potencia contratada inferior a 15 kW.
     `,
+
     coberturas: `
       <h3>Información detallada de consumos</h3>
       <ul>
-        <li>Acceso directo desde la App Iberdrola Clientes.</li>
-        <li>Consumo desglosado por electrodomésticos y categorías.</li>
-        <li>Evolución en € y kWh, con gráficos y comparativas.</li>
-        <li>Notificaciones sobre consumos anómalos y consejos de ahorro.</li>
+        <li>Consumo desglosado por electrodomésticos y categorías dentro de la App Iberdrola Clientes.</li>
+        <li>Histórico en euros y kWh y comparativas con periodos anteriores.</li>
+        <li>Notificaciones automáticas por desviaciones de consumo, optimización de potencia o cambios recomendados.</li>
+        <li>Informes periódicos de consumo enviados por correo electrónico.</li>
       </ul>
 
-      <h3>Reparación de electrodomésticos</h3>
+      <h3>Reparación de electrodomésticos de cocina</h3>
       <ul>
-        <li>Frigorífico, lavadora, cocina eléctrica, horno, campana, lavavajillas, secadora, congelador.</li>
-        <li>Cubre desplazamiento y 2 horas de mano de obra por intervención.</li>
-        <li>Sin límite de intervenciones, según condiciones del servicio.</li>
-        <li>Atención en un máximo de 48 horas laborables.</li>
-        <li>Excluye calderas, termos eléctricos y televisores.</li>
-        <li>Carencia de 30 días para reparación de electrodomésticos.</li>
+        <li>Electrodomésticos cubiertos: frigorífico, lavadora, cocina eléctrica, horno (no microondas independiente),
+            campana extractora, lavavajillas, secadora y congelador.</li>
+        <li>Incluye desplazamiento y 2 horas de mano de obra por intervención.</li>
+        <li>Las reparaciones incluyen 6 meses de garantía.</li>
+        <li>Si se requieren piezas o más horas, el coste adicional lo asume el cliente.</li>
+        <li>Carencia de 30 días para esta cobertura.</li>
       </ul>
 
       <h3>Hogar Digital</h3>
       <ul>
-        <li>Servicio de ciberseguridad: antivirus, control parental, protección bancaria, protección de identidad, informe de presencia en Internet, borrado digital.</li>
-        <li>Soporte digital remoto 24h para ordenadores y dispositivos conectados, con hasta 2 visitas presenciales al año si no puede resolverse online.</li>
-        <li>Soporte IoT (hogar conectado) y optimización de dispositivos y conectividad.</li>
+        <li>Servicios de ciberseguridad: antivirus, control parental, protección de identidad y banca online.</li>
+        <li>Informes sobre presencia digital y solicitudes de borrado de contenido.</li>
+        <li>Soporte técnico remoto 24h para ordenadores y dispositivos conectados.</li>
+        <li>Hasta 2 visitas presenciales anuales si la incidencia no puede resolverse de forma remota.</li>
+        <li>Posibilidad de configuración y optimización de dispositivos conectados en el hogar.</li>
+        <li>Carencia de 1 mes para esta prestación.</li>
       </ul>
 
-      <h3>Servicio de Protección de Pagos Esencial</h3>
+      <h3>Asesoramiento Energético (AE)</h3>
       <ul>
-        <li>Coberturas básicas en caso de determinadas contingencias (incapacidad, desempleo, fallecimiento, etc.) según perfil del cliente.</li>
+        <li>Análisis detallado del consumo del hogar con recomendaciones personalizadas de eficiencia.</li>
+        <li>Carencia de 6 meses desde la contratación.</li>
+      </ul>
+
+      <h3>Servicio de Protección de Pagos Esencial (SPP Esencial)</h3>
+      <ul>
+        <li>Incluye las coberturas básicas en caso de incapacidad, fallecimiento, hospitalización o desempleo según tipología del cliente.</li>
+        <li>Se activa automáticamente al contratar ASH.</li>
       </ul>
     `,
+
     exclusiones: `
       <ul>
-        <li>Electrodomésticos en garantía del fabricante.</li>
-        <li>Equipos no ubicados habitualmente en el domicilio del suministro.</li>
-        <li>Calderas, termos eléctricos y televisores no están cubiertos por la parte de reparación de electrodomésticos.</li>
-        <li>Hogar Digital no cubre daños físicos en dispositivos, solo software/servicio.</li>
-        <li>No compatible con Energy Wallet ni con AS Empresas.</li>
+        <li>No compatible con Asistente Smart Empresas ni con productos que utilicen sistemas equivalentes de análisis de consumo.</li>
+        <li>Electrodomésticos excluidos: calderas, termos eléctricos, televisores y microondas independientes.</li>
+        <li>No se cubren aparatos en garantía del fabricante.</li>
+        <li>No se cubren aparatos situados fuera del domicilio del suministro.</li>
+        <li>No se cubren reparaciones por golpes, daños estéticos, corrosión, oxidación o mantenimiento periódico.</li>
+        <li>Hogar Digital no cubre daños físicos en los dispositivos, únicamente servicio y soporte.</li>
       </ul>
     `,
+
     procesos: `
       <h3>Contratación</h3>
       <ul>
-        <li>Clientes residenciales con tarifa eléctrica 2.0TD.</li>
-        <li>Potencia contratada ≤ 15 kW.</li>
-        <li>Requiere contador con telegestión operativa.</li>
-        <li>Ofrecer ASH como opción principal. Solo si el cliente no quiere incluir Hogar Digital y SPP, valorar otras alternativas.</li>
+        <li>Cliente residencial con contrato de electricidad activo en Iberdrola y tarifa 2.0TD.</li>
+        <li>Potencia contratada inferior a 15 kW y contador inteligente operativo.</li>
+        <li>Es el servicio que debe ofrecerse por defecto a clientes domésticos dentro de SSAA.</li>
+        <li>Carencias: 30 días para reparaciones, 1 mes para Hogar Digital y 6 meses para AE.</li>
       </ul>
 
       <h3>Uso del servicio</h3>
       <ul>
-        <li>Reparaciones: abrir parte indicando electrodoméstico, antigüedad, síntoma y confirmar carencia superada.</li>
-        <li>Hogar Digital: el cliente accede a hogardigitaliberdrola.es para activar/usar coberturas.</li>
-        <li>Consultas de consumos: guiar al cliente en el uso de la App y resolver dudas de interpretación.</li>
+        <li>Los consumos comienzan a mostrarse una vez completado el perfil del hogar en la App.</li>
+        <li>Las incidencias relacionadas con el análisis de consumo se gestionan desde Front Office.</li>
+        <li>Las reparaciones se solicitan a través del canal telefónico habilitado.</li>
+        <li>Hogar Digital se activa a través del portal correspondiente con las credenciales enviadas al cliente.</li>
+        <li>Para AE, se debe verificar previamente la carencia de 6 meses.</li>
       </ul>
     `,
+
     fidelizacion: `
       <ul>
-        <li>Recordar que integra varios servicios en una sola cuota (consumo + reparaciones + digital + protección de pagos).</li>
-        <li>Si el cliente ve el precio alto pero reconoce el valor, ofrecer 50% 12 meses o meses gratis según política de fidelización y campañas.</li>
-        <li>Si el cliente no utiliza Hogar Digital, explorar bajar a un producto más simple (p.ej. solo Asistente Smart) manteniendo parte del valor.</li>
+        <li>Destacar que integra varios servicios en uno solo: consumos, reparaciones, soporte digital y protección de pagos.</li>
+        <li>Si el cliente es elegible, se puede aplicar un descuento del 50% durante 12 meses o las campañas vigentes.</li>
+        <li>Si el cliente no usa Hogar Digital, se puede valorar la migración al servicio Asistente Smart estándar.</li>
       </ul>
     `,
+
     ejemplos: `
       <ul>
-        <li>Familias con varios electrodomésticos y uso intensivo de internet y dispositivos conectados.</li>
-        <li>Clientes preocupados por ciberseguridad y protección de menores en internet.</li>
+        <li>Familias con uso intensivo de electrodomésticos y dispositivos conectados.</li>
+        <li>Clientes que necesitan apoyo digital frecuente para ordenadores u otros equipos tecnológicos.</li>
+        <li>Clientes que quieren controlar su consumo y recibir avisos ante incrementos inesperados.</li>
       </ul>
     `,
+
     argumentario: `
-      “Con Asistente Smart Hogar en una sola cuota tiene:
-      control de su consumo eléctrico, reparaciones de los electrodomésticos más importantes sin pagar desplazamiento ni mano de obra,
-      protección digital para toda la familia y un seguro que le ayuda a pagar las facturas en situaciones complicadas. Si sumáramos todos
-      estos servicios por separado, el coste sería muy superior.”
+      “Asistente Smart Hogar combina en una única cuota control de consumo, reparaciones,
+      servicios de ciberseguridad y soporte digital, junto con una cobertura que ayuda al
+      cliente en situaciones económicas imprevistas. El valor conjunto de estas prestaciones
+      supera con creces el coste mensual del servicio.”
     `
   }
 },
@@ -1613,6 +2012,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderFamilyButtons();
   renderCards();
 });
+
 
 
 
