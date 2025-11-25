@@ -35,7 +35,9 @@ const PRODUCTS = [
       <h3>Urgencias eléctricas</h3>
       <ul>
         <li>Atención urgente 24/7.</li>
-        <li>Desplazamiento, mano de obra y materiales incluidos hasta el límite anual fijado (“consultar ficha interna”).</li>
+        <li>Desplazamiento, mano de obra y materiales incluidos hasta el límite anual fijado en 300€ con opción a pago de sustitución por reparación inviable de
+hasta 300€ en función de la antigüedad, a decisión del técnico.
+.</li>
       </ul>
       <h3>Reparación de electrodomésticos</h3>
       <ul>
@@ -99,7 +101,7 @@ const PRODUCTS = [
   id: "PEH",
   family: "PYS Protección",
   name: "PEH · Protección Eléctrica Hogar",
-  price: "Consultar precio vigente",
+  price: "6,95 €/mes + impuestos",
   carencia: "1 mes",
   fidelizacionResumen: "50% 12 meses si elegible",
   resumenCorto: "Cobertura básica de urgencias y averías de instalación eléctrica.",
@@ -110,9 +112,9 @@ const PRODUCTS = [
     coberturas: `
       <h3>Instalación eléctrica</h3>
       <ul>
-        <li>Urgencias eléctricas.</li>
+        <li>Incluye desplazamiento, mano de obra y materiales hasta un límite de 550€ anuales sin limite de intervenciones.</li>
         <li>Reparaciones simples con materiales hasta límite anual.</li>
-        <li>Desplazamiento y mano de obra incluidos.</li>
+        <li>Atención en menos de 3 horas los 365 días del año excluyendo los garajes, trasteros, anexos, piscinas e iluminación exterior.</li>
       </ul>
     `,
     exclusiones: `
@@ -240,92 +242,6 @@ const PRODUCTS = [
   }
 },
 {
-  id: "SPEH",
-  family: "PYS Protección",
-  name: "SPEH · Servicio Protección Eléctrica Hogar",
-  price: "Consultar precio vigente",
-  carencia: "1 mes",
-  fidelizacionResumen: "50% 12 meses si elegible",
-  resumenCorto: "Averías eléctricas y asistencia técnica interior.",
-  sections: {
-    info: `
-      Servicio clásico de protección interior de la instalación eléctrica.
-    `,
-    coberturas: `
-      <ul>
-        <li>Reparación de averías eléctricas interiores.</li>
-        <li>Materiales incluidos hasta límite anual.</li>
-      </ul>
-    `,
-    exclusiones: `
-      <ul>
-        <li>Instalaciones antiguas sin boletín.</li>
-      </ul>
-    `,
-    procesos: `
-      <ul>
-        <li>Apertura de avería eléctrica → proveedor asociado.</li>
-      </ul>
-    `,
-    fidelizacion: `
-      <ul>
-        <li>Ofrecer paso a PEH si quiere algo más reciente.</li>
-      </ul>
-    `,
-    ejemplos: `
-      <ul>
-        <li>Fallo de interruptores y enchufes.</li>
-      </ul>
-    `,
-    argumentario: `
-      “SPEH evita asumir coste de mano de obra en reparaciones interiores.”
-    `
-  }
-},
-{
-  id: "SPEH_PLUS",
-  family: "PYS Protección",
-  name: "SPEH+ · Servicio Protección Eléctrica Hogar Plus",
-  price: "Consultar precio vigente",
-  carencia: "1 mes",
-  fidelizacionResumen: "50% 12 meses",
-  resumenCorto: "SPEH con ampliación de materiales y mano de obra.",
-  sections: {
-    info: `
-      Versión ampliada de SPEH con mayor cobertura económica.
-    `,
-    coberturas: `
-      <ul>
-        <li>Reparaciones eléctricas ampliadas.</li>
-        <li>Materiales incluidos hasta un límite superior.</li>
-      </ul>
-    `,
-    exclusiones: `
-      <ul>
-        <li>Instalaciones manipuladas.</li>
-      </ul>
-    `,
-    procesos: `
-      <ul>
-        <li>Gestión estándar avería eléctrica.</li>
-      </ul>
-    `,
-    fidelizacion: `
-      <ul>
-        <li>Argumentar ampliación económica en reparaciones.</li>
-      </ul>
-    `,
-    ejemplos: `
-      <ul>
-        <li>Puntos de luz y circuitos derivados.</li>
-      </ul>
-    `,
-    argumentario: `
-      “SPEH+ amplía materiales y mano de obra frente a SPEH básico.”
-    `
-  }
-},
-{
   id: "TAL",
   family: "PYS Protección",
   name: "TAL · Tu Asesor Legal",
@@ -373,7 +289,7 @@ const PRODUCTS = [
   id: "PMG",
   family: "PYS Gas",
   name: "PMG · Pack Mantenimiento Gas",
-  price: "Consultar precio vigente",
+  price: "9,95 €/mes + impuestos",
   carencia: "15 días",
   fidelizacionResumen: "50% 12 meses si es elegible",
   resumenCorto: "Revisión anual de gas + asistencia en averías con mano de obra y desplazamiento incluidos.",
@@ -448,7 +364,7 @@ const PRODUCTS = [
   id: "AG",
   family: "PYS Gas",
   name: "AG · Asistencia Gas",
-  price: "Consultar precio vigente",
+  price: "5,95€/mes + impuestos",
   carencia: "15 días",
   fidelizacionResumen: "50% 12 meses",
   resumenCorto: "Asistencia urgente en instalación de gas con desplazamiento y mano de obra incluidos.",
@@ -498,7 +414,7 @@ const PRODUCTS = [
   id: "PG",
   family: "PYS Gas",
   name: "PG · Protección Gas",
-  price: "Consultar precio vigente",
+  price: "4,95€/mes + impuestos",
   carencia: "15 días",
   fidelizacionResumen: "50% 12 meses",
   resumenCorto: "Cobertura ampliada de gas: instalación + caldera + mano de obra + materiales.",
@@ -1389,6 +1305,116 @@ const PRODUCTS = [
       para estar cómoda todo el año. Es una inversión en confort y en ahorro a medio plazo.”
     `
   }
+},
+  {
+  id: "PEH_RAC",
+  family: "PYS Protección",
+  name: "PEH/PEH+ R&C · Protección Repair & Care",
+  price: "Consultar precio vigente",
+  carencia: "Sin carencia",
+  fidelizacionResumen: "No tiene promociones ni descuentos. Permanencia obligatoria de 1 año.",
+  resumenCorto: "Versión Repair & Care de PEH/PEH+: 1ª reparación con descuento directo de 72,6 € (IVA incluido) y sin carencia.",
+  sections: {
+    info: `
+      PEH/PEH+ Repair & Care es una versión especial del servicio, pensada únicamente para clientes que ya tienen una avería
+      en su instalación eléctrica o electrodomésticos y NO tienen ningún servicio activo que la cubra. Permite contratar el servicio
+      sin carencia e incluye un descuento directo de 72,6 € (IVA incluido) aplicado en la primera reparación tras el alta, siempre
+      que esta se solicite dentro de los 3 primeros días.
+    `,
+    coberturas: `
+      <ul>
+        <li>Mismas coberturas que PEH/PEH+ estándar.</li>
+        <li>Descuento directo de 72,6 € (IVA incluido) en la primera reparación tras el alta.</li>
+        <li>Aplicación del descuento si la avería se comunica en los 3 primeros días desde la contratación.</li>
+        <li>Sin carencia: la cobertura es inmediata.</li>
+      </ul>
+    `,
+    exclusiones: `
+      <ul>
+        <li>Solo puede contratarse cuando el cliente ya tiene una avería sin servicio activo que la cubra.</li>
+        <li>No incluye descuentos ni promociones en energía.</li>
+        <li>No se aplica el descuento si no se solicita la reparación dentro de los primeros 3 días.</li>
+      </ul>
+    `,
+    procesos: `
+      <ul>
+        <li>Confirmar que el cliente tiene avería.</li>
+        <li>Validar que no existe otro servicio activo que pudiera cubrir la reparación.</li>
+        <li>Aclarar que el servicio tiene permanencia de 1 año.</li>
+        <li>Recordar que si se da de baja antes del año, se factura al cliente el descuento aplicado (72,6 €).</li>
+      </ul>
+    `,
+    fidelizacion: `
+      <ul>
+        <li>Recordar que el servicio permite cubrir la avería inmediata sin carencia.</li>
+        <li>Comparar el coste de una reparación eléctrica externa con la cobertura + descuento incluido.</li>
+      </ul>
+    `,
+    ejemplos: `
+      <ul>
+        <li>Cliente con avería eléctrica que no tiene PEH/PEH+.</li>
+        <li>Derivaciones, cortocircuitos, enchufes que no funcionan.</li>
+      </ul>
+    `,
+    argumentario: `
+      “Este servicio está diseñado justo para este tipo de averías inesperadas: lo contratas ahora SIN carencia,
+      cubre la intervención y además se descuenta 72,6 € de la reparación si la solicita en los primeros tres días.”
+    `
+  }
+},
+{
+  id: "PMG_RAC",
+  family: "PYS Gas",
+  name: "PMG R&C · Mantenimiento Repair & Care",
+  price: "Consultar precio vigente",
+  carencia: "Sin carencia",
+  fidelizacionResumen: "No tiene promociones ni descuentos. Permanencia obligatoria de 1 año.",
+  resumenCorto: "Versión Repair & Care de PMG: elimina la carencia y permite reparar la avería actual con cobertura inmediata.",
+  sections: {
+    info: `
+      PMG Repair & Care es una versión especial para clientes con avería en caldera o instalación de gas que no tienen
+      ningún servicio activo de mantenimiento. Permite contratarlo sin carencia y cubrir la avería inmediatamente.
+      Tiene permanencia de un año y elimina la carencia tradicional de 15 días del PMG estándar.
+    `,
+    coberturas: `
+      <ul>
+        <li>Mismas coberturas que PMG estándar: revisión anual + asistencia de caldera + instalación de gas.</li>
+        <li>Sin carencia: cobertura inmediata desde el alta.</li>
+        <li>Materiales y mano de obra según límites de PMG estándar.</li>
+      </ul>
+    `,
+    exclusiones: `
+      <ul>
+        <li>Solo puede contratarse cuando existe una avería actual y ningún servicio la está cubriendo.</li>
+        <li>No tiene promociones ni descuentos en gas.</li>
+        <li>Permanencia obligatoria de 1 año: si se da de baja antes, aplica regularización del servicio.</li>
+      </ul>
+    `,
+    procesos: `
+      <ul>
+        <li>Confirmar que hay avería en caldera o circuito.</li>
+        <li>Validar que el cliente no tiene PMG/AG/PG/otros activos.</li>
+        <li>Aclarar que se elimina la carencia de 15 días habitual del PMG.</li>
+        <li>Recordar que la baja anticipada implica regularización según condiciones.</li>
+      </ul>
+    `,
+    fidelizacion: `
+      <ul>
+        <li>Es el servicio más útil cuando la avería ya existe y el cliente quiere resolverla sin esperar carencia.</li>
+        <li>Recordar el coste real de una reparación de caldera sin servicio (normalmente alto).</li>
+      </ul>
+    `,
+    ejemplos: `
+      <ul>
+        <li>Caldera sin calentar, sin presión o con errores de seguridad.</li>
+        <li>Fuga o fallo en la instalación de gas del domicilio.</li>
+      </ul>
+    `,
+    argumentario: `
+      “PMG Repair & Care está creado para este caso concreto: el cliente tiene una avería ahora mismo y quiere resolverla
+      sin esperar la carencia normal. Se repara desde el primer día y además obtiene revisión y mantenimiento durante un año.”
+    `
+  }
 }
 ];
 
@@ -1538,4 +1564,5 @@ document.addEventListener("DOMContentLoaded", () => {
   renderFamilyButtons();
   renderCards();
 });
+
 
