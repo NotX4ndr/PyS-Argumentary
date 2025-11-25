@@ -773,49 +773,109 @@ const PRODUCTS = [
   id: "AG",
   family: "PYS Gas",
   name: "AG · Asistencia Gas",
-  price: "5,95€/mes + impuestos",
+  price: "5,95 €/mes + impuestos",
   carencia: "15 días",
-  fidelizacionResumen: "50% 12 meses",
-  resumenCorto: "Asistencia urgente en instalación de gas con desplazamiento y mano de obra incluidos.",
+  fidelizacionResumen: "50% 12 meses si elegible",
+  resumenCorto: "Asistencia en averías de instalación de gas, aparatos de gas y circuito hidráulico, con desplazamiento incluido y coberturas económicas en mano de obra y materiales.",
+
   sections: {
+
     info: `
-      AG es un servicio orientado a dar soporte rápido frente a incidencias en la instalación de gas, sin incluir mantenimiento preventivo. Ideal para clientes que solo necesitan intervenciones puntuales.
+      Asistencia Gas (AG) es un servicio orientado a resolver averías puntuales de la instalación individual de gas,
+      aparatos de gas domésticos y el circuito hidráulico de calefacción visto. No incluye mantenimiento preventivo
+      ni revisión anual, por lo que está pensado para clientes que solo necesitan cobertura frente a incidencias.
+      El contrato es anual con carencia de 15 días.
     `,
+
     coberturas: `
+      <h3>Averías cubiertas</h3>
       <ul>
-        <li>Asistencia urgente por fugas o cortes.</li>
-        <li>Desplazamiento incluido 100%.</li>
-        <li>Mano de obra incluida hasta límite anual.</li>
-        <li>Materiales incluidos hasta límite económico de proveedor.</li>
+        <li>Incluye <strong>hasta 2 averías al año</strong>.</li>
+        <li>En cada una de las dos primeras averías:
+          <ul>
+            <li>Desplazamiento del técnico incluido.</li>
+            <li>Hasta <strong>3 horas de mano de obra</strong>.</li>
+            <li>Hasta <strong>50 € en materiales</strong> (importe sin IVA).</li>
+          </ul>
+        </li>
+        <li>A partir de la 3ª avería:
+          <ul>
+            <li>Desplazamiento gratuito.</li>
+            <li>Mano de obra y materiales a cargo del cliente.</li>
+          </ul>
+        </li>
+      </ul>
+
+      <h3>Ámbito de la prestación</h3>
+      <ul>
+        <li>Instalación receptora individual de gas: tuberías vistas, llaves, conexiones, estanquidad.</li>
+        <li>Aparatos de gas de potencia inferior a 70 kW:
+          calentadores, calderas y aparatos de cocción doméstica
+          (excluye cocinas y vitrocerámicas de gas).</li>
+        <li>Circuito hidráulico de calefacción visto: radiadores, llaves, purgadores, detentores.</li>
+      </ul>
+
+      <h3>Plazos de atención</h3>
+      <ul>
+        <li>El técnico acude en un <strong>máximo de 24 horas</strong> desde la apertura de la solicitud.</li>
       </ul>
     `,
+
     exclusiones: `
       <ul>
-        <li>No incluye revisión anual.</li>
-        <li>No cubre caldera completa (solo instalación).</li>
-        <li>Daños estructurales no vinculados a gas.</li>
+        <li>No incluye revisión anual de mantenimiento (sin visita preventiva).</li>
+        <li>No cubre cocinas ni vitrocerámicas de gas.</li>
+        <li>No cubre elementos ocultos o no accesibles de la instalación.</li>
+        <li>No cubre daños por mal uso, corrosión, golpes o defectos estructurales.</li>
+        <li>No cubre aparatos con potencia superior a 70 kW ni instalaciones industriales/comerciales.</li>
+        <li>Fugas peligrosas deben gestionarse con la distribuidora (obligatorio por normativa).</li>
       </ul>
     `,
+
     procesos: `
+      <h3>Alta</h3>
       <ul>
-        <li>Identificar si es instalación o caldera (si es caldera → PMG/PG).</li>
-        <li>Clasificar si existe riesgo para activar urgencias 24/7.</li>
+        <li>Carencia de 15 días desde la contratación.</li>
+        <li>Contratable para suministros de gas RL1, RL2 y RL3 asociados a IBERCLI.</li>
+      </ul>
+
+      <h3>Gestión de averías</h3>
+      <ul>
+        <li>Las solicitudes se gestionan en Opera (no se transfieren al proveedor).</li>
+        <li>Clasificar la avería como: instalación / aparato de gas / circuito hidráulico.</li>
+        <li>En caso de fuga con riesgo: instruir al cliente a contactar con la distribuidora.</li>
+        <li>Tipos de avería frecuentes: falta de gas (regulador), fuga leve en aparato, escape de agua en caldera,
+            calentador que no enciende, fallo de calefacción, goteo de radiadores.</li>
+      </ul>
+
+      <h3>Baja</h3>
+      <ul>
+        <li>Regularización solo si el cliente ha hecho uso del servicio.</li>
+        <li>Baja automática si el cliente cambia de comercializadora de gas.</li>
       </ul>
     `,
+
     fidelizacion: `
       <ul>
-        <li>Comparar con precio de desplazamiento de un técnico independiente.</li>
-        <li>Ofrecer subida a PMG si quiere revisión anual.</li>
+        <li>Recordar que dos averías con mano de obra y materiales suelen costar más que la cuota anual.</li>
+        <li>Si el cliente quiere prevención o revisión anual: ofrecer PMG.</li>
+        <li>Aplicar 50% 12 meses si el cliente es elegible.</li>
       </ul>
     `,
+
     ejemplos: `
       <ul>
-        <li>Olor a gas o pérdida de presión.</li>
-        <li>Cortes de suministro internos.</li>
+        <li>Caldera que no arranca o falla intermitentemente.</li>
+        <li>Fuga leve en la instalación individual de gas.</li>
+        <li>Radiadores que pierden agua o no calientan.</li>
+        <li>Calentador que no enciende o no aporta ACS.</li>
       </ul>
     `,
+
     argumentario: `
-      “Una intervención de instalación de gas sin servicio puede costar más que meses del pack AG.”
+      “AG cubre dos averías al año con desplazamiento, mano de obra y materiales incluidos.
+      Una sola intervención sin servicio puede costar más que varios meses de cuota, por lo que es
+      la opción ideal si el cliente quiere protección económica ante incidencias puntuales.”
     `
   }
 },
@@ -823,60 +883,110 @@ const PRODUCTS = [
   id: "PG",
   family: "PYS Gas",
   name: "PG · Protección Gas",
-  price: "4,95€/mes + impuestos",
+  price: "4,95 €/mes + impuestos",
   carencia: "15 días",
-  fidelizacionResumen: "50% 12 meses",
-  resumenCorto: "Cobertura ampliada de gas: instalación + caldera + mano de obra + materiales.",
+  fidelizacionResumen: "50% 12 meses si elegible",
+
+  resumenCorto: "Cobertura de averías en instalación de gas, aparatos y circuito hidráulico, con 2 intervenciones al año que incluyen desplazamiento, mano de obra y materiales.",
+
   sections: {
+
     info: `
-      PG es la cobertura más completa en el área de gas. Incluye tanto la instalación interior como la caldera, cubriendo mantenimiento correctivo con un nivel económico superior al de AG.
+      Protección Gas (PG) es un servicio orientado a resolver averías tanto en la instalación individual de gas
+      como en aparatos domésticos de gas y el circuito hidráulico de calefacción visto. Comparte el mismo nivel
+      económico de cobertura que PMG, pero sin revisión anual, por lo que es ideal para clientes que quieren
+      protección amplia frente a incidencias sin incluir mantenimiento preventivo.
     `,
+
     coberturas: `
-      <h3>Instalación de gas</h3>
+      <h3>Averías cubiertas</h3>
       <ul>
-        <li>Reparaciones de conducción.</li>
-        <li>Desplazamiento y mano de obra incluidos.</li>
-        <li>Materiales incluidos hasta límite ampliado.</li>
+        <li>Incluye <strong>hasta 2 averías al año</strong>.</li>
+        <li>En cada avería cubierta:
+          <ul>
+            <li>Desplazamiento incluido.</li>
+            <li>Hasta <strong>3 horas de mano de obra</strong>.</li>
+            <li>Hasta <strong>50 € en materiales</strong> (importe sin IVA).</li>
+          </ul>
+        </li>
+        <li>A partir de la 3ª avería:
+          <ul>
+            <li>Desplazamiento incluido.</li>
+            <li>Mano de obra y materiales a cargo del cliente.</li>
+          </ul>
+        </li>
       </ul>
 
-      <h3>Caldera</h3>
+      <h3>Ámbito de actuación</h3>
       <ul>
-        <li>Reparaciones de componentes internos.</li>
-        <li>Ajustes y purgado.</li>
-        <li>Materiales y piezas cubiertas hasta tope técnico anual.</li>
-      </ul>
-
-      <h3>Asistencia urgente</h3>
-      <ul>
-        <li>Fugas o riesgo → intervención inmediata.</li>
+        <li><strong>Instalación de gas visible:</strong> tuberías, llaves, conexiones y estanquidad.</li>
+        <li><strong>Aparatos de gas</strong> de potencia inferior a 70 kW:
+          <ul>
+            <li>Calderas</li>
+            <li>Calentadores</li>
+            <li>Aparatos de cocción doméstica (excepto cocinas/vitrocerámicas de gas)</li>
+          </ul>
+        </li>
+        <li><strong>Circuito hidráulico de calefacción visto:</strong> radiadores, llaves, purgadores, detentores.</li>
+        <li>Cubre una o dos calderas si existieran.</li>
+        <li>Atención en un máximo de <strong>24 horas</strong> desde la solicitud.</li>
       </ul>
     `,
+
     exclusiones: `
       <ul>
-        <li>Calderas con antigüedad superior al límite.</li>
-        <li>Instalaciones sin normativa.</li>
+        <li>Instalaciones con aparatos de gas superiores a 70 kW.</li>
+        <li>Elementos no visibles u ocultos de la instalación.</li>
+        <li>Cocinas y vitrocerámicas de gas.</li>
+        <li>Daños por mal uso, golpes, corrosión o defectos estructurales.</li>
+        <li>Instalaciones comerciales o industriales.</li>
+        <li>Averías por heladas, inundaciones, incendios o causas de fuerza mayor.</li>
+        <li>No garantiza reparación en aparatos con antigüedad superior a 10 años.</li>
       </ul>
     `,
+
     procesos: `
+      <h3>Alta</h3>
       <ul>
-        <li>Alta: verificar caldera y datos del fabricante.</li>
-        <li>Uso: diferenciar instalación vs caldera.</li>
+        <li>Carencia de 15 días desde la contratación.</li>
+        <li>Válido para tarifas RL1, RL2 y RL3 asociadas a Iberdrola.</li>
+      </ul>
+
+      <h3>Gestión de averías</h3>
+      <ul>
+        <li>Las solicitudes se gestionan a través de Opera; no se transfieren al proveedor.</li>
+        <li>Clasificar la avería entre instalación / aparato de gas / circuito hidráulico.</li>
+        <li>Si existe fuga con riesgo inminente, debe actuarse con distribuidora según normativa.</li>
+      </ul>
+
+      <h3>Baja</h3>
+      <ul>
+        <li>Regularización si el cliente ha hecho uso del servicio en el periodo.</li>
+        <li>Baja automática si el cliente cambia de comercializadora de gas.</li>
       </ul>
     `,
+
     fidelizacion: `
       <ul>
-        <li>Comparar coste habitual de reparaciones de caldera.</li>
-        <li>Ofrecer bajada a PMG si el cliente quiere reducir cuota.</li>
+        <li>Recordar que una sola reparación de caldera o de instalación puede superar con facilidad el coste anual del servicio.</li>
+        <li>Si el cliente quiere incluir revisión anual, ofrecer migración a PMG.</li>
+        <li>Aplicar descuento de fidelización del 50% si cumple condiciones.</li>
       </ul>
     `,
+
     ejemplos: `
       <ul>
-        <li>Fallos en quemador.</li>
-        <li>Averías recurrentes en tuberías internas.</li>
+        <li>Caldera que no arranca, pierde presión o muestra códigos de error.</li>
+        <li>Radiadores que gotean o no calientan por fallo de circuitos visibles.</li>
+        <li>Fuga leve en la instalación individual de gas.</li>
+        <li>Averías en calentadores o quemadores domésticos.</li>
       </ul>
     `,
+
     argumentario: `
-      “PG cubre tanto instalación como caldera, evitando gastos imprevistos de reparaciones de alto coste.”
+      “PG cubre dos averías al año en instalación y aparatos de gas con desplazamiento, mano de obra y materiales incluidos.
+      Una reparación externa de caldera o instalación suele superar el valor anual del servicio, por lo que ofrece un ahorro y
+      una protección económica significativa.”
     `
   }
 },
@@ -1864,6 +1974,264 @@ const PRODUCTS = [
       sin esperar la carencia normal. Se repara desde el primer día y además obtiene revisión y mantenimiento durante un año.”
     `
   }
+},
+  {
+  id: "SPP_PLUS",
+  family: "PYS Protección",
+  name: "SPP Plus · Protección de Pagos Plus",
+  price: "Cuota según contrato",
+  carencia: "Sin carencia",
+  fidelizacionResumen: "No aplica fidelización",
+  resumenCorto: "Seguro que cubre pagos de suministros ante situaciones económicas adversas como desempleo, incapacidad o fallecimiento.",
+
+  sections: {
+    info: `
+      SPP Plus es un seguro orientado a proteger al cliente frente a la imposibilidad de afrontar los pagos de sus suministros.
+      Ofrece coberturas ampliadas respecto al SPP Esencial, incluyendo mayores indemnizaciones y más supuestos protegidos.
+    `,
+    coberturas: `
+      <ul>
+        <li>Desempleo involuntario: indemnización según contrato.</li>
+        <li>Incapacidad temporal o permanente.</li>
+        <li>Fallecimiento.</li>
+        <li>Hospitalización.</li>
+        <li>Pago directo sobre el contrato asegurado para cubrir cuotas o facturas.</li>
+      </ul>
+    `,
+    exclusiones: `
+      <ul>
+        <li>Situaciones voluntarias como baja voluntaria o despidos pactados.</li>
+        <li>Enfermedades preexistentes no declaradas.</li>
+        <li>Siniestros ocurridos antes de la contratación.</li>
+      </ul>
+    `,
+    procesos: `
+      <ul>
+        <li>Contratación asociada a un suministro activo.</li>
+        <li>Declaración de siniestro directamente con la aseguradora.</li>
+        <li>Documentación requerida según tipo de prestación (parte médico, certificado de empresa, etc.).</li>
+      </ul>
+    `,
+    fidelizacion: `
+      <ul>
+        <li>No aplica descuentos comerciales ya que es un seguro.</li>
+        <li>En caso de baja, recordar el valor de las coberturas y sus importes.</li>
+      </ul>
+    `,
+    ejemplos: `
+      <ul>
+        <li>Cliente que entra en situación de desempleo y necesita cubrir las próximas cuotas.</li>
+        <li>Cliente hospitalizado durante varios días.</li>
+      </ul>
+    `,
+    argumentario: `
+      “SPP Plus ofrece una protección económica real para momentos inesperados. En situaciones difíciles,
+      permite que el cliente mantenga sus servicios esenciales sin preocuparse por los pagos.”
+    `
+  }
+},
+{
+  id: "PACK_T_GAS",
+  family: "PYS Gas",
+  name: "Pack Tranquilidad Gas",
+  price: "Cuota según contrato",
+  carencia: "Según póliza",
+  fidelizacionResumen: "No aplica fidelización",
+  resumenCorto: "Pack asegurador que cubre averías y asistencia sobre la instalación de gas del hogar.",
+
+  sections: {
+    info: `
+      Pack Tranquilidad Gas es un seguro que protege al cliente frente a averías o incidencias en la instalación
+      de gas, ofreciendo asistencia técnica y cobertura económica para reparaciones.
+    `,
+    coberturas: `
+      <ul>
+        <li>Asistencia técnica por avería en instalación de gas.</li>
+        <li>Cobertura económica para reparaciones según límite de póliza.</li>
+        <li>Atención urgente en riesgos por fuga o corte.</li>
+      </ul>
+    `,
+    exclusiones: `
+      <ul>
+        <li>No cubre calderas o aparatos de combustión (solo instalación).</li>
+        <li>No cubre daños estructurales ajenos al gas.</li>
+        <li>No cubre instalaciones no homologadas o manipuladas.</li>
+      </ul>
+    `,
+    procesos: `
+      <ul>
+        <li>El cliente contacta con el teléfono de asistencia aseguradora.</li>
+        <li>Un técnico acude según prioridad indicada por el nivel de riesgo.</li>
+        <li>La reparación se cubre dentro de los límites económicos del contrato.</li>
+      </ul>
+    `,
+    fidelizacion: `
+      <ul>
+        <li>Recordar que la asistencia de gas externa suele ser costosa.</li>
+      </ul>
+    `,
+    ejemplos: `
+      <ul>
+        <li>Olor a gas en cocina o zona de caldera.</li>
+        <li>Pérdida de presión en la instalación interior.</li>
+      </ul>
+    `,
+    argumentario: `
+      “Pack Tranquilidad Gas garantiza asistencia rápida y económica ante cualquier incidencia en la instalación de gas,
+      evitando costes elevados por desplazamientos y reparaciones externas.”
+    `
+  }
+},
+{
+  id: "T_AVERIA_GAS",
+  family: "PYS Gas",
+  name: "Tranquilidad Avería Gas",
+  price: "Cuota según contrato",
+  carencia: "Según póliza",
+  fidelizacionResumen: "No aplica fidelización",
+  resumenCorto: "Seguro que cubre averías en la instalación interior de gas con asistencia urgente.",
+
+  sections: {
+    info: `
+      Tranquilidad Avería Gas es un seguro especializado que cubre específicamente averías en la instalación interior,
+      proporcionando asistencia urgente y reparaciones dentro de un límite económico asegurado.
+    `,
+    coberturas: `
+      <ul>
+        <li>Cobertura de averías en la instalación.</li>
+        <li>Asistencia urgente ante fugas o riesgos.</li>
+        <li>Materiales y mano de obra dentro de límite de póliza.</li>
+      </ul>
+    `,
+    exclusiones: `
+      <ul>
+        <li>No cubre aparatos de gas (caldera, calentador, etc.).</li>
+        <li>No cubre instalaciones exteriores o comunitarias.</li>
+      </ul>
+    `,
+    procesos: `
+      <ul>
+        <li>Declaración de avería al teléfono de asistencia.</li>
+        <li>En caso de fuga, envío prioritario.</li>
+        <li>Reparación con coste cubierto según límite asegurado.</li>
+      </ul>
+    `,
+    fidelizacion: `
+      <ul>
+        <li>Resaltar que evita gastos inesperados por averías frecuentes en instalaciones antiguas.</li>
+      </ul>
+    `,
+    ejemplos: `
+      <ul>
+        <li>Fuga pequeña localizada en tubería interior.</li>
+        <li>Válvula o llave interior defectuosa.</li>
+      </ul>
+    `,
+    argumentario: `
+      “Es una solución muy económica para tener cubierta cualquier avería inesperada en la instalación de gas.”
+    `
+  }
+},
+{
+  id: "T_REVISION_GAS",
+  family: "PYS Gas",
+  name: "Tranquilidad Revisión Gas",
+  price: "Cuota según contrato",
+  carencia: "Según póliza",
+  fidelizacionResumen: "No aplica fidelización",
+  resumenCorto: "Seguro que cubre la revisión periódica de la instalación de gas y asistencias asociadas.",
+
+  sections: {
+    info: `
+      Tranquilidad Revisión Gas cubre los costes asociados a la revisión periódica obligatoria de la instalación interior
+      y ofrece asistencia en caso de incidencias detectadas durante dicha revisión.
+    `,
+    coberturas: `
+      <ul>
+        <li>Coste de la revisión periódica obligatoria.</li>
+        <li>Desplazamiento del técnico.</li>
+        <li>Cobertura económica en pequeñas reparaciones asociadas a la revisión.</li>
+      </ul>
+    `,
+    exclusiones: `
+      <ul>
+        <li>No cubre revisiones fuera del calendario obligatorio.</li>
+        <li>No cubre reparaciones de gran entidad o sustitución completa de instalación.</li>
+      </ul>
+    `,
+    procesos: `
+      <ul>
+        <li>Planificación de la revisión dentro del periodo legal.</li>
+        <li>Informe al cliente sobre el estado de la instalación.</li>
+        <li>Realización de ajustes y pequeñas correcciones cubiertas por la póliza.</li>
+      </ul>
+    `,
+    fidelizacion: `
+      <ul>
+        <li>Recordar que una revisión externa suele costar mucho más que la cuota anual del seguro.</li>
+      </ul>
+    `,
+    ejemplos: `
+      <ul>
+        <li>Revisión obligatoria cada 5 años.</li>
+        <li>Ajuste de llaves o pruebas de estanqueidad incluidas.</li>
+      </ul>
+    `,
+    argumentario: `
+      “Asegura la revisión obligatoria sin costes inesperados y garantiza que la instalación cumple con la normativa vigente.”
+    `
+  }
+},
+{
+  id: "SPP_MASCOTAS",
+  family: "PYS Protección",
+  name: "Protección de Pagos Plus Mascotas",
+  price: "Cuota según aseguradora",
+  carencia: "Sin carencia",
+  fidelizacionResumen: "No aplica fidelización",
+  resumenCorto: "Seguro que cubre pagos vinculados a servicios del hogar ante situaciones graves en mascotas aseguradas.",
+
+  sections: {
+    info: `
+      Protección de Pagos Plus Mascotas es un seguro que amplía las coberturas tradicionales del SPP,
+      adaptándolas a situaciones relacionadas con enfermedades o accidentes graves de la mascota asegurada.
+    `,
+    coberturas: `
+      <ul>
+        <li>Cobertura económica por hospitalización de la mascota.</li>
+        <li>Cobertura por intervención quirúrgica.</li>
+        <li>Indemnización orientada a cubrir pagos del hogar durante el siniestro.</li>
+      </ul>
+    `,
+    exclusiones: `
+      <ul>
+        <li>Enfermedades preexistentes.</li>
+        <li>Accidentes derivados de negligencia grave.</li>
+        <li>Costes veterinarios fuera del alcance de la póliza.</li>
+      </ul>
+    `,
+    procesos: `
+      <ul>
+        <li>El cliente declara el siniestro a la aseguradora aportando informe veterinario.</li>
+        <li>Evaluación del caso y aprobación de la cobertura.</li>
+        <li>Pago de la prestación según condiciones contratadas.</li>
+      </ul>
+    `,
+    fidelizacion: `
+      <ul>
+        <li>El propietario suele valorar mucho la seguridad de tener respaldo económico ante emergencias veterinarias.</li>
+      </ul>
+    `,
+    ejemplos: `
+      <ul>
+        <li>Intervención quirúrgica urgente.</li>
+        <li>Hospitalización prolongada de la mascota.</li>
+      </ul>
+    `,
+    argumentario: `
+      “Un seguro pensado para quienes consideran a su mascota parte de su familia y quieren proteger sus finanzas ante emergencias veterinarias.”
+    `
+  }
 }
 ];
 
@@ -2013,6 +2381,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderFamilyButtons();
   renderCards();
 });
+
 
 
 
