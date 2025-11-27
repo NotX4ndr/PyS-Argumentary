@@ -25,7 +25,7 @@ const PRODUCTS = [
   name: "PIH · Pack Iberdrola Hogar",
   price: "8,95 €/mes + impuestos",
   carencia: "30 días general · 6 meses Asesoramiento Energético",
-  fidelizacionResumen: "50% 12 meses si elegible (según Manual de Fidelización PYS)",
+  fidelizacionResumen: "50% por 12 meses si elegible y no cuenta con descuento por ",
   
   resumenCorto: "Pack integral con averías eléctricas urgentes, reparación de electrodomésticos, bricolaje eléctrico, Asistente Smart, Hogar Digital, Asesoramiento Energético y Protección de Pagos Esencial.",
 
@@ -2623,6 +2623,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderFamilyButtons();
   renderCards();
 });
+
 
 
 
