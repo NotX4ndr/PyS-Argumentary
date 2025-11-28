@@ -19,6 +19,21 @@
       <aside class="sidebar">
         <h2>Familias</h2>
         <div id="familyButtons" class="pill-group"></div>
+        <section class="contact-section">
+          <div class="contact-header">
+            <div class="contact-dot"></div>
+            <div>
+              <p class="contact-kicker">Averías</p>
+              <h3>Proceso de atención</h3>
+            </div>
+          </div>
+          <div id="outageContacts" class="contact-list"></div>
+          <div class="contact-actions">
+            <button id="openProcessModal" class="pill pill-ghost">Ver procesos completos</button>
+            <button id="openMapModal" class="pill pill-ghost">Mapa por zonas</button>
+            <button id="openImagesModal" class="pill pill-ghost">Imágenes de soporte</button>
+          </div>
+        </section>
       </aside>
 
       <section class="content">
@@ -31,6 +46,30 @@
       <div class="modal-dialog">
         <button id="modalClose" class="modal-close">×</button>
         <div id="modalBody"></div>
+      </div>
+    </div>
+
+    <div id="processModal" class="modal hidden">
+      <div class="modal-backdrop"></div>
+      <div class="modal-dialog modal-dialog-wide">
+        <button class="modal-close" data-modal-close="processModal">×</button>
+        <div id="processModalBody" class="modal-generic-body"></div>
+      </div>
+    </div>
+
+    <div id="mapModal" class="modal hidden">
+      <div class="modal-backdrop"></div>
+      <div class="modal-dialog modal-dialog-wide">
+        <button class="modal-close" data-modal-close="mapModal">×</button>
+        <div id="mapModalBody" class="modal-generic-body"></div>
+      </div>
+    </div>
+
+    <div id="imagesModal" class="modal hidden">
+      <div class="modal-backdrop"></div>
+      <div class="modal-dialog modal-dialog-wide">
+        <button class="modal-close" data-modal-close="imagesModal">×</button>
+        <div id="imagesModalBody" class="modal-generic-body"></div>
       </div>
     </div>
   </div>
