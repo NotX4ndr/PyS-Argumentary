@@ -17,8 +17,36 @@
 
     <main class="layout">
       <aside class="sidebar">
-        <h2>Familias</h2>
+        <div class="sidebar-top">
+          <div>
+            <p class="sidebar-eyebrow">Selección</p>
+            <h2>Familias</h2>
+          </div>
+          <div class="sidebar-actions">
+            <button id="openProcessModal" class="pill pill-ghost">Ver procesos completos</button>
+            <button id="openMapModal" class="pill pill-ghost">Mapa por zonas</button>
+          </div>
+        </div>
         <div id="familyButtons" class="pill-group"></div>
+        <section class="contact-section">
+          <div class="contact-header">
+            <div class="contact-dot"></div>
+            <div>
+              <p class="contact-kicker">Averías</p>
+              <h3>Contacto de distribuidoras</h3>
+              <p class="contact-sub">Consulta rápida de teléfonos de luz y gas.</p>
+            </div>
+          </div>
+          <div class="contact-collapse">
+            <button id="toggleContacts" class="pill pill-inline">
+              <span>Ver teléfonos de distribuidoras</span>
+              <span class="chevron" aria-hidden="true">▼</span>
+            </button>
+            <div id="outageContactsPanel" class="contact-panel is-collapsed">
+              <div id="outageContacts" class="contact-list"></div>
+            </div>
+          </div>
+        </section>
       </aside>
 
       <section class="content">
@@ -31,6 +59,22 @@
       <div class="modal-dialog">
         <button id="modalClose" class="modal-close">×</button>
         <div id="modalBody"></div>
+      </div>
+    </div>
+
+    <div id="processModal" class="modal hidden">
+      <div class="modal-backdrop"></div>
+      <div class="modal-dialog modal-dialog-wide">
+        <button class="modal-close" data-modal-close="processModal">×</button>
+        <div id="processModalBody" class="modal-generic-body"></div>
+      </div>
+    </div>
+
+    <div id="mapModal" class="modal hidden">
+      <div class="modal-backdrop"></div>
+      <div class="modal-dialog modal-dialog-wide">
+        <button class="modal-close" data-modal-close="mapModal">×</button>
+        <div id="mapModalBody" class="modal-generic-body"></div>
       </div>
     </div>
   </div>

@@ -18,6 +18,256 @@ const FAMILIES = [
   "SSAA Energía"
 ];
 
+const OUTAGE_CONTACTS = {
+  luz: [
+    { nombre: "e-distribución", telefono: "900 850 840" },
+    { nombre: "i-DE (Iberdrola Distribución)", telefono: "900 171 171" },
+    { nombre: "UFD (Naturgy Distribución)", telefono: "900 333 999" },
+    { nombre: "E-REDES (EDP)", telefono: "900 907 001" },
+    { nombre: "Repsol Electricidad y Gas (Viesgo)", telefono: "900 101 051" },
+    { nombre: "Electrica Arínzano Añón S.L.", telefono: "941 380 717" },
+    { nombre: "Eléctrica de Barbastro S.A.", telefono: "974 310 929" },
+    { nombre: "Eléctrica O Barco S.A.", telefono: "988 321 183" },
+    { nombre: "Eléctrica Sada S.A. (Edesa de Sada)", telefono: "981 620 450" },
+    { nombre: "Eléctricas de Nembra S.N. S.L.", telefono: "956 740 717" },
+    { nombre: "Energía Coop. da Arteixo Compos Graño", telefono: "981 640 603" },
+    { nombre: "Energía Garriga S.L.", telefono: "972 212 048" },
+    { nombre: "EON Distribuidor S.L. (Trasmoro España)", telefono: "942 000 100" },
+    { nombre: "Hidroeléctrica Narcea S.A.", telefono: "988 540 236" },
+    { nombre: "Hidroeléctrica del Cantábrico S.A.", telefono: "981 580 008" },
+    { nombre: "Elecar Castrocid S.A.", telefono: "932 245 477" },
+    { nombre: "Electricidad Ballester S.L.", telefono: "938 740 926" },
+    { nombre: "Electricidad Boix S.L.", telefono: "977 870 045" },
+    { nombre: "Eléctrica Alto Miño", telefono: "986 604 105" },
+    { nombre: "Eléctrica Altaia G.S.L.", telefono: "966 644 027" },
+    { nombre: "Eléctrica Bas Olives S.L.", telefono: "977 293 288" },
+    { nombre: "Eléctrica Blanquer S.A.", telefono: "971 567 020" },
+    { nombre: "Eléctrica Calfenense S.A.", telefono: "977 836 256" },
+    { nombre: "Eléctrica Calonge S.L.", telefono: "972 652 672" },
+    { nombre: "Eléctrica del Ebro S.A.", telefono: "976 633 485" },
+    { nombre: "Eléctrica d'Anglès S.A.", telefono: "973 681 350" },
+    { nombre: "Eléctrica Fonseca S.A.", telefono: "977 447 700" },
+    { nombre: "Eléctrica Guitert S.L.", telefono: "972 541 258" },
+    { nombre: "Eléctrica Guixense S.A.", telefono: "973 468 693" },
+    { nombre: "Eléctrica La Finca Alta S.C.L.", telefono: "977 427 909" },
+    { nombre: "Eléctrica Mas de las Matas S.C.L.", telefono: "978 848 007" },
+    { nombre: "Eléctrica Salar S.L.", telefono: "958 797 011" },
+    { nombre: "Eléctrica San Isidro S.Coop.", telefono: "949 290 004" },
+    { nombre: "Eléctrica Son Cortera S.L.", telefono: "971 487 284" },
+    { nombre: "Eléctrica Soneja S.L.", telefono: "964 012 942" },
+    { nombre: "Eléctrica Soler S.A.", telefono: "935 887 525" },
+    { nombre: "Eléctrica Taradell S.L.", telefono: "938 126 069" },
+    { nombre: "Eléctrica Vall d'Aro S.L.", telefono: "972 823 000" },
+    { nombre: "Eléctricas Carmiñal", telefono: "981 563 039" },
+    { nombre: "ELM Salgot S.A.", telefono: "938 439 400" },
+    { nombre: "Empresa S. Electra Caldense S.A.", telefono: "938 488 033" },
+    { nombre: "Enermuñoz Energía", telefono: "974 490 871" },
+    { nombre: "Hidroeléctrica del Pasteral S.A.", telefono: "972 420 201" },
+    { nombre: "Hidroeléctrica de La Bastida y Labajos S.L.", telefono: "949 290 004" },
+    { nombre: "Hidroeléctrica de Saleses S.A.", telefono: "973 445 066" },
+    { nombre: "Hidroeléctrica San Juan S.C.L.", telefono: "964 414 014" },
+    { nombre: "Lumelco S.L.", telefono: "963 890 538" },
+    { nombre: "Nacelec S.L.", telefono: "964 120 021" },
+    { nombre: "Setelsa S.L.", telefono: "964 599 093" },
+    { nombre: "Suelo y Vivienda de Aragón S.L.U.", telefono: "976 405 701" },
+    { nombre: "Zigoitia Elektrizitatea S.L.", telefono: "945 460 303" },
+    { nombre: "Eneluz, Sociedad Cooperativa", telefono: "948 810 111" },
+    { nombre: "Lumisa Energías S.L.", telefono: "900 831 183" },
+    { nombre: "Electra Avellana S.L.", telefono: "964 710 013" },
+    { nombre: "Electra Caldense Energia S.A.", telefono: "938 488 033" },
+    { nombre: "Electra del Maestrazgo S.A.", telefono: "978 856 003" },
+    { nombre: "Electra La Cenia S.A.", telefono: "977 570 170" },
+    { nombre: "Electra La Portellada S.A.", telefono: "978 853 126" },
+    { nombre: "Electra Norte S.A.", telefono: "987 260 011" },
+    { nombre: "Electra Penedès S.A.", telefono: "938 171 100" },
+    { nombre: "Electra Rubio S.A.", telefono: "948 810 111" }
+  ],
+  gas: [
+    { nombre: "NEDGIA SDG", telefono: "900 750 750" },
+    { nombre: "NEDGIA CEGAS", telefono: "900 750 750" },
+    { nombre: "NEDGIA Catalunya", telefono: "900 750 750" },
+    { nombre: "NEDGIA Rioja SDG", telefono: "900 750 750" },
+    { nombre: "NEDGIA Galicia S.A.", telefono: "900 750 750" },
+    { nombre: "NEDGIA Castilla y León", telefono: "900 750 750" },
+    { nombre: "NEDGIA Aragón SDG", telefono: "900 750 750" },
+    { nombre: "NEDGIA Murcia", telefono: "900 750 750" },
+    { nombre: "NEDGIA Navarra", telefono: "900 750 750" },
+    { nombre: "Gas Andalucía S.A.", telefono: "900 750 750" },
+    { nombre: "Gas Natural Cantabria", telefono: "900 750 750" },
+    { nombre: "Gas Natural Rioja SDG", telefono: "900 750 750" },
+    { nombre: "Gas Natural Castilla-La Mancha", telefono: "900 750 750" },
+    { nombre: "Gas Directo S.A.", telefono: "900 902 984" },
+    { nombre: "Beraigas - Distribuidora Gas Asturias", telefono: "900 902 984" },
+    { nombre: "Baigás Distribución", telefono: "900 902 984" },
+    { nombre: "Gas Navarra SDG", telefono: "900 750 750" },
+    { nombre: "Gas Aragón SDG", telefono: "900 750 750" },
+    { nombre: "Gas Natural Madrid SDG", telefono: "900 750 750" },
+    { nombre: "Madrileña Red de Gas", telefono: "900 601 010" },
+    { nombre: "Nortegas Energía Distribución", telefono: "900 400 523" },
+    { nombre: "Redexis Gas", telefono: "900 924 622" },
+    { nombre: "Gas Extremadura", telefono: "900 100 249" },
+    { nombre: "DC Gas Distribución Ceuta", telefono: "956 517 231" }
+  ]
+};
+
+const placeholderImage = (label, color) =>
+  `data:image/svg+xml;utf8,${encodeURIComponent(
+    `<svg xmlns='http://www.w3.org/2000/svg' width='640' height='360'><defs><linearGradient id='g' x1='0' x2='1' y1='0' y2='1'><stop offset='0' stop-color='${color}' stop-opacity='0.15'/><stop offset='1' stop-color='${color}' stop-opacity='0.45'/></linearGradient></defs><rect width='640' height='360' fill='url(#g)'/><rect x='24' y='24' width='592' height='312' rx='20' fill='white' opacity='0.8'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='28' fill='#2c3e50'>${label}</text></svg>`
+  )}`;
+
+const OUTAGE_IMAGES = [
+  {
+    titulo: "Atención de averías eléctricas · Pasos 1 y 2",
+    descripcion: "Infografía de presentación, escucha y comprobaciones entre avería general o particular.",
+    src: placeholderImage("Averías eléctricas 1-2", "#34a853"),
+    tipo: "luz"
+  },
+  {
+    titulo: "Atención de averías eléctricas · Reparación",
+    descripcion: "Guía de actuación tras comprobaciones y derivación según tenga o no PYS.",
+    src: placeholderImage("Averías eléctricas reparación", "#2bbd7e"),
+    tipo: "luz"
+  },
+  {
+    titulo: "Averías de gas · Pasos principales",
+    descripcion: "Resumen visual con urgencias, avería general, particular y reapertura de suministro.",
+    src: placeholderImage("Averías de gas", "#fbbc04"),
+    tipo: "gas"
+  },
+  {
+    titulo: "Mapa de distribuidoras de gas en España",
+    descripcion: "Principales distribuidoras de gas y áreas de actuación mostradas en el mapa.",
+    src: placeholderImage("Mapa gas", "#f9ab00"),
+    tipo: "mapa"
+  },
+  {
+    titulo: "Mapa de distribuidoras de luz en España",
+    descripcion: "Distribuidoras de electricidad por territorio con ejemplos de zonas de atención.",
+    src: placeholderImage("Mapa luz", "#4285f4"),
+    tipo: "mapa"
+  }
+];
+
+const OUTAGE_PROCESSES = {
+  luz: {
+    titulo: "Atención de averías eléctricas",
+    pasos: [
+      "Presenta y escucha la incidencia. Pregunta si afecta a más vecinos o solo al cliente y si existe peligro inmediato.",
+      "Avería general (toda la calle): informa que la distribuidora actuará sobre la red y confirma que no hay riesgo en la instalación interior.",
+      "Avería particular en varios puntos de la vivienda o comunidad: ofrece derivar a PSI para solicitar Servicios con ATSI (PEH/PEH Plus).",
+      "Avería particular solo del cliente: valida carencias y deuda; si procede, abre la gestión con PSI o guía al cliente sobre las acciones necesarias.",
+      "Llamadas urgentes con peligro (humo, chispa, olor a quemado): tranquiliza, valida si es seguro y coordina aviso de emergencia si hay riesgo vital.",
+      "Tras las comprobaciones, si el cliente no tiene PYS disponible, ofrece contratación o traslado a Grupo IWS para resolver la incidencia."
+    ],
+    notas: "Si el cliente tiene PYS (SPH/SP/UL/EE/PEH/PEH Plus), comprueba carencia y paga; con carencia cumplida, abre solicitud con PSI. Si no tiene PYS o está en carencia, puede derivarse a Grupo IWS o solicitar un número de contacto para avisar cuando se pueda gestionar."
+  },
+  gas: {
+    titulo: "Atención de averías de gas",
+    pasos: [
+      "Escucha la incidencia y confirma si hay olor a gas o daños visibles; solicita ventilar y cerrar llave general solo si es seguro.",
+      "Urgencia: ante fuga o tubos dañados, contacta con distribuidora o emergencias según gravedad y permanece en línea con el cliente.",
+      "Avería general: valida dirección y teléfonos para que la distribuidora actúe sobre la red sin intervenir en la instalación interior.",
+      "Avería particular: si afecta a la instalación del cliente, coordina revisión de distribuidora y prepara datos de contrato, CUPS y contacto.",
+      "Si el cliente solicita reparación y tiene PYS activo (PMG o PTG/PAG) y pagado, agenda visita con PSI e informa de los plazos de atención.",
+      "Para reapertura tras corte por seguridad, recopila teléfono, referencia de contrato y asunto “Reforma Instalación” y crea solicitud en Intranet Comercial: Gestión Domésticos > ATR > Reapertura de gas."
+    ],
+    notas: "Si el cliente no tiene PYS o está impagado, informa que no puede tramitarse reparación con cobertura y ofrece contratar. No se tramitan suspensiones ni cortes por impago desde esta gestión; en urgencias, prioriza la seguridad y la comunicación con la distribuidora."
+  }
+};
+
+const REGION_DISTRIBUTORS = [
+  {
+    region: "Andalucía",
+    luz: ["e-distribución", "i-DE (Iberdrola Distribución)"],
+    gas: ["Gas Andalucía S.A.", "NEDGIA SDG", "Redexis Gas"]
+  },
+  {
+    region: "Aragón",
+    luz: ["e-distribución"],
+    gas: ["NEDGIA Aragón SDG", "Gas Aragón SDG", "Redexis Gas"]
+  },
+  {
+    region: "Asturias",
+    luz: ["E-REDES (EDP)"],
+    gas: ["Nortegas Energía Distribución"]
+  },
+  {
+    region: "Cantabria",
+    luz: ["E-REDES (EDP)", "Repsol Electricidad y Gas (Viesgo)"],
+    gas: ["Gas Natural Cantabria", "NEDGIA SDG"]
+  },
+  {
+    region: "Castilla y León",
+    luz: ["i-DE (Iberdrola Distribución)"],
+    gas: ["NEDGIA Castilla y León"]
+  },
+  {
+    region: "Castilla-La Mancha",
+    luz: ["i-DE (Iberdrola Distribución)", "e-distribución"],
+    gas: ["Gas Natural Castilla-La Mancha", "NEDGIA SDG"]
+  },
+  {
+    region: "Cataluña",
+    luz: ["e-distribución"],
+    gas: ["NEDGIA Catalunya", "Gas Natural Madrid SDG", "Gas Directo S.A."]
+  },
+  {
+    region: "Comunidad de Madrid",
+    luz: ["i-DE (Iberdrola Distribución)"],
+    gas: ["Madrileña Red de Gas", "NEDGIA SDG"]
+  },
+  {
+    region: "Comunidad Valenciana",
+    luz: ["i-DE (Iberdrola Distribución)"],
+    gas: ["NEDGIA CEGAS"]
+  },
+  {
+    region: "Extremadura",
+    luz: ["e-distribución"],
+    gas: ["Gas Extremadura", "Redexis Gas"]
+  },
+  {
+    region: "Galicia",
+    luz: ["UFD"],
+    gas: ["NEDGIA Galicia S.A."]
+  },
+  {
+    region: "Islas Baleares",
+    luz: ["e-distribución"],
+    gas: ["Redexis Gas"]
+  },
+  {
+    region: "Islas Canarias",
+    luz: ["e-distribución"],
+    gas: ["Redexis Gas"]
+  },
+  {
+    region: "La Rioja",
+    luz: ["i-DE (Iberdrola Distribución)"],
+    gas: ["NEDGIA Rioja SDG"]
+  },
+  {
+    region: "Murcia",
+    luz: ["i-DE (Iberdrola Distribución)", "e-distribución"],
+    gas: ["NEDGIA Murcia", "Redexis Gas"]
+  },
+  {
+    region: "Navarra",
+    luz: ["i-DE (Iberdrola Distribución)"],
+    gas: ["Gas Navarra SDG", "NEDGIA Navarra"]
+  },
+  {
+    region: "País Vasco",
+    luz: ["E-REDES (EDP)"],
+    gas: ["Nortegas Energía Distribución"]
+  },
+  {
+    region: "Ceuta y Melilla",
+    luz: ["e-distribución"],
+    gas: ["DC Gas Distribución Ceuta", "Redexis Gas"]
+  }
+];
+
 const PRODUCTS = [
 {
   id: "PIH",
@@ -2480,6 +2730,210 @@ const PRODUCTS = [
 let currentFamily = "Todas las familias";
 let currentProduct = null;
 let currentSection = "info";
+let currentImageFilter = "todas";
+
+function renderOutageContacts() {
+  const container = document.getElementById("outageContacts");
+  if (!container) return;
+  const groups = [
+    { titulo: "Luz", datos: OUTAGE_CONTACTS.luz },
+    { titulo: "Gas", datos: OUTAGE_CONTACTS.gas }
+  ];
+  container.innerHTML = groups
+    .map(group => {
+      const items = group.datos
+        .map(item => `
+          <div class="contact-item">
+            <span class="contact-label">${item.nombre}</span>
+            <a class="contact-number" href="tel:${item.telefono.replace(/\s+/g, "")}">${item.telefono}</a>
+          </div>
+        `)
+        .join("");
+      return `
+        <div class="contact-group">
+          <h4>${group.titulo}</h4>
+          ${items}
+        </div>
+      `;
+    })
+    .join("");
+}
+
+let currentProcessType = "luz";
+let currentRegion = REGION_DISTRIBUTORS[0]?.region || "";
+
+function getPhoneByName(name, tipo) {
+  const list = OUTAGE_CONTACTS[tipo] || [];
+  const match = list.find(item => item.nombre === name);
+  return match ? match.telefono : "Pendiente";
+}
+
+function renderProcessModal() {
+  const container = document.getElementById("processModalBody");
+  if (!container) return;
+  const tabs = Object.keys(OUTAGE_PROCESSES)
+    .map(key => {
+      const active = key === currentProcessType ? "tab-button-active" : "";
+      return `<button class="tab-button ${active}" data-process="${key}">${key === "luz" ? "Luz" : "Gas"}</button>`;
+    })
+    .join("");
+  const data = OUTAGE_PROCESSES[currentProcessType];
+  const contacts = OUTAGE_CONTACTS[currentProcessType] || [];
+  const steps = data.pasos
+    .map(step => `<li>${step}</li>`)
+    .join("");
+  const numbers = contacts
+    .map(item => {
+      const tel = item.telefono.replace(/\s+/g, "");
+      return `<li><span>${item.nombre}</span><a class="contact-number" href="tel:${tel}">${item.telefono}</a></li>`;
+    })
+    .join("");
+  container.innerHTML = `
+    <header class="modal-header">
+      <div>
+        <p class="contact-kicker">Protocolo</p>
+        <h2>${data.titulo}</h2>
+        <p class="modal-sub">Resumen operativo según la guía oficial de averías eléctricas y de gas.</p>
+      </div>
+    </header>
+    <div class="modal-tabs">${tabs}</div>
+    <div class="modal-split">
+      <div class="modal-panel">
+        <h3>Paso a paso</h3>
+        <ol class="process-list">${steps}</ol>
+        <p class="modal-note">${data.notas}</p>
+      </div>
+      <div class="modal-panel">
+        <h3>Teléfonos directos</h3>
+        <ul class="process-phones">${numbers}</ul>
+      </div>
+    </div>
+  `;
+  const buttons = container.querySelectorAll("button[data-process]");
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      currentProcessType = btn.getAttribute("data-process");
+      renderProcessModal();
+    });
+  });
+}
+
+function renderMapModal() {
+  const container = document.getElementById("mapModalBody");
+  if (!container) return;
+  if (!currentRegion && REGION_DISTRIBUTORS.length) {
+    currentRegion = REGION_DISTRIBUTORS[0].region;
+  }
+  const buttons = REGION_DISTRIBUTORS
+    .map(region => {
+      const active = region.region === currentRegion ? "chip-active" : "";
+      return `<button class="chip ${active}" data-region="${region.region}">${region.region}</button>`;
+    })
+    .join("");
+  const selected = REGION_DISTRIBUTORS.find(r => r.region === currentRegion);
+  const luzList = (selected?.luz || [])
+    .map(name => {
+      const tel = getPhoneByName(name, "luz");
+      const href = tel.replace(/\s+/g, "");
+      return `<li><span>${name}</span><a class="contact-number" href="tel:${href}">${tel}</a></li>`;
+    })
+    .join("");
+  const gasList = (selected?.gas || [])
+    .map(name => {
+      const tel = getPhoneByName(name, "gas");
+      const href = tel.replace(/\s+/g, "");
+      return `<li><span>${name}</span><a class="contact-number" href="tel:${href}">${tel}</a></li>`;
+    })
+    .join("");
+  const hasGas = gasList.length > 0;
+  container.innerHTML = `
+    <header class="modal-header">
+      <div>
+        <p class="contact-kicker">Distribuidoras por zona</p>
+        <h2>Mapa interactivo de averías</h2>
+        <p class="modal-sub">Selecciona comunidad o provincia para ver teléfonos directos.</p>
+      </div>
+    </header>
+    <div class="chip-row">${buttons}</div>
+    <div class="modal-split">
+      <div class="modal-panel">
+        <h3>Zonas de luz</h3>
+        <ul class="process-phones">${luzList || "<li>Sin datos disponibles</li>"}</ul>
+      </div>
+      <div class="modal-panel">
+        <h3>Zonas de gas</h3>
+        <ul class="process-phones">${hasGas ? gasList : "<li>Sin datos disponibles</li>"}</ul>
+      </div>
+    </div>
+  `;
+  const regionButtons = container.querySelectorAll("button[data-region]");
+  regionButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      currentRegion = btn.getAttribute("data-region");
+      renderMapModal();
+    });
+  });
+}
+
+function renderImagesModal() {
+  const container = document.getElementById("imagesModalBody");
+  if (!container) return;
+  const filters = [
+    { id: "todas", label: "Todas" },
+    { id: "luz", label: "Luz" },
+    { id: "gas", label: "Gas" },
+    { id: "mapa", label: "Mapas" }
+  ];
+  const filterChips = filters
+    .map(filter => {
+      const active = filter.id === currentImageFilter ? "chip-active" : "";
+      return `<button class="chip ${active}" data-filter="${filter.id}">${filter.label}</button>`;
+    })
+    .join("");
+  const images = currentImageFilter === "todas"
+    ? OUTAGE_IMAGES
+    : OUTAGE_IMAGES.filter(item => item.tipo === currentImageFilter);
+  const cards = images.length
+    ? images
+        .map(item => `
+          <article class="image-card">
+            <div class="image-card-media">
+              <img src="${item.src}" alt="${item.titulo}">
+            </div>
+            <div class="image-card-body">
+              <span class="chip chip-solid">${item.tipo === "mapa" ? "Mapa" : item.tipo === "luz" ? "Luz" : "Gas"}</span>
+              <h3>${item.titulo}</h3>
+              <p class="modal-sub">${item.descripcion}</p>
+            </div>
+          </article>
+        `)
+        .join("")
+    : `<div class="empty-state">
+         <div class="empty-state-icon">🖼️</div>
+         <div>
+           <h3>Sin material disponible</h3>
+           <p>Prueba con otro filtro o carga las imágenes correspondientes.</p>
+         </div>
+       </div>`;
+  container.innerHTML = `
+    <header class="modal-header">
+      <div>
+        <p class="contact-kicker">Material gráfico</p>
+        <h2>Imágenes e infografías</h2>
+        <p class="modal-sub">Visualiza los archivos subidos de procesos y mapa interactivo.</p>
+      </div>
+    </header>
+    <div class="chip-row">${filterChips}</div>
+    <div class="image-gallery">${cards || "<p class=\"modal-sub\">No hay imágenes disponibles.</p>"}</div>
+  `;
+  const filterButtons = container.querySelectorAll("button[data-filter]");
+  filterButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      currentImageFilter = btn.getAttribute("data-filter");
+      renderImagesModal();
+    });
+  });
+}
 
 function renderFamilyButtons() {
   const container = document.getElementById("familyButtons");
@@ -2611,16 +3065,70 @@ document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("modal");
   const backdrop = modal.querySelector(".modal-backdrop");
   const closeButton = document.getElementById("modalClose");
+  const processModal = document.getElementById("processModal");
+  const processBackdrop = processModal.querySelector(".modal-backdrop");
+  const processClose = processModal.querySelector("[data-modal-close='processModal']");
+  const mapModal = document.getElementById("mapModal");
+  const mapBackdrop = mapModal.querySelector(".modal-backdrop");
+  const mapClose = mapModal.querySelector("[data-modal-close='mapModal']");
+  const openProcessButton = document.getElementById("openProcessModal");
+  const openMapButton = document.getElementById("openMapModal");
+  const contactToggle = document.getElementById("toggleContacts");
+  const contactPanel = document.getElementById("outageContactsPanel");
+  const chevron = contactToggle?.querySelector(".chevron");
 
   backdrop.addEventListener("click", closeModal);
   closeButton.addEventListener("click", closeModal);
+  processBackdrop.addEventListener("click", () => {
+    processModal.classList.add("hidden");
+  });
+  processClose.addEventListener("click", () => {
+    processModal.classList.add("hidden");
+  });
+  mapBackdrop.addEventListener("click", () => {
+    mapModal.classList.add("hidden");
+  });
+  mapClose.addEventListener("click", () => {
+    mapModal.classList.add("hidden");
+  });
+  openProcessButton.addEventListener("click", () => {
+    currentProcessType = "luz";
+    renderProcessModal();
+    processModal.classList.remove("hidden");
+  });
+  openMapButton.addEventListener("click", () => {
+    currentRegion = REGION_DISTRIBUTORS[0]?.region || "";
+    renderMapModal();
+    mapModal.classList.remove("hidden");
+  });
+
+  if (contactToggle && contactPanel) {
+    const label = contactToggle.querySelector("span");
+    contactToggle.setAttribute("aria-expanded", "false");
+    contactToggle.addEventListener("click", () => {
+      const isCollapsed = contactPanel.classList.toggle("is-collapsed");
+      const isOpen = !isCollapsed;
+      contactToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      if (chevron) {
+        chevron.textContent = isOpen ? "▲" : "▼";
+      }
+      if (label) {
+        label.textContent = isOpen
+          ? "Ocultar teléfonos de distribuidoras"
+          : "Ver teléfonos de distribuidoras";
+      }
+    });
+  }
   document.addEventListener("keydown", e => {
     if (e.key === "Escape") {
       closeModal();
+      processModal.classList.add("hidden");
+      mapModal.classList.add("hidden");
     }
   });
 
   renderFamilyButtons();
+  renderOutageContacts();
   renderCards();
 });
 
