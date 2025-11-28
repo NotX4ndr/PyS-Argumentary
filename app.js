@@ -3071,12 +3071,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const mapModal = document.getElementById("mapModal");
   const mapBackdrop = mapModal.querySelector(".modal-backdrop");
   const mapClose = mapModal.querySelector("[data-modal-close='mapModal']");
-  const imagesModal = document.getElementById("imagesModal");
-  const imagesBackdrop = imagesModal.querySelector(".modal-backdrop");
-  const imagesClose = imagesModal.querySelector("[data-modal-close='imagesModal']");
   const openProcessButton = document.getElementById("openProcessModal");
   const openMapButton = document.getElementById("openMapModal");
-  const openImagesButton = document.getElementById("openImagesModal");
+  const contactToggle = document.getElementById("toggleContacts");
+  const contactPanel = document.getElementById("outageContactsPanel");
+  const chevron = contactToggle?.querySelector(".chevron");
 
   backdrop.addEventListener("click", closeModal);
   closeButton.addEventListener("click", closeModal);
@@ -3092,12 +3091,6 @@ document.addEventListener("DOMContentLoaded", () => {
   mapClose.addEventListener("click", () => {
     mapModal.classList.add("hidden");
   });
-  imagesBackdrop.addEventListener("click", () => {
-    imagesModal.classList.add("hidden");
-  });
-  imagesClose.addEventListener("click", () => {
-    imagesModal.classList.add("hidden");
-  });
   openProcessButton.addEventListener("click", () => {
     currentProcessType = "luz";
     renderProcessModal();
@@ -3108,17 +3101,29 @@ document.addEventListener("DOMContentLoaded", () => {
     renderMapModal();
     mapModal.classList.remove("hidden");
   });
-  openImagesButton.addEventListener("click", () => {
-    currentImageFilter = "todas";
-    renderImagesModal();
-    imagesModal.classList.remove("hidden");
-  });
+
+  if (contactToggle && contactPanel) {
+    const label = contactToggle.querySelector("span");
+    contactToggle.setAttribute("aria-expanded", "false");
+    contactToggle.addEventListener("click", () => {
+      const isCollapsed = contactPanel.classList.toggle("is-collapsed");
+      const isOpen = !isCollapsed;
+      contactToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      if (chevron) {
+        chevron.textContent = isOpen ? "▲" : "▼";
+      }
+      if (label) {
+        label.textContent = isOpen
+          ? "Ocultar teléfonos de distribuidoras"
+          : "Ver teléfonos de distribuidoras";
+      }
+    });
+  }
   document.addEventListener("keydown", e => {
     if (e.key === "Escape") {
       closeModal();
       processModal.classList.add("hidden");
       mapModal.classList.add("hidden");
-      imagesModal.classList.add("hidden");
     }
   });
 

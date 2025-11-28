@@ -69,8 +69,8 @@ body {
 
 .layout {
   display: grid;
-  grid-template-columns: 260px minmax(0, 1fr);
-  gap: 18px;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: 20px;
   flex: 1;
   min-height: 0;
 }
@@ -78,15 +78,37 @@ body {
 .sidebar {
   background: var(--ib-surface);
   border-radius: var(--ib-radius-lg);
-  padding: 16px;
+  padding: 18px;
   border: 1px solid var(--ib-border);
   box-shadow: var(--ib-shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.sidebar-top {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .sidebar h2 {
-  font-size: 0.95rem;
-  margin-bottom: 10px;
+  font-size: 1rem;
   color: var(--ib-text-main);
+}
+
+.sidebar-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ib-text-muted);
+  font-size: 0.72rem;
+  margin-bottom: 2px;
+}
+
+.sidebar-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
 }
 
 .pill-group {
@@ -95,11 +117,11 @@ body {
   gap: 8px;
 }
 
+
 .contact-section {
-  margin-top: 16px;
   border: 1px solid var(--ib-border);
   border-radius: var(--ib-radius-lg);
-  padding: 12px;
+  padding: 14px;
   background: linear-gradient(135deg, #ffffff, #f7fef2);
   box-shadow: var(--ib-shadow-soft);
 }
@@ -127,21 +149,28 @@ body {
 }
 
 .contact-section h3 {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--ib-text-main);
+}
+
+.contact-sub {
+  color: var(--ib-text-muted);
+  font-size: 0.85rem;
+  margin-top: 2px;
 }
 
 .contact-list {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  padding: 6px 2px 0;
 }
 
-.contact-actions {
-  margin-top: 12px;
+.contact-collapse {
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .contact-group {
@@ -184,6 +213,36 @@ body {
 .contact-number:hover {
   color: var(--ib-primary);
   text-decoration: underline;
+}
+
+.contact-panel {
+  border: 1px dashed var(--ib-border-strong);
+  border-radius: var(--ib-radius-md);
+  background: var(--ib-surface);
+  overflow: hidden;
+  max-height: 420px;
+  transition: max-height 0.25s ease, padding 0.25s ease;
+  padding: 0 10px;
+  overflow-y: auto;
+}
+
+.contact-panel.is-collapsed {
+  max-height: 0;
+  padding: 0 10px;
+  border-color: transparent;
+}
+
+.pill-inline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.chevron {
+  font-size: 0.85rem;
+  color: var(--ib-text-muted);
 }
 
 .pill {
