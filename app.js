@@ -157,9 +157,9 @@ const OUTAGE_PROCESSES = {
       "Avería particular en varios puntos de la vivienda o comunidad: ofrece derivar a PSI para solicitar Servicios con ATSI (PEH/PEH Plus).",
       "Avería particular solo del cliente: valida carencias y deuda; si procede, abre la gestión con PSI o guía al cliente sobre las acciones necesarias.",
       "Llamadas urgentes con peligro (humo, chispa, olor a quemado): tranquiliza, valida si es seguro y coordina aviso de emergencia si hay riesgo vital.",
-      "Tras las comprobaciones, si el cliente no tiene PYS disponible, ofrece contratación o traslado a Grupo IWS para resolver la incidencia."
+      "Tras las comprobaciones, si el cliente no tiene PYS disponible, ofrece contratación o traslado a Grupo P&S para resolver la incidencia."
     ],
-    notas: "Si el cliente tiene PYS (SPH/SP/UL/EE/PEH/PEH Plus), comprueba carencia y paga; con carencia cumplida, abre solicitud con PSI. Si no tiene PYS o está en carencia, puede derivarse a Grupo IWS o solicitar un número de contacto para avisar cuando se pueda gestionar."
+    notas: "Si el cliente tiene PYS (SPH/SP/UL/EE/PEH/PEH Plus), comprueba carencia y paga; con carencia cumplida, abre solicitud con PSI. Si no tiene PYS o está en carencia, puede derivarse a Grupo P&S o solicitar un número de contacto para avisar cuando se pueda gestionar."
   },
   gas: {
     titulo: "Atención de averías de gas",
@@ -3131,6 +3131,7 @@ document.addEventListener("DOMContentLoaded", () => {
   renderOutageContacts();
   renderCards();
 });
+
 
 
 
